@@ -74,7 +74,6 @@ export default {
   color: rgb(255, 255, 255);
 }
 .part1 div {
-  /* height: 5vh; */
   text-align: left;
 }
 /**********/
