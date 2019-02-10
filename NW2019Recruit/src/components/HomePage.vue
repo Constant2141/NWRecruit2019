@@ -119,7 +119,7 @@ export default {
 .begin-leave-active {
   transition: opacity 2.5s;
 }
-.begin-enter, .begin-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.begin-enter, .begin-leave-to  {
   opacity: 0;
 }
 .lumos-enter-active,
