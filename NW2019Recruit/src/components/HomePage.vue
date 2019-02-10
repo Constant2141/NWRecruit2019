@@ -64,7 +64,6 @@ export default {
 }
 .part1 {
   width: 300px;
-  /* height: 10vh; */
   position: absolute;
   top: 50%;
   left: 50%;
