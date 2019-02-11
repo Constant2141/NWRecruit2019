@@ -1,21 +1,25 @@
 <template>
   <div class="home-page">
-      <transition name="begin">
-        <section class="part2" @click="clickHere" v-if="IsBegin">
-          <div class="click-here">点击此处</div>
-          <div class="dot"></div>
-          <img class="bgm" src="../assets/bgm1.png" width="100%">
-        </section>
-      </transition>
-      <transition name="lumos">
-        <section class="part3" v-if="IsClickHere">
-          <div class="lumos">Lumos</div>
-        </section>
-      </transition>
-      <section class="part1">
-        <div>隧道里太暗了...</div>
-        <div>我们需要点亮一盏灯...</div>
+    <transition name="begin">
+      <section class="part2" @click="clickHere" v-if="IsBegin">
+        <div class="click-here">点击此处</div>
+        <div class="dot"></div>
+        <img class="bgm" src="../assets/bgm1.png" width="100%">
       </section>
+    </transition>
+    <transition name="lumos">
+      <section class="part3" v-if="IsClickHere">
+        <div class="lumos">Lumos</div>
+      </section>
+    </transition>
+    <section class="part1">
+      <transition name="first">
+        <div v-if="first">隧道里太暗了...</div>
+      </transition>
+      <transition name="second">
+        <div v-if="second">我们需要点亮一盏灯...</div>
+      </transition>
+    </section>
   </div>
 </template>
 
@@ -24,13 +28,21 @@ export default {
   data() {
     return {
       IsBegin: false,
-      IsClickHere: false
+      IsClickHere: false,
+      first: false,
+      second: false
     };
   },
   mounted() {
-    let timer = setTimeout(() => {
+    setTimeout(() => {
+      this.first = true;
+    }, 1000);
+    setTimeout(() => {
+      this.second = true;
+    }, 2500);
+    setTimeout(() => {
       this.IsBegin = true;
-    }, 2000);
+    }, 4000);
   },
   methods: {
     clickHere() {
@@ -76,6 +88,22 @@ export default {
 .part1 div {
   text-align: left;
 }
+.first-enter-active,
+.first-leave-active {
+  transition: opacity 2.5s;
+}
+.first-enter,
+.first-leave-to {
+  opacity: 0;
+}
+.second-enter-active,
+.second-leave-active {
+  transition: opacity 2.5s;
+}
+.second-enter,
+.second-leave-to {
+  opacity: 0;
+}
 /**********/
 .part2 {
   width: 650px;
@@ -119,7 +147,8 @@ export default {
 .begin-leave-active {
   transition: opacity 2.5s;
 }
-.begin-enter, .begin-leave-to  {
+.begin-enter,
+.begin-leave-to {
   opacity: 0;
 }
 .lumos-enter-active,

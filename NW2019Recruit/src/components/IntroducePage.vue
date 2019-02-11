@@ -1,7 +1,17 @@
 <template>
   <div class="introduce-page" :style="{height:clientHeight}">
     <section class="content-box" ref="banner">
-      <div class="dot blur1" :style="{filter:blur}"></div>
+      <transition name="dotAppear">
+        <div class="dot" v-if="IsShowDot">
+          <div
+            class="circle1"
+            :style="{width:width+'px',height:width+'px',marginLeft:-width/2+'px',marginTop:-width/2+'px'}"
+          ></div>
+          <div class="circle2"></div>
+          <div class="circle3 blur1" :style="{filter:blur}"></div>
+        </div>
+      </transition>
+      <!-- <div class="dot blur1" :style="{filter:blur}"></div> -->
       <ul class="bg-bubbles" v-if="IsBegin">
         <li v-for="i in 12" :key="i"></li>
       </ul>
@@ -15,32 +25,45 @@ export default {
   data() {
     return {
       clientHeight: "",
-      blur: "0px",
-      width: "13px",
+      blur: "2px",
+      width: 0,
       height: "13px",
-      IsBegin: false
+      IsBegin: false,
+      IsShowDot:false
     };
   },
   methods: {
     blurChange() {
-      var i = 0;
+      var i = 2;
       var flag = true;
+      var flag2 = false;
       setTimeout(() => {
         setInterval(() => {
           this.blur = "blur(" + i + "px)";
-          if (flag) {
-            i++;
+          if (flag2) {
+            this.width -= 5;
           } else {
-            i--;
+            this.width += 5;
           }
-          if (i == 8) {
-            flag = false;
+          if (this.width == 0) {
+            flag2 = false;
+          }
+          if (this.width == 40) {
+            flag2 = true;
+          }
+          if (flag) {
+            i--;
+          } else {
+            i++;
           }
           if (i == 0) {
+            flag = false;
+          }
+          if (i == 2) {
             flag = true;
             this.IsBegin = true;
           }
-        }, 70);
+        }, 100);
       }, 2000);
     }
   },
@@ -50,8 +73,11 @@ export default {
         document.documentElement.clientHeight ||
         document.body.clientHeight) + "px";
     console.log(this.clientHeight);
+    this.IsShowDot = true;
+    setTimeout(() => {
 
     this.blurChange();
+    },70)
   }
 };
 </script>
@@ -77,17 +103,50 @@ export default {
   position: relative;
   margin: 0 auto;
 }
+.dotAppear-enter-active,
+.dotAppear-leave-active {
+  transition: opacity 2.5s;
+}
+.dotAppear-enter,
+.dotAppear-leave-to {
+  opacity: 0;
+}
 .dot {
   width: 26px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -15px;
-  margin-top: 5px;
+  /* padding-left: -15px;  */
+  padding-top: 20px;
   height: 26px;
   border-radius: 50%;
-  background-color: #fff;
   z-index: 2;
+}
+.circle1 {
+  background: #60e2da;
+  position: absolute;
+  border-radius: 25px;
+  -webkit-filter: blur(20px);
+}
+.circle2 {
+  background: #60e2da;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  -webkit-filter: blur(8px);
+}
+.circle3 {
+  background: #60e2da;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
+  border-radius: 25px;
+  -webkit-filter: blur(2px);
 }
 .blur3 {
   filter: blur(1px);
