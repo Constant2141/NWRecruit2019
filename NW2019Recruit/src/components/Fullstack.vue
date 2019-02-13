@@ -41,7 +41,7 @@ loadImg(){
       clearInterval(timer);
       timer = setInterval(function () {
         var ispeed = 0;
-        ispeed = alpha < tar ? 0.5 : -0.5;
+        ispeed = alpha < tar ? 2 : -2;
           if(alpha == tar){
             clearInterval(timer)
             alpha = 20;
@@ -55,19 +55,19 @@ loadImg(){
   }
   setTimeout(function(){
     startMove(100,img2)
-  },2000)
+  },1000)
   setTimeout(function(){
     startMove(100,p1)
-  },4000)
+  },2000)
   setTimeout(function(){
     startMove(100,p2)
-  },5800)
+  },2800)
   setTimeout(function(){
     startMove(100,can)
-  },8000)
+  },4000)
   setTimeout(function(){
     startMove(100,p3)
-  },25000)
+  },10000)
 },
 drawIt(){
   var getPixelRatio = function (context) {
@@ -199,114 +199,4 @@ mounted(){
 .cans{
   opacity: 0;
 }
-/* .pic1{
-  height: 271px;
-  width: 563px;
-  background: url('../assets/page62.png');
-  background-size: 100% 100%;
-  margin-left: 16px;
-  margin-top: 26px;
-}
-.text{
-  text-align: left;
-  margin-top: 50px;
-  margin-left:16px;
-}
-#h1{
-	font-family: FZYTK--GBK1-0;
-	font-size: 63px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	background: -webkit-linear-gradient(left, #808080 , #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-#p1{
-	font-family: AdobeHeitiStd-Regular;
-	font-size: 35px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #ffffff;
-  margin-top: 50px;
-}
-#p2{
-	font-family: AdobeHeitiStd-Regular;
-	font-size: 35px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #ffffff;
-  margin-top: 10px;
-  margin-left: 32px;
-}
-#p3{
-	font-family: AdobeHeitiStd-Regular;
-	font-size: 35px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #ffffff;
-  margin-top: 10px;
-  margin-left: 64px;
-}
-#p4{
-	font-family: AdobeHeitiStd-Regular;
-	font-size: 35px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #ffffff;
-  margin-top: 10px;
-}
-.bottom{
-  text-align: left;
-  margin-left:16px;
-}
-.ltext{
-  float: left;
-  margin-top: 130px;
-}
-#p5{
-	font-family: YouYuan;
-	font-size: 32px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #b4b4b4;
-}
-#p6{
-	font-family: YouYuan;
-	font-size: 32px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #bababa;
-}
-#p7{
-	font-family: YouYuan;
-	font-size: 32px;
-	font-weight: normal;
-	font-stretch: normal;
-	line-height: 75px;
-	letter-spacing: 0px;
-	color: #b4b4b4;
-  margin-top: 40px;
-}
-.pic2{
-  float: left;
-  width: 290px;
-  height: 340px;
-  background: url("../assets/page61.png");
-  background-size: 100% 100%;
-  margin-top: 660px;
-} */
 </style>
