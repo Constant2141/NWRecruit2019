@@ -1,22 +1,20 @@
 <template>
     <div class="page6">
-      <div class="pic1" v-show="pic1">
+      <div class="pic1">
+        <img src="../assets/page62.png" ref="img1">
       </div>
-      <div class="text">
-        <p id="h1">全栈组</p>
-        <p id="p1">这是全栈组介绍这是全栈组介绍自己想文案</p>
-        <p id="p2">这是全栈组介绍这是全栈组介绍自己想文案</p>
-        <p id="p3">这是全栈组介绍这是全栈组介绍自己想文案</p>
-        <p id="p2">这是全栈组介绍这是全栈组介绍自己想文案</p>
-        <p id="p4">这是全栈组介绍这是全栈组介绍自己想文案</p>
+      <div class="pic2">
+        <img src="../assets/page61.png" ref="img2">
       </div>
-      <div class="bottom">
-        <div class="ltext">
-        <p id="p5">噢...这只调皮的猫</p>
-        <p id="p6">打翻了我的咖啡杯"</p>
-        <p id="p7">啊！ZELDA！瞧你的毛线球！</p>
-        </div>
-        <div class="pic2"></div>
+      <div class="text1">
+        <p ref="p1">噢...这只调皮的猫</p>
+        <p ref="p2">打翻了我的咖啡杯</p>
+      </div>
+      <div class="text2">
+        <p ref="p3">啊！ZELDA！瞧你的毛线球！</p>
+      </div>
+      <div>
+        <canvas id="can" width="375" height="330"></canvas>
       </div>
     </div>
 </template>
@@ -25,20 +23,62 @@
 export default {
   data(){
     return{
-      // pic1:false,
-      pic1:true
+
     }
   },
-  methods:{
-    second5(){
-        let that = this;
-      setTimeout(function(){
-        that.pic1 = true;
-      },1000)
-    }
+methods:{
+loadImg(){
+    var alpha = 20;
+    var img1 = this.$refs.img1
+    var img2 = this.$refs.img2
+    var p1 = this.$refs.p1
+    var p2 = this.$refs.p2
+    var p3 = this.$refs.p3
+    startMove(100,img1)
+    var timer;
+    function startMove(tar,obj) {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        var ispeed = 0;
+        ispeed = alpha < tar ? 0.5 : -0.5;
+          if(alpha == tar){
+            clearInterval(timer)
+            alpha = 20;
+        }
+        else{
+            alpha += ispeed;
+            obj.style.filter = "alpha(opacity:"+alpha+")";
+            obj.style.opacity = alpha/100;
+        }
+    }, 10)
+  }
+  setTimeout(function(){
+    startMove(100,img2)
+  },2000)
+  setTimeout(function(){
+    startMove(100,p1)
+  },4000)
+  setTimeout(function(){
+    startMove(100,p2)
+  },5800)
+  setTimeout(function(){
+    startMove(100,p3)
+  },25000)
+},
+drawIt(){
+  // var canvas = document.getElementById("can");
+  // if (!canvas.getContext) return;
+  // var ctx = canvas.getContext("2d");
+  // ctx.font = "bold 50px"
+  // ctx.fillStyle = "#b4b4b4"
+  // ctx.fillText("天若有情", 10, 50);
+  // ctx.fillText("天若有情", 20, 90);
+  // ctx.strokeText("天若有情", 10, 40)
+}
   },
-  mounted(){
-    // this.second5()
+mounted(){
+    this.loadImg()
+    // this.drawIt()
   }
 }
 </script>
@@ -54,6 +94,65 @@ export default {
     overflow: hidden;
 }
 .pic1{
+  height: 271px;
+  width: 563px;
+  margin-left: 16px;
+  margin-top: 26px;
+}
+.pic1 img{
+  height: 271px;
+  width: 563px;
+  margin: 0 auto;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.pic2{
+  width: 290px;
+  height: 340px;
+  position: absolute;
+  bottom: 20px;
+  right: 2px;
+}
+.pic2 img{
+  height: 340px;
+  width: 290px;
+  margin: 0 auto;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.text1{
+  position: absolute;
+  bottom: 140px;
+  left: 16px;
+}
+.text1 p{
+  font-family: YouYuan;
+	font-size: 32px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 75px;
+	letter-spacing: 0px;
+	color: #b4b4b4;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.text2{
+  position: absolute;
+  bottom: 40px;
+  left: 16px;
+}
+.text2 p{
+  font-family: YouYuan;
+	font-size: 32px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 75px;
+	letter-spacing: 0px;
+	color: #b4b4b4;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+/* .pic1{
   height: 271px;
   width: 563px;
   background: url('../assets/page62.png');
@@ -161,6 +260,6 @@ export default {
   height: 340px;
   background: url("../assets/page61.png");
   background-size: 100% 100%;
-  margin-top: 80px;
-}
+  margin-top: 660px;
+} */
 </style>
