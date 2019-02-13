@@ -13,8 +13,8 @@
       <div class="text2">
         <p ref="p3">啊！ZELDA！瞧你的毛线球！</p>
       </div>
-      <div>
-        <canvas id="can" width="375" height="330"></canvas>
+      <div class="cans" ref="can">
+        <canvas id="can"></canvas>
       </div>
     </div>
 </template>
@@ -34,6 +34,7 @@ loadImg(){
     var p1 = this.$refs.p1
     var p2 = this.$refs.p2
     var p3 = this.$refs.p3
+    var can = this.$refs.can
     startMove(100,img1)
     var timer;
     function startMove(tar,obj) {
@@ -62,23 +63,66 @@ loadImg(){
     startMove(100,p2)
   },5800)
   setTimeout(function(){
+    startMove(100,can)
+  },8000)
+  setTimeout(function(){
     startMove(100,p3)
   },25000)
 },
 drawIt(){
-  // var canvas = document.getElementById("can");
-  // if (!canvas.getContext) return;
-  // var ctx = canvas.getContext("2d");
-  // ctx.font = "bold 50px"
-  // ctx.fillStyle = "#b4b4b4"
-  // ctx.fillText("天若有情", 10, 50);
-  // ctx.fillText("天若有情", 20, 90);
-  // ctx.strokeText("天若有情", 10, 40)
+  var getPixelRatio = function (context) {
+        var backingStore = context.backingStorePixelRatio ||
+            context.webkitBackingStorePixelRatio ||
+            context.mozBackingStorePixelRatio ||
+            context.msBackingStorePixelRatio ||
+            context.oBackingStorePixelRatio ||
+            context.backingStorePixelRatio || 1;
+        return (window.devicePixelRatio || 1) / backingStore;
+    };
+    //画文字
+    var myCanvas = document.getElementById("can");
+    var context = myCanvas.getContext("2d");
+    var ratio = getPixelRatio(context);
+
+    myCanvas.width = document.documentElement.clientWidth;
+    myCanvas.height = document.documentElement.clientHeight/2;
+    var cwidth = myCanvas.width;
+    var cheight = myCanvas.height
+    myCanvas.style.width = myCanvas.width + 'px';
+    myCanvas.style.height = myCanvas.height + 'px';
+ 
+    myCanvas.width = myCanvas.width * ratio;
+    myCanvas.height = myCanvas.height * ratio;
+ 
+    // 放大倍数
+    context.scale(ratio, ratio);
+
+    var sizes2 = 0.0853 * cwidth
+    var fontsize2 = sizes2 + 'px'
+    var styles2 = "FZYTK--GBK1-0"
+    var font2 = fontsize2 + " " + styles2
+    context.font = font2
+    var color = context.createLinearGradient(0.016*cwidth,0.135*cheight, 0.32*cwidth, 0.135*cheight);   
+    color.addColorStop(0, '#808080');      
+    color.addColorStop(1, '#ffffff');  
+    context.fillStyle = color;
+    context.fillText("全栈组", 0.016*cwidth, 0.135*cheight);
+    var sizes = 0.0453 * cwidth
+    var fontsize = sizes + 'px'
+    var styles = "AdobeHeitiStd-Regular"
+    var font = fontsize + " " + styles
+    context.font = font
+    context.fillStyle = "#ffffff"
+    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大沙雕", 0.016*cwidth, 0.285*cheight);
+    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大沙雕", 0.072*cwidth, 0.405*cheight);
+    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大沙雕", 0.128*cwidth, 0.525*cheight);
+    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大沙雕", 0.072*cwidth, 0.645*cheight);
+    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大沙雕", 0.016*cwidth, 0.765*cheight);
 }
   },
 mounted(){
     this.loadImg()
-    // this.drawIt()
+    this.drawIt()
   }
 }
 </script>
@@ -150,6 +194,9 @@ mounted(){
 	letter-spacing: 0px;
 	color: #b4b4b4;
   filter: alpha(opacity=0);
+  opacity: 0;
+}
+.cans{
   opacity: 0;
 }
 /* .pic1{
