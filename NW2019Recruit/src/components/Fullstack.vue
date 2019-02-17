@@ -75,7 +75,7 @@ loadImg(){
   },8500)
   setTimeout(function(){
     startMove(100,p3)
-  },17500)
+  },19500)
 },
 drawIt(){
   var getPixelRatio = function (context) {
@@ -243,7 +243,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16450)
+    },16480)
 
     setTimeout(function(){
       var timer = setInterval(function(){
@@ -256,7 +256,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16550)
+    },18550)
 
     setTimeout(function(){
       var timer = setInterval(function(){
@@ -269,7 +269,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16600)
+    },18600)
 
     setTimeout(function(){
       var timer = setInterval(function(){
@@ -283,7 +283,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16650)
+    },18650)
 
     setTimeout(function(){
       var timer = setInterval(function(){
@@ -296,7 +296,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16700)
+    },18700)
 },
   show(){
     let that = this
@@ -356,7 +356,7 @@ mounted(){
     this.drawIt()
     setTimeout(function(){
       that.show()
-    },15500)
+    },17500)
     // this.show()
   }
 }
