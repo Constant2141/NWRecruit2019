@@ -243,7 +243,7 @@ drawIt(){
       change(context)
       }
     },20)
-    },16480)
+    },18480)
 
     setTimeout(function(){
       var timer = setInterval(function(){
