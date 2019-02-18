@@ -29,7 +29,7 @@ export default {
       width: 0,
       height: "13px",
       IsBegin: false,
-      IsShowDot:false
+      IsShowDot: false,
     };
   },
   methods: {
@@ -37,6 +37,7 @@ export default {
       var i = 2;
       var flag = true;
       var flag2 = false;
+
       setTimeout(() => {
         setInterval(() => {
           this.blur = "blur(" + i + "px)";
@@ -75,9 +76,8 @@ export default {
     console.log(this.clientHeight);
     this.IsShowDot = true;
     setTimeout(() => {
-
-    this.blurChange();
-    },70)
+      this.blurChange();
+    }, 70);
   }
 };
 </script>
