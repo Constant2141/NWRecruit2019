@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/HomePage'
 import IntroducePage from '@/components/IntroducePage'
 import Fullstack from '@/components/Fullstack'
-
+import EntryForm from '@/components/EntryForm'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +28,11 @@ export default new Router({
       path: '/fullstack',
       name: 'Fullstack',
       component: Fullstack
+    },
+    {
+      path: '/entryform',
+      name: 'EntryForm',
+      component: EntryForm
     }
   ]
 })
