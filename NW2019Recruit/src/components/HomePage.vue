@@ -4,6 +4,10 @@
       <section class="part2" @click="clickHere" v-if="IsBegin">
         <div class="click-here">点击此处</div>
         <div class="dot"></div>
+        <div class="wave1"></div>
+        <div class="wave2"></div>
+        <div class="wave3"></div>
+        <div class="wave4"></div>
         <img class="bgm" src="../assets/bgm1.png" width="100%">
       </section>
     </transition>
@@ -71,7 +75,7 @@ export default {
 .home-page {
   width: 100vw;
   height: 100vh;
-  background-position: relative;
+  position: relative;
   background-color: #000;
 }
 .part1 {
@@ -123,6 +127,70 @@ export default {
   color: #fff;
   margin-bottom: 10px;
 }
+.wave1{
+  width: 208px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: -86px;
+  height: 208px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  border: 1px solid #fff;
+  z-index: 2;
+  opacity: 0;
+  animation: wave 1.5s ease-in-out 1s infinite;
+}
+.wave2{
+  width: 208px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: -86px;
+  height: 208px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  border: 1px solid #fff;
+  z-index: 2;
+  opacity: 0;
+  animation: wave 1.5s ease-in-out 1.2s infinite;
+}
+.wave3{
+  width: 208px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: -86px;
+  height: 208px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  border: 1px solid #fff;
+  z-index: 2;
+  opacity: 0;
+  animation: wave 1.5s ease-in-out 1.4s infinite;
+}
+.wave4{
+  width: 208px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: -86px;
+  height: 208px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  border: 1px solid #fff;
+  z-index: 2;
+  opacity: 0;
+  animation: wave 1.5s ease-in-out 1.6s infinite;
+}
 .bgm {
   margin: 0 auto;
   background-size: contain;
@@ -141,7 +209,7 @@ export default {
   height: 26px;
   border-radius: 50%;
   background-color: #fff;
-  z-index: 2;
+  z-index: 20;
 }
 .begin-enter-active,
 .begin-leave-active {
@@ -182,5 +250,52 @@ export default {
   text-align: center;
   font-family: "HarryP";
   color: rgb(2, 172, 187);
+}
+/****波浪wave动效***/
+@keyframes wave {
+  0%{
+    transform: scale(0.05);
+    opacity: 0.3;
+  }
+  10%{
+    transform: scale(0.10);
+    opacity: 0.4;
+  }
+  20%{
+    transform: scale(0.20);
+    opacity: 0.5;
+  }
+  30%{
+    transform: scale(0.30);
+    opacity: 0.6;
+  }
+  40%{
+    transform: scale(0.40);
+    opacity: 0.7
+  }
+  50%{
+    transform: scale(0.50);
+    opacity: 0.8
+  }
+  60%{
+    transform: scale(0.6);
+    opacity: 0.9
+  }
+  70%{
+    transform: scale(0.7);
+    opacity: 1
+  }
+  80%{
+    transform: scale(0.8);
+    opacity: 0.9
+  }
+  90%{
+    transform: scale(0.9);
+    opacity: 0.4
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0.1
+  }
 }
 </style>

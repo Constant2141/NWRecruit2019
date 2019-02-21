@@ -13,10 +13,28 @@
       </transition>
       <!-- <div class="dot blur1" :style="{filter:blur}"></div> -->
       <ul class="bg-bubbles" v-if="IsBegin">
-        <li v-for="i in 12" :key="i"></li>
+        <li v-for="i in 9" :key="i"></li>
       </ul>
       <img class="bg circle" src="../assets/bgm.png">
     </section>
+    <transition name="NW">
+      <section class="nw-font" v-if="IsShowNW">
+        <div class="night">
+          <span>N</span>ight's
+        </div>
+        <div class="watch">
+          <span>W</span>atch
+        </div>
+      </section>
+    </transition>
+    <transition name="font">
+      <section class="font-content" v-if="IsShowFont">
+        <p
+          class="part1"
+        >守夜人工作室成立于2017年初，前身是协同工作室前端组。目前主要分为设计、全栈组，工作室专注设计并开发Web项目、移动端网页及小程序，特色独立项目为女生节许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。</p>
+        <p class="part2">我们着重培养多方面、多技能的人才，增加自己的竞争力。毕业的师兄师姐大多就职于阿里、腾讯、网易等一线互联网公司。</p>
+      </section>
+    </transition>
   </div>
 </template>
 
@@ -29,7 +47,9 @@ export default {
       width: 0,
       height: "13px",
       IsBegin: false,
-      IsShowDot:false
+      IsShowDot: false,
+      IsShowNW: false,
+      IsShowFont: false
     };
   },
   methods: {
@@ -37,6 +57,7 @@ export default {
       var i = 2;
       var flag = true;
       var flag2 = false;
+
       setTimeout(() => {
         setInterval(() => {
           this.blur = "blur(" + i + "px)";
@@ -62,6 +83,10 @@ export default {
           if (i == 2) {
             flag = true;
             this.IsBegin = true;
+            this.IsShowNW = true;
+            setTimeout(() => {
+              this.IsShowFont = true;
+            }, 1000);
           }
         }, 100);
       }, 2000);
@@ -75,14 +100,17 @@ export default {
     console.log(this.clientHeight);
     this.IsShowDot = true;
     setTimeout(() => {
-
-    this.blurChange();
-    },70)
+      this.blurChange();
+    }, 70);
   }
 };
 </script>
 
 <style scoped>
+@font-face {
+  font-family: HarryP;
+  src: url("../font/harrypotter.ttf");
+}
 .introduce-page {
   width: 750px;
   background: #000;
@@ -117,7 +145,7 @@ export default {
   top: 50%;
   left: 50%;
   /* padding-left: -15px;  */
-  padding-top: 20px;
+  padding-top: 24px;
   height: 26px;
   border-radius: 50%;
   z-index: 2;
@@ -173,8 +201,8 @@ export default {
 .bg-bubbles {
   position: absolute;
   /* background-color: red; */
-  width: 300px;
-  height: 180px;
+  width: 350px;
+  height: 190px;
   top: 100px;
   z-index: 5;
   list-style: none;
@@ -184,13 +212,14 @@ export default {
 }
 .bg-bubbles li {
   position: absolute;
-  top: 160px;
+  top: 140px;
   left: 280px;
   width: 20px;
   height: 20px;
   background-color: #8deae6;
   transition-timing-function: linear;
   border-radius: 50%;
+  opacity: 0;
 }
 .bg-bubbles li:nth-child(1) {
   width: 25px;
@@ -200,103 +229,157 @@ export default {
 .bg-bubbles li:nth-child(2) {
   width: 13px;
   height: 13px;
-  top: 170px;
+  top: 150px;
   left: 310px;
   animation: square 5s linear 1s infinite;
 }
 .bg-bubbles li:nth-child(3) {
   width: 12px;
   height: 12px;
-  top: 210px;
+  top: 175px;
   left: 280px;
   animation: square 5s linear 1.1s infinite;
 }
 .bg-bubbles li:nth-child(4) {
   width: 24px;
   height: 24px;
-  top: 210px;
+  top: 175px;
   left: 320px;
   animation: square 5s linear 1.6s infinite;
 }
 .bg-bubbles li:nth-child(5) {
   width: 6px;
   height: 6px;
-  top: 230px;
+  top: 160px;
   left: 300px;
   animation: square 5s linear 1s infinite;
 }
 .bg-bubbles li:nth-child(6) {
   width: 6px;
   height: 6px;
-  top: 270px;
+  top: 200px;
   left: 320px;
   animation: square 5s linear 1.1s infinite;
 }
 .bg-bubbles li:nth-child(7) {
   width: 10px;
   height: 10px;
-  top: 150px;
+  top: 130px;
   left: 300px;
   animation: square 5s linear 2.1s infinite;
 }
 .bg-bubbles li:nth-child(8) {
   width: 12px;
   height: 12px;
-  top: 180px;
+  top: 160px;
   left: 270px;
   animation: square 5s linear 3.6s infinite;
 }
 .bg-bubbles li:nth-child(9) {
   width: 14px;
   height: 14px;
-  top: 100px;
+  top: 130px;
   left: 300px;
   animation: square 5s linear 3.1s infinite;
 }
-.bg-bubbles li:nth-child(10) {
+/* .bg-bubbles li:nth-child(10) {
   width: 10px;
   height: 10px;
-  top: 120px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 3.4s infinite;
 }
 .bg-bubbles li:nth-child(11) {
   width: 14px;
   height: 14px;
-  top: 100px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 4.1s infinite;
 }
 .bg-bubbles li:nth-child(12) {
   width: 10px;
   height: 10px;
-  top: 120px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 4.4s infinite;
-}
+} */
 @keyframes square {
   0% {
-    opacity: 1;
+    opacity: 0;
     transform: translate(-3px, -2px);
+  }
+  10% {
+    opacity: 0.1;
   }
   25% {
     opacity: 1;
-    transform: translateY(-30px, -20px);
+    transform: translateY(-24px, -16px);
   }
   50% {
     opacity: 1;
-    transform: translate(-60px, -40px);
+    transform: translate(-48px, -32px);
   }
   75% {
     opacity: 0.8;
-    transform: translate(-90px, -60px);
+    transform: translate(-72px, -48px);
   }
-  95% {
-    opacity: 0.7;
+  90% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
-    transform: translate(-120px, -80px);
+    transform: translate(-96px, -64px);
   }
+}
+/***night's watch*/
+.nw-font {
+  text-align: right;
+  margin-right: 110px;
+}
+.night {
+  font-family: "HarryP";
+  font-size: 75px;
+  color: #fff;
+}
+.watch {
+  font-family: "HarryP";
+  font-size: 75px;
+  color: #fff;
+}
+.nw-font div span {
+  color: #228e88;
+}
+/***font-content*/
+.font-content {
+  width: 600px;
+  font-size: 22px;
+  color: #ddd;
+  font-family: "youyuan";
+  line-height: 2;
+  text-align: left;
+  margin: 0 auto;
+}
+.part1 {
+  margin-top: 15px;
+}
+.part2 {
+  margin-top: 20px;
+}
+/****/
+.NW-enter-active,
+.NW-leave-active {
+  transition: opacity 2.5s;
+}
+.NW-enter,
+.NW-leave-to {
+  opacity: 0;
+}
+.font-enter-active,
+.font-leave-active {
+  transition: opacity 2.5s;
+}
+.font-enter,
+.font-leave-to {
+  opacity: 0;
 }
 </style>
