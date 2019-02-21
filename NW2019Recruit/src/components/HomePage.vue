@@ -75,7 +75,7 @@ export default {
 .home-page {
   width: 100vw;
   height: 100vh;
-  background-position: relative;
+  position: relative;
   background-color: #000;
 }
 .part1 {

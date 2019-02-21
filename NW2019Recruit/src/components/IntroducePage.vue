@@ -17,20 +17,24 @@
       </ul>
       <img class="bg circle" src="../assets/bgm.png">
     </section>
-    <section class="nw-font">
-      <div class="night">
-        <span>N</span>ight's
-      </div>
-      <div class="watch">
-        <span>W</span>atch
-      </div>
-    </section>
-    <section class="font-content">
-      <p class="part1">守夜人工作室成立于2017年初，前身是协同工作室前端组。目前主要分为设计、全栈组，工作室专注设计并开发Web项目、移动端网页及小程序，特色独立项目为女生节许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。
-      </p>
-      <p class="part2">我们着重培养多方面、多技能的人才，增加自己的竞争力。毕业的师兄师姐大多就职于阿里、腾讯、网易等一线互联网公司。
-      </p>
-    </section>
+    <transition name="NW">
+      <section class="nw-font" v-if="IsShowNW">
+        <div class="night">
+          <span>N</span>ight's
+        </div>
+        <div class="watch">
+          <span>W</span>atch
+        </div>
+      </section>
+    </transition>
+    <transition name="font">
+      <section class="font-content" v-if="IsShowFont">
+        <p
+          class="part1"
+        >守夜人工作室成立于2017年初，前身是协同工作室前端组。目前主要分为设计、全栈组，工作室专注设计并开发Web项目、移动端网页及小程序，特色独立项目为女生节许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。</p>
+        <p class="part2">我们着重培养多方面、多技能的人才，增加自己的竞争力。毕业的师兄师姐大多就职于阿里、腾讯、网易等一线互联网公司。</p>
+      </section>
+    </transition>
   </div>
 </template>
 
@@ -43,7 +47,9 @@ export default {
       width: 0,
       height: "13px",
       IsBegin: false,
-      IsShowDot: false
+      IsShowDot: false,
+      IsShowNW: false,
+      IsShowFont: false
     };
   },
   methods: {
@@ -77,6 +83,10 @@ export default {
           if (i == 2) {
             flag = true;
             this.IsBegin = true;
+            this.IsShowNW = true;
+            setTimeout(() => {
+              this.IsShowFont = true;
+            }, 1000);
           }
         }, 100);
       }, 2000);
@@ -352,7 +362,24 @@ export default {
 .part1 {
   margin-top: 15px;
 }
-.part2{
+.part2 {
   margin-top: 20px;
+}
+/****/
+.NW-enter-active,
+.NW-leave-active {
+  transition: opacity 2.5s;
+}
+.NW-enter,
+.NW-leave-to {
+  opacity: 0;
+}
+.font-enter-active,
+.font-leave-active {
+  transition: opacity 2.5s;
+}
+.font-enter,
+.font-leave-to {
+  opacity: 0;
 }
 </style>
