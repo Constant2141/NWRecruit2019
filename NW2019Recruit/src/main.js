@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import star from './utils/star'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$star = star;
 
 /* eslint-disable no-new */
 new Vue({
