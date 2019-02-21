@@ -49,7 +49,7 @@
 
 <script>
 
-import star from "../utils/star"
+// import star from "../utils/star"
 export default {
     data(){
         return {
@@ -65,7 +65,7 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style scoped>
     .home-img{
         background-image: url(../assets/home.jpg);
         height: 100vh;
