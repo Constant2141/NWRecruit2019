@@ -79,7 +79,7 @@ export default {
   background-color: #000;
 }
 .part1 {
-  width: 300px;
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
