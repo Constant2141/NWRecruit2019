@@ -13,7 +13,7 @@
       </transition>
       <!-- <div class="dot blur1" :style="{filter:blur}"></div> -->
       <ul class="bg-bubbles" v-if="IsBegin">
-        <li v-for="i in 12" :key="i"></li>
+        <li v-for="i in 9" :key="i"></li>
       </ul>
       <img class="bg circle" src="../assets/bgm.png">
     </section>
@@ -173,8 +173,8 @@ export default {
 .bg-bubbles {
   position: absolute;
   /* background-color: red; */
-  width: 300px;
-  height: 180px;
+  width: 350px;
+  height: 190px;
   top: 100px;
   z-index: 5;
   list-style: none;
@@ -184,13 +184,14 @@ export default {
 }
 .bg-bubbles li {
   position: absolute;
-  top: 160px;
+  top: 140px;
   left: 280px;
   width: 20px;
   height: 20px;
   background-color: #8deae6;
   transition-timing-function: linear;
   border-radius: 50%;
+  opacity: 0;
 }
 .bg-bubbles li:nth-child(1) {
   width: 25px;
@@ -200,103 +201,106 @@ export default {
 .bg-bubbles li:nth-child(2) {
   width: 13px;
   height: 13px;
-  top: 170px;
+  top: 150px;
   left: 310px;
   animation: square 5s linear 1s infinite;
 }
 .bg-bubbles li:nth-child(3) {
   width: 12px;
   height: 12px;
-  top: 210px;
+  top: 175px;
   left: 280px;
   animation: square 5s linear 1.1s infinite;
 }
 .bg-bubbles li:nth-child(4) {
   width: 24px;
   height: 24px;
-  top: 210px;
+  top: 175px;
   left: 320px;
   animation: square 5s linear 1.6s infinite;
 }
 .bg-bubbles li:nth-child(5) {
   width: 6px;
   height: 6px;
-  top: 230px;
+  top: 160px;
   left: 300px;
   animation: square 5s linear 1s infinite;
 }
 .bg-bubbles li:nth-child(6) {
   width: 6px;
   height: 6px;
-  top: 270px;
+  top: 200px;
   left: 320px;
   animation: square 5s linear 1.1s infinite;
 }
 .bg-bubbles li:nth-child(7) {
   width: 10px;
   height: 10px;
-  top: 150px;
+  top: 130px;
   left: 300px;
   animation: square 5s linear 2.1s infinite;
 }
 .bg-bubbles li:nth-child(8) {
   width: 12px;
   height: 12px;
-  top: 180px;
+  top: 160px;
   left: 270px;
   animation: square 5s linear 3.6s infinite;
 }
 .bg-bubbles li:nth-child(9) {
   width: 14px;
   height: 14px;
-  top: 100px;
+  top: 130px;
   left: 300px;
   animation: square 5s linear 3.1s infinite;
 }
-.bg-bubbles li:nth-child(10) {
+/* .bg-bubbles li:nth-child(10) {
   width: 10px;
   height: 10px;
-  top: 120px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 3.4s infinite;
 }
 .bg-bubbles li:nth-child(11) {
   width: 14px;
   height: 14px;
-  top: 100px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 4.1s infinite;
 }
 .bg-bubbles li:nth-child(12) {
   width: 10px;
   height: 10px;
-  top: 120px;
+  top: 140px;
   left: 300px;
   animation: square 5s linear 4.4s infinite;
-}
+} */
 @keyframes square {
   0% {
-    opacity: 1;
+    opacity: 0;
     transform: translate(-3px, -2px);
+  }
+  10%{
+    opacity: 0.1;
   }
   25% {
     opacity: 1;
-    transform: translateY(-30px, -20px);
+    transform: translateY(-24px, -16px);
   }
   50% {
     opacity: 1;
-    transform: translate(-60px, -40px);
+    transform: translate(-48px, -32px);
   }
   75% {
     opacity: 0.8;
-    transform: translate(-90px, -60px);
+    transform: translate(-72px, -48px);
   }
   95% {
     opacity: 0.7;
   }
   100% {
     opacity: 0;
-    transform: translate(-120px, -80px);
+    transform: translate(-96px, -64px);
   }
 }
 </style>
