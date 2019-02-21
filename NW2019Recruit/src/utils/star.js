@@ -21,9 +21,9 @@ function twinkle(e,e2){
         e2.style.width = 2 +'vw';
         e2.style.height = 2 +'vw';
         e2.style.marginLeft = -1 + 'vw';
-        e2.style.marginTop = -1 + 'vw'; 
+        e2.style.marginTop = -1 + 'vw';
     },1500)
-    
+
 }
 setInterval(function(){
     let s1 = (Math.floor(Math.random()*100))%8;

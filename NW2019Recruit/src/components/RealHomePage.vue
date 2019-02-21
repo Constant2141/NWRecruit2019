@@ -49,7 +49,7 @@
 
 <script>
 
-import star from "../utils/star"
+// import star from "../utils/star"
 export default {
     data(){
         return {

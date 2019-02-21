@@ -17,6 +17,20 @@
       </ul>
       <img class="bg circle" src="../assets/bgm.png">
     </section>
+    <section class="nw-font">
+      <div class="night">
+        <span>N</span>ight's
+      </div>
+      <div class="watch">
+        <span>W</span>atch
+      </div>
+    </section>
+    <section class="font-content">
+      <p class="part1">守夜人工作室成立于2017年初，前身是协同工作室前端组。目前主要分为设计、全栈组，工作室专注设计并开发Web项目、移动端网页及小程序，特色独立项目为女生节许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。
+      </p>
+      <p class="part2">我们着重培养多方面、多技能的人才，增加自己的竞争力。毕业的师兄师姐大多就职于阿里、腾讯、网易等一线互联网公司。
+      </p>
+    </section>
   </div>
 </template>
 
@@ -29,7 +43,7 @@ export default {
       width: 0,
       height: "13px",
       IsBegin: false,
-      IsShowDot: false,
+      IsShowDot: false
     };
   },
   methods: {
@@ -83,6 +97,10 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: HarryP;
+  src: url("../font/harrypotter.ttf");
+}
 .introduce-page {
   width: 750px;
   background: #000;
@@ -117,7 +135,7 @@ export default {
   top: 50%;
   left: 50%;
   /* padding-left: -15px;  */
-  padding-top: 20px;
+  padding-top: 24px;
   height: 26px;
   border-radius: 50%;
   z-index: 2;
@@ -280,7 +298,7 @@ export default {
     opacity: 0;
     transform: translate(-3px, -2px);
   }
-  10%{
+  10% {
     opacity: 0.1;
   }
   25% {
@@ -295,12 +313,46 @@ export default {
     opacity: 0.8;
     transform: translate(-72px, -48px);
   }
-  95% {
-    opacity: 0.7;
+  90% {
+    opacity: 0;
   }
   100% {
     opacity: 0;
     transform: translate(-96px, -64px);
   }
+}
+/***night's watch*/
+.nw-font {
+  text-align: right;
+  margin-right: 110px;
+}
+.night {
+  font-family: "HarryP";
+  font-size: 75px;
+  color: #fff;
+}
+.watch {
+  font-family: "HarryP";
+  font-size: 75px;
+  color: #fff;
+}
+.nw-font div span {
+  color: #228e88;
+}
+/***font-content*/
+.font-content {
+  width: 600px;
+  font-size: 22px;
+  color: #ddd;
+  font-family: "youyuan";
+  line-height: 2;
+  text-align: left;
+  margin: 0 auto;
+}
+.part1 {
+  margin-top: 15px;
+}
+.part2{
+  margin-top: 20px;
 }
 </style>
