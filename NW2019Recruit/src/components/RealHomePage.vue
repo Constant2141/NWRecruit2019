@@ -49,18 +49,27 @@
 
 <script>
 
-// import star from "../utils/star"
 export default {
     data(){
         return {
-
+            timer:null
         }
     },
+    created(){
+        
+    },
     mounted(){
-
+        this.timer = setInterval(() =>{
+            this.$star.RandomTwinkle();
+        },4000);
+    },
+    beforeDestroy(){
+        clearInterval(this.timer);
     },
     methods: {
-    }
+
+    },
+
 
 }
 </script>
