@@ -3,10 +3,13 @@
         <div class="desk">
           <img src="../assets/书.png" alt="" class="book">
             <div class="paper">
-                <div class="title">报名</div>
+                <div class="title">報名</div>
                 <div class="line"></div>
+                <div class="NW">Night's Watch</div>
                 <img src="../assets/人.png" alt="" class="person">
                 <img src="../assets/提交.png" alt="" class="submit">
+
+               
             </div>
         </div>
     </div>
@@ -19,9 +22,13 @@ export default {};
 
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: HarryP;
+  src: url("../font/harrypotter.ttf");
+}
+@font-face {
+  font-family: Genkaimincho;
+  src: url("../font/genkai-mincho.ttf");
 }
 .entry-form {
   width: 100vw;
@@ -61,13 +68,7 @@ export default {};
   top: 44vw;
   right: 0;
 } */
-.submit{
-  width: 109px;
-	height: 108px;
-  position: absolute;
-  bottom: 14.533vw;
-  right: 8.733vw;
-}
+
 .person{
   width: 211px;
 	height: 532px;
@@ -91,4 +92,20 @@ export default {};
 	background-color: #0d0d0d;
   margin:18px 0 0 152px;
 }
+.submit{
+  width: 109px;
+	height: 108px;
+  position: absolute;
+  bottom: 14.533vw;
+  right: 8.733vw;
+}
+.NW{
+  font-family: Papyrus-Regular;
+  font-size: 23px;
+  position: absolute;
+  bottom: 14.533vw;
+  right: 31.733vw;
+}
 </style>
+
+stly

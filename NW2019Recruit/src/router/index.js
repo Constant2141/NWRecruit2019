@@ -5,12 +5,14 @@ import HomePage from '@/components/HomePage'
 import IntroducePage from '@/components/IntroducePage'
 import Fullstack from '@/components/Fullstack'
 import EntryForm from '@/components/EntryForm'
+import RealHomePage from "@/components/RealHomePage"
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/s',
       name: 'HelloWorld',
       component: HelloWorld
     },
@@ -33,6 +35,11 @@ export default new Router({
       path: '/entryform',
       name: 'EntryForm',
       component: EntryForm
+    },
+    {
+      path: '/',
+      name: 'RealHomePage',
+      component: RealHomePage
     }
   ]
 })
