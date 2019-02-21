@@ -1,6 +1,7 @@
 <template>
     <div class="entry-form">
         <div class="desk">
+          <img src="../assets/报名表.jpg" alt="" class="background">
           <img src="../assets/书.png" alt="" class="book">
             <div class="paper">
                 <div class="title">報名</div>
@@ -9,6 +10,22 @@
                 <img src="../assets/人.png" alt="" class="person">
                 <img src="../assets/提交.png" alt="" class="submit">
 
+                <form class="form">
+                    <label for="name">姓名:</label>
+                    <input type="text" id="name" placeholder="点击编辑" v-model="name">
+
+                    <label for="sex">性别:</label>
+                    <input type="text" id="sex" placeholder="点击编辑" v-model="sex">
+
+                    <label for="like">意向:</label>
+                    <input type="text" id="like" placeholder="点击编辑" v-model="like">
+
+                    <label for="major">专业班级:</label>
+                    <input type="text" id="major" placeholder="点击编辑" v-model="major">
+
+                    <label for="intro">个人简介:</label>
+                    <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro">
+                </form>
                
             </div>
         </div>
@@ -17,7 +34,17 @@
 
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      name:'',
+      sex:'',
+      like:'',
+      major:'',
+      intro:''
+    }
+  }
+};
 </script>
 
 
@@ -30,21 +57,26 @@ export default {};
   font-family: Genkaimincho;
   src: url("../font/genkai-mincho.ttf");
 }
+@font-face {
+  font-family: ShouShuti;
+  src: url("../font/ShouShuti.ttf");
+}
 .entry-form {
   width: 100vw;
   height: 100vh;
-  background-position: relative;
+  position: relative;
 }
 .desk {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background-size: contain;
-  background-repeat: no-repeat;
   position: relative;
-  background: url('../assets/报名表.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+}
+.desk .background{
+  width: 100%;
+  height: 100%;
 }
 .paper {
   width: 693px;
@@ -61,14 +93,6 @@ export default {};
   left: 0;
   z-index: 2;
 }
-/* .cup {
-  width: 262px;
-  height: 271px;
-  position: absolute;
-  top: 44vw;
-  right: 0;
-} */
-
 .person{
   width: 211px;
 	height: 532px;
@@ -105,6 +129,32 @@ export default {};
   position: absolute;
   bottom: 14.533vw;
   right: 31.733vw;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-left: 152px;
+  font-family: ShouShuti;
+  font-size: 45px;
+}
+.form input{
+  width: 195px;
+	height: 41px;
+	border: solid 1px #757575;
+  background-color: transparent;
+  border-radius: 0;
+  font-family: ShouShuti;
+  text-align: center;
+  font-size: 36px;
+  line-height: 41px;
+}
+.form input::placeholder{
+	font-size: 36px;
+  line-height: 41px;
+  color: #757575;
+  font-family: ShouShuti;
+  text-align: center;
 }
 </style>
 
