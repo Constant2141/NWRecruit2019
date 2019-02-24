@@ -33,10 +33,10 @@ export default {
 </script>
 <style scoped>
 /*为什么不行！！！*/
-/* @font-face {
+@font-face {
   font-family: SoukouMincho;
-  src: url("../font/SoukouMincho.tff");
-} */
+  src: url("../font/SoukouMincho.ttf");
+}
 *{
     margin: 0;
     padding: 0;
@@ -121,11 +121,11 @@ export default {
 }
 .we-word span {
     position: relative;
-    left:16px;
+    left:18px;
     top:-38px;
 	font-family: "SoukouMincho";
 	font-size: 75px;
-	font-weight: normal;
+	font-weight: 400;
 	font-stretch: normal;
 	line-height: 18px;
 	letter-spacing: 0px;
