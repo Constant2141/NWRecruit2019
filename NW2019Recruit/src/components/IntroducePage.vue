@@ -31,8 +31,10 @@
       <section class="font-content" v-if="IsShowFont">
         <p
           class="part1"
-        >守夜人工作室成立于2017年初，前身是协同工作室前端组。目前主要分为设计、全栈组，工作室专注设计并开发Web项目、移动端网页及小程序，特色独立项目为女生节许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。</p>
-        <p class="part2">我们着重培养多方面、多技能的人才，增加自己的竞争力。毕业的师兄师姐大多就职于阿里、腾讯、网易等一线互联网公司。</p>
+        >不同于传统画师，UI设计师除了要给用户带来最优的视觉效果，同时需要明确产品功能，安排界面布局，制定交互逻辑，创造流畅的动态效果，从而带来最佳的用户体验。</p>
+        <p
+          class="part2"
+        >当然，我们设计组并不局限于UI设计，还会涉及到平面、海报、插图设计等。从用笔纸作画，到用Photoshop处理图像、Illustrator绘制图案、CorelDRAW建模、After Effect制定交互……工具多如繁星，只为实现你天马星空的灵感。</p>
       </section>
     </transition>
   </div>
@@ -351,8 +353,8 @@ export default {
 }
 /***font-content*/
 .font-content {
-  width: 600px;
-  font-size: 22px;
+  width: 640px;
+  font-size: 25px;
   color: #ddd;
   font-family: "youyuan";
   line-height: 2;

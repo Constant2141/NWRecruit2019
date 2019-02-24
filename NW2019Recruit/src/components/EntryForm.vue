@@ -1,6 +1,5 @@
 <template>
     <div class="entry-form">
-      <!-- <video id="myvideo" src="咖啡.mp4" webkit-playsinline="true"></video> -->
         <div class="desk">
           <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
             <img src="../assets/书.png" alt="" class="book">
@@ -29,30 +28,30 @@
                 <img src="../assets/提交.png" alt="" class="submit" @click="showTip1 = true">
                 <div class="NW">Night's Watch</div>
             </div>
-            
+
             <div class="tips" v-show="showTip1">
                 <div class="close" @click="showTip1 = false">&times;</div>
                 <p>是否確認提交?</p>
-                <span @click="submit">確認</span> 
+                <span @click="submit">確認</span>
                 <span @click="showTip1 = false">取消</span>
            </div>
 
            <div class="tips" v-show="showTip2">
                 <div class="close" @click="showTip2 = false">&times;</div>
                 <p>選擇性別</p>
-                <span @click="handleSex('boy')">男生</span> 
+                <span @click="handleSex('boy')">男生</span>
                 <span @click="handleSex('girl')">女生</span>
            </div>
 
            <div class="tips" v-show="showTip3">
                 <div class="close" @click="showTip3 = false">&times;</div>
                 <p>選擇意向</p>
-                <span @click="handleLike('1')">全棧</span> 
+                <span @click="handleLike('1')">全棧</span>
                 <span @click="handleLike('2')">設計</span>
            </div>
         </div>
 
-      
+
     </div>
 </template>
 
@@ -72,6 +71,8 @@ export default {
       showTip2:false, //选择性别
       showTip3:false //选择意向
     }
+  },
+  mounted(){
   },
   methods:{
     submit(){
@@ -188,7 +189,7 @@ export default {
   font-family: Papyrus-Regular;
   font-size: 23px;
   position: absolute;
-  bottom: 7vw;
+  bottom: 20px;
   right: 208px;
 }
 .form{
@@ -218,8 +219,8 @@ export default {
   text-align: center;
 }
 #intro{
-  width: 27.133vw;
-  height: 16.8vw;
+  width: 195px;
+  height: 140px;
   line-height: 36px;
   border: solid 1px #757575;
   background-color: transparent;
