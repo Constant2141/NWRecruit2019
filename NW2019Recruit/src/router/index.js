@@ -6,6 +6,7 @@ import IntroducePage from '@/components/IntroducePage'
 import Fullstack from '@/components/Fullstack'
 import EntryForm from '@/components/EntryForm'
 import RealHomePage from "@/components/RealHomePage"
+import We from '@/components/We'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/',
       name: 'RealHomePage',
       component: RealHomePage
+    },
+    {
+      path:'/we',
+      name:'We',
+      component:We
     }
   ]
 })
