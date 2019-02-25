@@ -105,18 +105,18 @@ drawIt(){
     // 放大倍数
     context.scale(ratio, ratio);
 
-    this.aw1 = 0.606*cwidth; this.ah1 = 0.285*cheight; 
-    this.aw2 = 0.516*cwidth; this.ah2 = 0.285*cheight; 
-    this.aw3 = 0.561*cwidth; this.ah3 = 0.285*cheight; 
-    this.aw4 = 0.615*cwidth; this.ah4 = 0.405*cheight; 
-    this.aw5 = 0.660*cwidth; this.ah5 = 0.405*cheight; 
-    this.aw6 = 0.671*cwidth; this.ah6 = 0.525*cheight; 
-    this.aw7 = 0.716*cwidth; this.ah7 = 0.525*cheight; 
-    this.aw8 = 0.705*cwidth; this.ah8 = 0.645*cheight; 
-    this.aw9 = 0.750*cwidth; this.ah9 = 0.645*cheight; 
-    this.aw10 = 0.795*cwidth; this.ah10 = 0.645*cheight;
-    this.aw11 = 0.787*cwidth; this.ah11 = 0.765*cheight;
-    this.aw12 = 0.832*cwidth; this.ah12 = 0.765*cheight;
+    this.aw1 = 0.622*cwidth; this.ah1 = 0.285*cheight; 
+    this.aw2 = 0.532*cwidth; this.ah2 = 0.285*cheight; 
+    this.aw3 = 0.578*cwidth; this.ah3 = 0.285*cheight; 
+    this.aw4 = 0.608*cwidth; this.ah4 = 0.405*cheight; 
+    this.aw5 = 0.658*cwidth; this.ah5 = 0.405*cheight; 
+    this.aw6 = 0.747*cwidth; this.ah6 = 0.525*cheight; 
+    this.aw7 = 0.792*cwidth; this.ah7 = 0.525*cheight; 
+    this.aw8 = 0.766*cwidth; this.ah8 = 0.645*cheight; 
+    this.aw9 = 0.812*cwidth; this.ah9 = 0.645*cheight; 
+    this.aw10 = 0.856*cwidth; this.ah10 = 0.645*cheight;
+    this.aw11 = 0.810*cwidth; this.ah11 = 0.765*cheight;
+    this.aw12 = 0.852*cwidth; this.ah12 = 0.765*cheight;
 
 
     let that = this
@@ -136,98 +136,98 @@ drawIt(){
     var font = fontsize + " " + styles
     context.font = font
     context.fillStyle = "#ffffff"
-    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚", 0.016*cwidth, 0.285*cheight);
-    context.fillText("程", that.aw2, that.ah2)
-    context.fillText("沙", that.aw3, that.ah3)
-    context.fillText("雕", that.aw1, that.ah1)
-    context.fillText("瀚程大沙雕",0.652*cwidth, 0.285*cheight)
-    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程", 0.073*cwidth, 0.405*cheight);
-    context.fillText("沙", that.aw4, that.ah4)
-    context.fillText("雕", that.aw5, that.ah5)
-    context.fillText("瀚程大沙雕",0.705*cwidth, 0.405*cheight)
-    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程", 0.128*cwidth, 0.525*cheight);
-    context.fillText("沙", that.aw6, that.ah6)
-    context.fillText("雕", that.aw7, that.ah7)
-    context.fillText("瀚程大沙雕",0.761*cwidth, 0.525*cheight)
-    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕", 0.072*cwidth, 0.645*cheight);
-    context.fillText("瀚", that.aw8, that.ah8)
-    context.fillText("程", that.aw9, that.ah9)
-    context.fillText("大", that.aw10, that.ah10)
-    context.fillText("沙雕",0.840*cwidth, 0.645*cheight)
-    context.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大", 0.016*cwidth, 0.765*cheight);
-    context.fillText("沙", that.aw11, that.ah11)
-    context.fillText("雕", that.aw12, that.ah12)
+    context.fillText("全栈工程师掌握多种技能,", 0.016*cwidth, 0.285*cheight);
+    context.fillText("他", that.aw2, that.ah2)
+    context.fillText("既", that.aw3, that.ah3)
+    context.fillText("需", that.aw1, that.ah1)
+    context.fillText("要了解后端",0.666*cwidth, 0.285*cheight)
+    context.fillText("开发也要了解前端开发他", 0.103*cwidth, 0.405*cheight);
+    context.fillText("们", that.aw4, that.ah4)
+    context.fillText("是", that.aw5, that.ah5)
+    context.fillText("“全方位”的",0.715*cwidth, 0.405*cheight)
+    context.fillText("工程师,熟悉服务端的同时又", 0.185*cwidth, 0.525*cheight);
+    context.fillText("懂", that.aw6, that.ah6)
+    context.fillText("客", that.aw7, that.ah7)
+    context.fillText("户端用",0.837*cwidth, 0.525*cheight)
+    context.fillText("户体验,在这里,我们使用的是轻量", 0.103*cwidth, 0.645*cheight);
+    context.fillText("级", that.aw8, that.ah8)
+    context.fillText("的", that.aw9, that.ah9)
+    context.fillText("语", that.aw10, that.ah10)
+    context.fillText("言",0.898*cwidth, 0.645*cheight)
+    context.fillText("Node.js搭建响应速度快,易于扩展的网络", 0.016*cwidth, 0.765*cheight);
+    context.fillText("应", that.aw11, that.ah11)
+    context.fillText("用", that.aw12, that.ah12)
 
     function change(ctx){
       ctx.clearRect(0.016*cwidth, 0.155*cheight,cwidth,cheight);
-      ctx.fillText("沙雕瀚程沙雕瀚程沙雕瀚", 0.016*cwidth, 0.285*cheight);
+      ctx.fillText("全栈工程师掌握多种技能,", 0.016*cwidth, 0.285*cheight);
       ctx.save();
       ctx.translate(0,0);
       ctx.rotate(that.zhuan2);
-      ctx.fillText("程", that.aw2, that.ah2);
+      ctx.fillText("他", that.aw2, that.ah2);
       ctx.restore();
       ctx.save();
       ctx.translate(10, 10);
       ctx.rotate(that.zhuan3);
-      ctx.fillText("沙", that.aw3, that.ah3)
+      ctx.fillText("既", that.aw3, that.ah3)
       ctx.restore();
       ctx.save();
       ctx.translate(17,12)
       ctx.rotate(that.zhuan1);
-      ctx.fillText("雕", that.aw1, that.ah1)
+      ctx.fillText("需", that.aw1, that.ah1)
       ctx.restore();
-      ctx.fillText("瀚程大沙雕",0.652*cwidth, 0.285*cheight)
-      ctx.fillText("沙雕瀚程沙雕瀚程沙雕瀚程", 0.073*cwidth, 0.405*cheight);
+      ctx.fillText("要了解后端",0.666*cwidth, 0.285*cheight)
+      ctx.fillText("开发也要了解前端开发他", 0.103*cwidth, 0.405*cheight);
       ctx.save();
       ctx.translate(0,0)
       ctx.rotate(that.zhuan4)
-      ctx.fillText("沙", that.aw4, that.ah4)
+      ctx.fillText("们", that.aw4, that.ah4)
       ctx.restore();
       ctx.save();
       ctx.translate(15,15)
       ctx.rotate(that.zhuan5)
-      ctx.fillText("雕", that.aw5, that.ah5)
+      ctx.fillText("是", that.aw5, that.ah5)
       ctx.restore()
-      ctx.fillText("瀚程大沙雕",0.705*cwidth, 0.405*cheight)
-      ctx.fillText("沙雕瀚程沙雕瀚程沙雕瀚程", 0.128*cwidth, 0.525*cheight);
+      ctx.fillText("“全方位”的",0.715*cwidth, 0.405*cheight)
+      ctx.fillText("工程师,熟悉服务端的同时又", 0.185*cwidth, 0.525*cheight);
       ctx.save();
       ctx.translate(10,10)
       ctx.rotate(that.zhuan6)
-      ctx.fillText("沙", that.aw6, that.ah6)
+      ctx.fillText("懂", that.aw6, that.ah6)
       ctx.restore()
       ctx.save();
       ctx.translate(50,50)
       ctx.rotate(that.zhuan7)
-      ctx.fillText("雕", that.aw7, that.ah7)
+      ctx.fillText("客", that.aw7, that.ah7)
       ctx.restore();
-      ctx.fillText("瀚程大沙雕",0.761*cwidth, 0.525*cheight)
-      ctx.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕", 0.072*cwidth, 0.645*cheight);
+      ctx.fillText("户端用",0.837*cwidth, 0.525*cheight)
+      ctx.fillText("户体验,在这里,我们使用的是轻量", 0.103*cwidth, 0.645*cheight);
       ctx.save();
       ctx.translate(5,25)
       ctx.rotate(that.zhuan8)
-      ctx.fillText("瀚", that.aw8, that.ah8)
+      ctx.fillText("级", that.aw8, that.ah8)
       ctx.restore();
       ctx.save();
       ctx.translate(0,0);
       ctx.rotate(that.zhuan9)
-      ctx.fillText("程", that.aw9, that.ah9)
+      ctx.fillText("的", that.aw9, that.ah9)
       ctx.restore();
       ctx.save();
       ctx.translate(5,5)
       ctx.rotate(that.zhuan10)
-      ctx.fillText("大", that.aw10, that.ah10)
+      ctx.fillText("语", that.aw10, that.ah10)
       ctx.restore();
-      ctx.fillText("沙雕",0.840*cwidth, 0.645*cheight)
-      ctx.fillText("沙雕瀚程沙雕瀚程沙雕瀚程沙雕瀚程大", 0.016*cwidth, 0.765*cheight);
+      ctx.fillText("言",0.898*cwidth, 0.645*cheight)
+      ctx.fillText("Node.js搭建响应速度快,易于扩展的网络", 0.016*cwidth, 0.765*cheight);
       ctx.save();
       ctx.translate(2,12)
       ctx.rotate(that.zhuan11)
-      ctx.fillText("沙", that.aw11, that.ah11)
+      ctx.fillText("应", that.aw11, that.ah11)
       ctx.restore();
       ctx.save();
       ctx.translate(10,10)
       ctx.rotate(that.zhuan12)
-      ctx.fillText("雕", that.aw12, that.ah12);
+      ctx.fillText("用", that.aw12, that.ah12);
       ctx.restore();
     }
 
