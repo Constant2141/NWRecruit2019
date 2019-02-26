@@ -3,17 +3,19 @@ let star = {};
 star.RandomTwinkle = function(){
     let blur1 = document.getElementsByClassName("star-blur");
     let blur2 = document.getElementsByClassName("star-blur2");
-
-    function twinkle(e,e2){
+    let wrap = document.getElementsByClassName("star-wrap");
+    function twinkle(e,e2,e3){
         setTimeout(() =>{
-            e.style.width = 6 +'vw';
-            e.style.height = 6 +'vw';
-            e.style.marginLeft = -3 + 'vw';
-            e.style.marginTop = -3 + 'vw';
+            e.style.width = 5 +'vw';
+            e.style.height = 5 +'vw';
+            e.style.marginLeft = -2.5 + 'vw';
+            e.style.marginTop = -2.5 + 'vw';
             e2.style.width = 4 +'vw';
             e2.style.height = 4 +'vw';
             e2.style.marginLeft = -2 + 'vw';
             e2.style.marginTop = -2 + 'vw';
+            e3.style.opacity = 1;
+
         },0)
         setTimeout(() =>{
             e.style.width = 3 +'vw';
@@ -23,7 +25,8 @@ star.RandomTwinkle = function(){
             e2.style.width = 2 +'vw';
             e2.style.height = 2 +'vw';
             e2.style.marginLeft = -1 + 'vw';
-            e2.style.marginTop = -1 + 'vw'; 
+            e2.style.marginTop = -1 + 'vw';
+            e3.style.opacity = 0; 
         },1500)
     }
 
@@ -39,9 +42,9 @@ star.RandomTwinkle = function(){
     }
      
     // console.log(s1+','+s2+','+s3)
-    twinkle(blur1[s1],blur2[s1]);
-    twinkle(blur1[s2],blur2[s2]);
-    twinkle(blur1[s3],blur2[s3]);
+    twinkle(blur1[s1],blur2[s1],wrap[s1]);
+    twinkle(blur1[s2],blur2[s2],wrap[s2]);
+    twinkle(blur1[s3],blur2[s3],wrap[s3]);
 }
 
 export default star
