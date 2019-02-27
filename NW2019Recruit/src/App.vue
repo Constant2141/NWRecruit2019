@@ -6,8 +6,12 @@
 </template>
 
 <script>
+import vwx from './utils/vwx'
 export default {
-  name: 'App'
+  name: 'App',
+  created(){
+    vwx.share();
+  }
 }
 </script>
 
