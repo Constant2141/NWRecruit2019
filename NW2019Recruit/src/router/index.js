@@ -4,7 +4,9 @@ import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/HomePage'
 import IntroducePage from '@/components/IntroducePage'
 import Fullstack from '@/components/Fullstack'
+import full from '@/components/full'
 import EntryForm from '@/components/EntryForm'
+import FormShow from '@/components/FormShow'
 import RealHomePage from "@/components/RealHomePage"
 import We from '@/components/We'
 
@@ -31,6 +33,16 @@ export default new Router({
       path: '/fullstack',
       name: 'Fullstack',
       component: Fullstack
+    },
+    {
+      path: '/formshow',
+      name: 'FormShow',
+      component: FormShow
+    },
+    {
+      path: '/full',
+      name: 'full',
+      component: full
     },
     {
       path: '/entryform',
