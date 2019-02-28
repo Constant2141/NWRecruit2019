@@ -8,6 +8,7 @@ import full from '@/components/full'
 import EntryForm from '@/components/EntryForm'
 import FormShow from '@/components/FormShow'
 import RealHomePage from "@/components/RealHomePage"
+import ToPhone from "@/components/ToPhone"
 import We from '@/components/We'
 
 Vue.use(Router)
@@ -43,6 +44,11 @@ export default new Router({
       path: '/full',
       name: 'full',
       component: full
+    },
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
     },
     {
       path: '/entryform',

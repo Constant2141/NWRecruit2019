@@ -133,6 +133,7 @@ export default {
     mounted(){
         this.wave();
         this.font();
+        this.types();
         this.timer = setInterval(() =>{
             // console.log(this.$star);
             this.$star.RandomTwinkle();
@@ -159,6 +160,15 @@ export default {
                 requestAnimationFrame(act);
             }
             act();
+        },
+        types(){
+            var u = navigator.userAgent;
+            console.log(u)
+            if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
+                console.log("手机")
+            }else{
+                this.$router.push("/tophone")
+            }
         },
         
         // wave(){
