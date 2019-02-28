@@ -125,7 +125,10 @@ export default {
         }
     },
     created(){
-        
+        // window.addEventListener('message',function(e){
+        //     console.log(e.origin,e.data)
+        //     }
+        // )
     },
     mounted(){
         this.wave();
@@ -136,7 +139,7 @@ export default {
         },3000);
     },
     beforeDestroy(){
-        console.log(1);
+        // console.log(1);
         clearInterval(this.timer);
     },
     methods: {
@@ -231,7 +234,7 @@ export default {
                         shou[4] -= 29.5/(20/0.4);
                         shou[5] += 30.5/(20/0.4);
                         shou[6] += 30.5/(20/0.4);
-                        console.log(color)
+                        // console.log(color)
                         
                         s1.setAttribute("y",shou[0]);
                         s2.setAttribute("x",shou[1]);
@@ -250,7 +253,7 @@ export default {
                         s7.setAttribute("style","fill:rgba(255,255,255,"+ color +")")
                     }
                     else{
-                        console.log(s1.getAttribute("style"))
+                        // console.log(s1.getAttribute("style"))
                         clearInterval(act1);
                         let act2 = setInterval(() => {
                             if(shou[7] < 1){

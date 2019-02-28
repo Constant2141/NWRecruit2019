@@ -25,6 +25,7 @@ vwx.share = function () {
     console.log(url);
     axios.get(`/api/config?url=${url}`).then(obj => {
         let res = obj.data.data;
+        console.log('拿到配置了');
         // console.log(res);
         wx.config({
             debug: true,
