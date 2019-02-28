@@ -12,7 +12,7 @@
           <form class="form">
             <div class="form-box">
               <label for="name">姓名</label>
-              <input type="text" id="name" placeholder="点击编辑" v-model="name">
+              <input type="text" maxlength="7" id="name" placeholder="点击编辑" v-model="name">
             </div>
             <div class="form-box">
               <label for="sex">性别</label>
@@ -36,14 +36,30 @@
                 readonly
               >
             </div>
-            <div class="form-box">
+            <div class="form-box" @click="inf">
               <label for="major">个人信息</label>
               <input type="text" id="major" placeholder="点击编辑" v-model="major">
             </div>
-
+            <section class="inf" v-if="IsShowInf">
+              <div class="close2" @click="IsShowInf = false">&times;</div>
+              <div class="form-box3">
+                <label for="ID" class="mgl50">學號</label>
+                <input type="text" maxlength="12" id="ID" placeholder="点击编辑" v-model="ID">
+              </div>
+              <div class="form-box3">
+                <label for="subject">專業班級</label>
+                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject">
+              </div>
+              <div class="form-box3">
+                <label for="call" class="mgl50">電話</label>
+                <input type="text" maxlength="12" id="call" placeholder="点击编辑" v-model="call">
+              </div>
+              <span>確認</span>
+              <span>取消</span>
+            </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
-              <textarea name="intro" id="intro" placeholder="点击编辑"></textarea>
+              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑"></textarea>
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
@@ -86,12 +102,16 @@ export default {
       like: "",
       major: "",
       intro: "",
+      ID: "",
+      subject: "",
+      call: "",
       //提示框
       showTip1: false, //提交
       showTip2: false, //选择性别
       showTip3: false, //选择意向
       clientHeight: "",
-      IsShowPaper: false
+      IsShowPaper: false,
+      IsShowInf: false
     };
   },
   mounted() {
@@ -117,6 +137,9 @@ export default {
       if (like == "1") this.like = "全栈";
       else this.like = "设计";
       this.showTip3 = false;
+    },
+    inf() {
+      this.IsShowInf = true;
     }
   }
 };
@@ -243,7 +266,7 @@ export default {
   height: 65px;
   position: relative;
   box-sizing: border-box;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   line-height: 24px;
   border: solid 1px #757575;
   /* background-color: transparent; */
@@ -270,7 +293,7 @@ export default {
   position: relative;
   margin: 20px auto 0 auto;
 }
-.form div:first-child {
+.form .form-box:first-child {
   margin: 0 auto;
 }
 .form-box2 textarea {
@@ -295,7 +318,6 @@ export default {
   position: absolute;
   background-origin: content-box;
   left: 10px;
-  top: 1px;
   height: 65px;
   color: #000;
   z-index: 21;
@@ -350,6 +372,76 @@ export default {
 }
 .tips span {
   margin: 30px 40px 0 40px;
+}
+.inf {
+  width: 660px;
+  height: 830px;
+  position: absolute;
+  left: 50%;
+  top: 140px;
+  margin-left: -330px;
+  z-index: 25;
+  font-family: Genkaimincho;
+  background-image: url("../assets/inf.png");
+  background-size: 100% 100%;
+  font-size: 40px;
+}
+.form-box3 {
+  width: 520px;
+  height: 65px;
+  line-height: 65px;
+  position: relative;
+  margin: 100px auto 0 auto;
+}
+.form-box3 label {
+  display: inline-block;
+  position: absolute;
+  background-origin: content-box;
+  left: 10px;
+  height: 65px;
+  line-height: 65px;
+  color: #000;
+  z-index: 21;
+  font-size: 46px;
+}
+#ID,
+#subject,
+#call {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  font-size: 40px;
+  height: 65px;
+  line-height: 65px;
+  border: none;
+  box-sizing: border-box;
+  text-align: left;
+  background-color: transparent;
+}
+#ID::placeholder,
+#subject::placeholder,
+#call::placeholder {
+  font-size: 40px;
+  height: 65px;
+  line-height: 65px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+.close2 {
+  position: absolute;
+  right: 80px;
+  top: 30px;
+  font-size: 48px;
+}
+.inf span {
+  position: relative;
+  display: inline-block;
+  margin: 150px 50px 0px 50px;
+  color: #000;
+  font-size: 46px;
+}
+.mgl50{
+  margin-left: 50px;
 }
 </style>
 
