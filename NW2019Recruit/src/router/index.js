@@ -17,15 +17,20 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path:'/',
+      name:'base',
+      redirect:'/picture'
+    },
+    {
       path: '/picture',
       name: 'Picture',
       component: Picture
     },
-    {
-      path: '/s',
-      name: 'Picture',
-      component: HelloWorld
-    },
+    // {
+    //   path: '/s',
+    //   name: 'Picture',
+    //   component: HelloWorld
+    // },
     {
       path: '/homepage',
       name: 'HomePage',
@@ -62,7 +67,7 @@ export default new Router({
       component: EntryForm
     },
     {
-      path: '/',
+      path: '/realhomepage',
       name: 'RealHomePage',
       component: RealHomePage
     },
