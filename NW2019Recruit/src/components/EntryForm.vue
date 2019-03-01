@@ -43,8 +43,8 @@
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
-                <label for="ID" class="mgl50">學號</label>
-                <input type="text" maxlength="12" id="ID" placeholder="点击编辑" v-model="ID">
+                <label for="stuID" class="mgl50">學號</label>
+                <input type="text" maxlength="12" id="stuID" placeholder="点击编辑" v-model="stuID">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
@@ -54,12 +54,12 @@
                 <label for="call" class="mgl50">電話</label>
                 <input type="text" maxlength="12" id="call" placeholder="点击编辑" v-model="call">
               </div>
-              <span>確認</span>
-              <span>取消</span>
+              <span @click="IsShowInf = false">確認</span>
+              <span @click="IsShowInf = false">取消</span>
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
-              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑"></textarea>
+              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑" v-model="intro"></textarea>
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
@@ -102,9 +102,9 @@ export default {
       like: "",
       major: "",
       intro: "",
-      ID: "",
-      subject: "",
-      call: "",
+      stuID: "",//学号
+      subject: "",//专业班级
+      call: "",//电话
       //提示框
       showTip1: false, //提交
       showTip2: false, //选择性别
@@ -125,8 +125,38 @@ export default {
   },
   methods: {
     submit() {
-      alert("啊啊");
-      //此处发送请求
+      console.log({
+        name: this.name,
+          sex: this.sex,
+          like: this.like,
+          major: this.major,
+          intro: this.intro,
+          stuID: this.stuID,//学号
+          subject: this.subject,//专业班级
+          call: this.call,//电话
+      });
+      
+      this.$axios.post('/api/submit',{
+          name: this.name,
+          sex: this.sex,
+          like: this.like,
+          major: this.major,
+          intro: this.intro,
+          stuID: this.stuID,//学号
+          subject: this.subject,//专业班级
+          call: this.call,//电话
+      })
+      .then((res) => {
+        console.log(res);
+        if(res.data.code == 200){
+          alert('报名成功')
+        }else{
+          console.log('请确认信息填写是否完整');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
     },
     handleSex(sex) {
       if (sex == "boy") this.sex = "男生";
@@ -404,7 +434,7 @@ export default {
   z-index: 21;
   font-size: 46px;
 }
-#ID,
+#stuID,
 #subject,
 #call {
   position: absolute;
@@ -418,7 +448,7 @@ export default {
   text-align: left;
   background-color: transparent;
 }
-#ID::placeholder,
+#stuID::placeholder,
 #subject::placeholder,
 #call::placeholder {
   font-size: 40px;
