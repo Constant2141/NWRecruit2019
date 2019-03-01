@@ -15,10 +15,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/s',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+			path: '/',
+			name: 'base', 
+			redirect: '/homepage'
+		},
+    // {
+    //   path: '/s',
+    //   name: 'HelloWorld',
+    //   component: HelloWorld
+    // },
     {
       path: '/homepage',
       name: 'HomePage',
@@ -50,7 +55,7 @@ export default new Router({
       component: EntryForm
     },
     {
-      path: '/',
+      path: '/realhomepage',
       name: 'RealHomePage',
       component: RealHomePage
     },
