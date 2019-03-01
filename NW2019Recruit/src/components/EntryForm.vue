@@ -40,7 +40,7 @@
               <label for="major">个人信息</label>
               <input type="text" id="major" placeholder="点击编辑" v-model="major">
             </div>
-            <section class="inf" v-if="IsShowInf">
+            <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
                 <label for="ID" class="mgl50">學號</label>

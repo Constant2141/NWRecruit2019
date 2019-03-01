@@ -9,14 +9,20 @@ import EntryForm from '@/components/EntryForm'
 import FormShow from '@/components/FormShow'
 import RealHomePage from "@/components/RealHomePage"
 import We from '@/components/We'
+import Picture from '@/components/Picture'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
+      path: '/picture',
+      name: 'Picture',
+      component: Picture
+    },
+    {
       path: '/s',
-      name: 'HelloWorld',
+      name: 'Picture',
       component: HelloWorld
     },
     {
