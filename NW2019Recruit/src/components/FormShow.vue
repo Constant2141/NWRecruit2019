@@ -19,17 +19,20 @@
       </div>
       <div>
         <p class="middles">手机</p>
-        <span>18888299999</span>
+        <span id="number">18888299999</span>
       </div>
       <div>
         <p class="middles">学号</p>
-        <span>3117002222</span>
+        <span id="number">3117002222</span>
       </div>
       <div>
         <p class="middles">专业班级</p>
         <span id="school">计算机学院软件2班</span>
       </div>
-        <p class="middles" id="self-int">自我介绍</p>
+      <div>
+        <p id="introduce">自我介绍</p>
+        <p id="contents">我很帅很好很棒很厉害..</p>
+        </div>
     </div>
     </transition>
     <transition name="logo">
@@ -52,7 +55,7 @@ export default {
     let that = this
     setTimeout(function(){
       that.nws = true
-    },2500)
+    },1200)
   }
 }
 </script>
@@ -62,14 +65,6 @@ export default {
   margin:0;
   padding: 0;
   list-style: none;
-}
-@font-face {
-  font-family: youyuan;
-  src: url("../font/youyuan.ttf");
-}
-@font-face {
-  font-family: handshu;
-  src: url("../font/hand.ttf");
 }
 .fade-enter{
   opacity: 0;
@@ -141,7 +136,8 @@ export default {
   width: 160px;
   text-align: center;
   font-size: 36px;
-  font-family: youyuan;
+  font-family: YouYuan;
+  color: black;
 }
 .texts span{
   display: inline-block;
@@ -149,7 +145,11 @@ export default {
   width: 250px;
   text-align: center;
   font-size: 36px;
-  font-family: handshu;
+  font-family: YouYuan;
+  color:#6e6e6e;
+}
+#number{
+  line-height: 55px;
 }
 #ptop{
   margin-left: 60px;
@@ -160,6 +160,9 @@ export default {
 #school{
   font-size: 24px;
   line-height: 34px;
+  width:176px;
+  word-wrap: break-word;
+  margin-left: 30px;
 }
 #self-int{
   margin-top: 40px;
@@ -173,5 +176,19 @@ export default {
   background-size: 100% 100%;
   bottom: 270px;
   right: 126px;
+}
+#introduce{
+  float: none;
+  margin-top: 0;
+  margin-left: 60px;
+  color: black;
+}
+#contents{
+  font-family: YouYuan;
+  font-size: 36px;
+  width: 450px;
+  margin-top: 40px;
+  margin-left: 40px;
+  color:#6e6e6e
 }
 </style>
