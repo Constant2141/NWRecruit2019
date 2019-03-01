@@ -1,23 +1,24 @@
 <template>
   <div class="picture">
-    <transition name="p1">
-      <section v-if="p1">
-        <img src="../assets/p1.png" class="p1">
-      </section>
-    </transition>
-    <transition name="p2">
-      <section v-if="p2">
-        <img src="../assets/p2.png">
+    <section class="bg" v-show="IsShowBg"></section>
+    <transition name="p4">
+      <section v-show="p4">
+        <img src="../assets/p4.png">
       </section>
     </transition>
     <transition name="p3">
-      <section v-if="p3">
+      <section v-show="p3">
         <img src="../assets/p3.png">
       </section>
     </transition>
-    <transition name="p4">
-      <section v-if="p4">
-        <img src="../assets/p4.png">
+    <transition name="p2">
+      <section v-show="p2">
+        <img src="../assets/p2.png">
+      </section>
+    </transition>
+    <transition name="p1">
+      <section v-show="p1">
+        <img src="../assets/p1.png">
       </section>
     </transition>
   </div>
@@ -30,37 +31,41 @@ export default {
       p1: false,
       p2: false,
       p3: false,
-      p4: false
+      p4: false,
+      IsShowBg:false
     };
   },
   mounted() {
     this.p1 = true
     setTimeout(() => {
       this.p1 = false
-    }, 2000);
+    }, 800);
     setTimeout(()=>{
       this.p2 = true;
-    },4000)
+    },850)
     setTimeout(() => {
       this.p2 = false;
-    }, 6000);
+    }, 1650);
     setTimeout(() => {
       this.p3 = true;
-    },8000)
+    },1700)
     setTimeout(() => {
       this.p3 = false;
-    }, 10000);
+    }, 2500);
     setTimeout(() => {
       this.p4 = true;
-    },12000)
+    },2550)
     setTimeout(() => {
       this.p4 = false
-    }, 14000);
+    }, 3350);
     setTimeout(() => {
+      this.IsShowBg = true
+    },3450)
+    setTimeout(() =>{
       this.$router.push({
         path: "/full"
       });
-    },16000)
+    },4150)
   }
 };
 </script>
@@ -75,46 +80,47 @@ export default {
 }
 .p1-enter-active,
 .p1-leave-active {
-  transition: opacity 2s;
+  transition: opacity .2s;
 }
 .p1-enter,
 .p1-leave-to {
-  opacity: 0;
+  opacity: 0.6;
 }
 .p2-enter-active,
 .p2-leave-active {
-  transition: opacity 2s;
+  transition: opacity .2s;
 }
 .p2-enter,
 .p2-leave-to {
-  opacity: 0;
+  opacity: 0.6;
 }
 .p3-enter-active,
 .p3-leave-active {
-  transition: opacity 2s;
+  transition: opacity .2s;
 }
 .p3-enter,
 .p3-leave-to {
-  opacity: 0;
+  opacity: 0.6;
 }
 .p4-enter-active,
 .p4-leave-active {
-  transition: opacity 2s;
+  transition: opacity .1s;
 }
 .p4-enter,
 .p4-leave-to {
   opacity: 0;
 }
-.cat {
-  position: absolute;
-  left: 162px;
-  top: 276px;
-  width: 112px;
-  height: 152px;
-}
 img {
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  left: 0;
+  top: 0;
+}
+.bg{
+  background-color: grey;
+  height: 100vh;
+  width: 100vw;
 }
 /* .p1{
   position: absolute;

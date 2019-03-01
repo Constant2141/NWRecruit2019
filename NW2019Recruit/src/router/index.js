@@ -19,18 +19,18 @@ export default new Router({
     {
       path:'/',
       name:'base',
-      redirect:'/picture'
+      redirect:'/realhomepage'
     },
     {
-      path: '/picture',
-      name: 'Picture',
-      component: Picture
+      path: '/realhomepage',
+      name: 'RealHomePage',
+      component: RealHomePage
     },
-    // {
-    //   path: '/s',
-    //   name: 'Picture',
-    //   component: HelloWorld
-    // },
+    {
+      path:'/we',
+      name:'We',
+      component:We
+    },
     {
       path: '/homepage',
       name: 'HomePage',
@@ -42,24 +42,24 @@ export default new Router({
       component: IntroducePage
     },
     {
-      path: '/fullstack',
-      name: 'Fullstack',
-      component: Fullstack
+      path: '/picture',
+      name: 'Picture',
+      component: Picture
     },
-    {
-      path: '/formshow',
-      name: 'FormShow',
-      component: FormShow
-    },
+    // {
+    //   path: '/s',
+    //   name: 'Picture',
+    //   component: HelloWorld
+    // },
+    // {
+    //   path: '/fullstack',
+    //   name: 'Fullstack',
+    //   component: Fullstack
+    // },
     {
       path: '/full',
       name: 'full',
       component: full
-    },
-    {
-      path: '/tophone',
-      name: 'ToPhone',
-      component: ToPhone
     },
     {
       path: '/entryform',
@@ -67,14 +67,14 @@ export default new Router({
       component: EntryForm
     },
     {
-      path: '/realhomepage',
-      name: 'RealHomePage',
-      component: RealHomePage
+      path: '/formshow',
+      name: 'FormShow',
+      component: FormShow
     },
     {
-      path:'/we',
-      name:'We',
-      component:We
-    }
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
   ]
 })
