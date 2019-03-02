@@ -170,7 +170,7 @@ export default {
   font-stretch: normal;
   line-height: 18px;
   letter-spacing: 0px;
-  color: #228e88;
+  color: #79beff;
   z-index: 10;
 }
 .we-word p {
