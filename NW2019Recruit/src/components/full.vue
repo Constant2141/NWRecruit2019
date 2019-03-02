@@ -145,7 +145,7 @@ export default {
   height: 100vh;
   background: url("../../static/img/full.png");
   /* background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png"); */
-  
+
 
   background-size: 100% 100%;
 }
@@ -155,11 +155,11 @@ export default {
   height: 339px;
   top: 109px;
   left: 28px;
-  background: url("../assets/circle.png");
+  background: url("../../static/img/circle.png");
   background-size: 100% 100%;
 }
 .top-text{
-  font-family: YouYuan;
+  font-family: youyuan;
   font-size: 26px;
   color:#ffffff;
   writing-mode: vertical-lr;

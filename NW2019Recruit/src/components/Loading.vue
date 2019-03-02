@@ -47,6 +47,7 @@ export default {
   },
   watch: {
     count(val) {
+
       if (val == 14) {
         setTimeout(() => {
           this.$router.push({
