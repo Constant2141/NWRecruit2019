@@ -5,9 +5,7 @@ import App from './App'
 import router from './router'
 import Axios from 'axios'
 import star from './utils/star'
-import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueLazyload)
 Vue.config.productionTip = false
 
 Vue.prototype.$star = star;

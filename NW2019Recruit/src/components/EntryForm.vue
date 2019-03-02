@@ -2,7 +2,7 @@
   <div class="entry-form" :style="{height:clientHeight}">
     <div class="desk">
       <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
-      <img src="../../static/img/书.png" alt class="book">
+      <img src="../../static/img/book.png" alt class="book">
       <!-- <img src="../assets/杯子.png" alt="" class="cup"> -->
       <transition name="entryForm">
         <div class="paper" v-if="IsShowPaper">
@@ -63,7 +63,7 @@
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
-          <img src="../../static/img/提交.png" alt class="submit" @click="showTip1 = true">
+          <img src="../../static/img/commit.png" alt class="submit" @click="showTip1 = true">
           <div class="NW">Night's Watch</div>
         </div>
       </transition>
@@ -135,7 +135,7 @@ export default {
           subject: this.subject,//专业班级
           call: this.call,//电话
       });
-      
+
       this.$axios.post('/api/submit',{
           name: this.name,
           sex: this.sex,
@@ -201,7 +201,7 @@ export default {
   height: 100%;
   margin: 0 auto;
   position: relative;
-  background: url("../../static/img/报名表.jpg");
+  background: url("../../static/img/baomingbiao.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -385,7 +385,7 @@ export default {
   top: 31%;
   left: 50%;
   transform: translate(-50%);
-  background: url("../../static/img/提示框.png");
+  background: url("../../static/img/tishikuang.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Genkaimincho;

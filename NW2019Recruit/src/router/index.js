@@ -27,11 +27,11 @@ export default new Router({
       name:'base',
       redirect:'/loading'
     },
-    {
-      path: '/loading',
-      name: 'Loading',
-      component: Loading
-    },
+    // {
+    //   path: '/loading',
+    //   name: 'Loading',
+    //   component: Loading
+    // },
     {
       path: '/realhomepage',
       name: 'RealHomePage',

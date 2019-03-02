@@ -3,26 +3,26 @@
     <section class="bg" v-show="IsShowBg"></section>
     <transition name="p4">
       <section v-show="p4">
-        <!-- <img src="../../static/img/p4.png"> -->
-        <img v-lazy="'../../static/img/p4.png'" alt>
+        <img src="../../static/img/p4.png">
+        <!-- <img v-lazy="'../../static/img/p4.png'" alt> -->
       </section>
     </transition>
     <transition name="p3">
       <section v-show="p3">
-        <!-- <img src="../../static/img/p3.png"> -->
-        <img v-lazy="'../../static/img/p3.png'" alt>
+        <img src="../../static/img/p3.png">
+        <!-- <img v-lazy="'../../static/img/p3.png'" alt> -->
       </section>
     </transition>
     <transition name="p2">
       <section v-show="p2">
-        <!-- <img src="../../static/img/p2.png"> -->
-        <img v-lazy="'../../static/img/p2.png'" alt>
+        <img src="../../static/img/p2.png">
+        <!-- <img v-lazy="'../../static/img/p2.png'" alt> -->
       </section>
     </transition>
     <transition name="p1">
       <section v-show="p1">
-        <!-- <img src="../../static/img/p1.png"> -->
-        <img v-lazy="'../../static/img/p1.png'" alt>
+        <img src="../../static/img/p1.png">
+        <!-- <img v-lazy="'../../static/img/p1.png'" alt> -->
       </section>
     </transition>
   </div>
