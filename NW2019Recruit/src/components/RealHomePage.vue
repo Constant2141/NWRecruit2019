@@ -412,7 +412,7 @@ export default {
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../assets/newHome.jpg);
+        background-image: url(../../static/img/newHome.jpg);
         height: 100vh;
         overflow: hidden;
         background-size: cover;
@@ -526,7 +526,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 5vh;
         bottom:0;
-        background-image: url(../assets/wave1.png);
+        background-image: url(../../static/img/wave1.png);
         z-index: 10;
     }
     #wave2{
@@ -538,7 +538,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 4vh;
         bottom:0;
-        background-image: url(../assets/wave2.png);
+        background-image: url(../../static/img/wave2.png);
         z-index: 9;
     }
 </style>

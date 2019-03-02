@@ -58,6 +58,7 @@ export default {
     }
 }
 </script>
+
 <style scoped>
 @font-face {
   font-family: HarryP;
@@ -106,7 +107,7 @@ export default {
 .lcircle {
   width: 618px;
   height: 618px;
-  background-image: url("../assets/lcircle.png");
+  background-image: url("../../static/img/lcircle.png");
   background-size: cover;
   position: absolute;
   top: -260px;
@@ -116,7 +117,7 @@ export default {
 .scircle {
   width: 225px;
   height: 225px;
-  background-image: url("../assets/scircle.png");
+  background-image: url("../../static/img/scircle.png");
   background-size: cover;
   position: absolute;
   top: -70px;
