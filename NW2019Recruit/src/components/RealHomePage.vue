@@ -344,7 +344,7 @@ export default {
             }
             shou();
             setTimeout(ye,500);
-            setTimeout(ren,2000);
+            setTimeout(ren,1500);
             
             
             // var font = document.getElementsByClassName("font")[0];
