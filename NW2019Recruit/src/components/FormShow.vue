@@ -1,37 +1,37 @@
 <template>
   <div class="form-show">
-    <img src="../assets/书.png" alt="" class="book">
-    <img src="../assets/topf.png" alt="" class="topf">
-    <img src="../assets/bottomf.png" alt="" class="bottomf">
+    <img src="../../static/img/book.png" alt="" class="book">
+    <img src="../../static/img/topf.png" alt="" class="topf">
+    <img src="../../static/img/bottomf.png" alt="" class="bottomf">
     <transition name="fade">
     <div class="texts" v-if="show">
       <div>
         <p id="ptop">姓名</p>
-        <span>郑庆义</span>
+        <span>{{this.name}}</span>
       </div>
       <div>
         <p class="middles">性别</p>
-        <span>男</span>
+        <span>{{obj.sex}}</span>
       </div>
       <div>
         <p class="middles">意向</p>
-        <span>设计</span>
+        <span>{{obj.like}}</span>
       </div>
       <div>
         <p class="middles">手机</p>
-        <span id="number">18888299999</span>
+        <span id="number">{{obj.call}}</span>
       </div>
       <div>
         <p class="middles">学号</p>
-        <span id="number">3117002222</span>
+        <span id="number">{{obj.stuID}}</span>
       </div>
       <div>
         <p class="middles">专业班级</p>
-        <span id="school">计算机学院软件2班</span>
+        <span id="school">{{obj.subject}}</span>
       </div>
       <div>
         <p id="introduce">自我介绍</p>
-        <p id="contents">我很帅很好很棒很厉害..</p>
+        <p id="contents">{{obj.intro}}</p>
         </div>
     </div>
     </transition>
@@ -48,15 +48,33 @@ export default {
     return{
       show:false,
       nws:false,
+      name:this.$store.state.name,
+      obj:{}
     }
   },
   mounted(){
+  // console.log(this.$store.state.name);
     this.show = true;
     let that = this
     setTimeout(function(){
       that.nws = true
     },1200)
-  }
+
+
+    this.$axios.post('/api/show',{
+      name:this.$store.state.name
+    })
+    .then((res) => {
+      if(res.data.code == 200){
+        this.obj = res.data.doc;
+      }else{
+        console.log('不对劲');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  },
 }
 </script>
 

@@ -144,6 +144,9 @@ export default {
 .fullstack{
   height: 100vh;
   background: url("../../static/img/full.png");
+  /* background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png"); */
+  
+
   background-size: 100% 100%;
 }
 .circle{

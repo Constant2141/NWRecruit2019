@@ -15,7 +15,6 @@ export default {
   },
   mounted() {
     this.preLoading();
-        alert(1)
   },
   methods: {
     preLoading() {
@@ -49,10 +48,9 @@ export default {
   watch: {
     count(val) {
       if (val == 14) {
-        alert(1)
         setTimeout(() => {
           this.$router.push({
-            path: "/"
+            path: "/realhomepage"
           });
         },2000);
       }
