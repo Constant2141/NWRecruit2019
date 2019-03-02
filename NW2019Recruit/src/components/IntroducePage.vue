@@ -7,7 +7,7 @@
             class="circle1"
             :style="{width:width+'px',height:width+'px',marginLeft:-width/2+'px',marginTop:-width/2+'px'}"
           ></div>
-          <div class="circle2"></div>
+          <!-- <div class="circle2"></div> -->
           <div class="circle3 blur1" :style="{filter:blur}"></div>
         </div>
       </transition>
@@ -62,7 +62,7 @@ export default {
 
       setTimeout(() => {
         setInterval(() => {
-          this.blur = "blur(" + i + "px)";
+          // this.blur = "blur(" + i + "px)";
           if (flag2) {
             this.width -= 5;
           } else {
