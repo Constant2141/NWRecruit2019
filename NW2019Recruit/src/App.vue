@@ -39,7 +39,7 @@ export default {
 		// console.log("app.vue更新了");
 		var routeName = this.$route.name;
 			// 整个路由配置中的url
-		if(routeName == 'HomePage' || routeName == 'ToPhone' || routeName == 'FormShow' || routeName == "Picture")this.arrStatus = false;
+		if(routeName == 'HomePage' || routeName == 'ToPhone' || routeName == 'FormShow' || routeName == "Picture" || routeName == "EntryForm")this.arrStatus = false;
 		else this.arrStatus = true;
 	},
 	methods: {
@@ -72,7 +72,7 @@ export default {
 				return 
 			}
 
-			if((navMap == 2 && cha > 120) || (navMap == 4 && cha < -120) ||(navMap == 6 && cha< -120)||(navMap == 6 && cha > 120)||(navMap == routes.length - 1 && cha < -120)){
+			if((navMap == 2 && cha > 120) || (navMap == 4 && cha < -120) ||(navMap == 6 && cha< -120)||(navMap == 6 && cha > 120)||(navMap == 8 && cha< -120)||(navMap == routes.length - 1 && cha < -120)){
 				// console.log("不该上下滑");
 				return 
 			}

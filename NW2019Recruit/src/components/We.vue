@@ -51,13 +51,14 @@ export default {
     },
     beforeRouteLeave(to,from,next){
       this.$refs.blackCover.style.left="-100px"
-      this.$refs.blackCover.style.top="-100px" 
+      this.$refs.blackCover.style.top="-100px"
       setTimeout(function(){
         next();
-      },600)    
+      },800)
     }
 }
 </script>
+
 <style scoped>
 @font-face {
   font-family: HarryP;
@@ -87,10 +88,10 @@ export default {
   background-size: cover;
 }
 .we-bg {
-  background-image: url("../assets/webg.jpg");
+  background-image: url("../../static/img/webg.jpg");
 }
 .we-ppl {
-  background-image: url("../assets/weppl.png");
+  background-image: url("../../static/img/weppl.png");
   z-index: 3;
   position: absolute;
   top: 0;
@@ -106,7 +107,7 @@ export default {
 .lcircle {
   width: 618px;
   height: 618px;
-  background-image: url("../assets/lcircle.png");
+  background-image: url("../../static/img/lcircle.png");
   background-size: cover;
   position: absolute;
   top: -260px;
@@ -116,7 +117,7 @@ export default {
 .scircle {
   width: 225px;
   height: 225px;
-  background-image: url("../assets/scircle.png");
+  background-image: url("../../static/img/scircle.png");
   background-size: cover;
   position: absolute;
   top: -70px;
@@ -170,7 +171,7 @@ export default {
   font-stretch: normal;
   line-height: 18px;
   letter-spacing: 0px;
-  color: #228e88;
+  color: #79beff;
   z-index: 10;
 }
 .we-word p {

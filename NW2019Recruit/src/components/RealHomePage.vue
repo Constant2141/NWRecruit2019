@@ -2,7 +2,7 @@
     <div class="homepage">
         <div class="home-img">
             <canvas class="font">
-                
+
             </canvas>
             <div class="font">
                 <svg width="93" height="259">
@@ -50,7 +50,7 @@
                         <path id="y8"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M32 133
-                            S38 150 60 157"></path>    
+                            S38 150 60 157"></path>
                         <path id="y9"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M41 133
@@ -68,7 +68,7 @@
                     </g>
                 </svg>
             </div>
-            
+
             <div class="star-wrap" id="s1">
                 <div class="star"></div>
                 <div class="star-blur" ref="blur1"></div>
@@ -134,10 +134,10 @@ export default {
         this.wave();
         this.font();
         this.types();
-        this.timer = setInterval(() =>{
-            // console.log(this.$star);
-            this.$star.RandomTwinkle();
-        },3000);
+        // this.timer = setInterval(() =>{
+        //     // console.log(this.$star);
+        //     this.$star.RandomTwinkle();
+        // },3000);
     },
     beforeDestroy(){
         // console.log(1);
@@ -170,12 +170,12 @@ export default {
                 this.$router.push("/tophone")
             }
         },
-        
+
         // wave(){
         //     var canvas = document.getElementById("wave");
-        //     canvas.width = window.innerWidth; 
+        //     canvas.width = window.innerWidth;
 		// 	canvas.height = window.innerHeight;
-        //     if(canvas.getContext){  
+        //     if(canvas.getContext){
         //         var ctx = canvas.getContext('2d');
         //     }
 
@@ -189,7 +189,7 @@ export default {
         //         waveCount = 2.5,
         //         waveWidth = canvas.width,
         //         x = 0;
-                
+
 
         //     function draw(){
         //         ctx.fillStyle = "rgb(36,94,157)";
@@ -212,7 +212,7 @@ export default {
         //         offset +=1;
         //         if(offset > 50)offset = -50;
         //         offset2 = Math.abs(offset);
-        //         // offset = 
+        //         // offset =
         //         ctx.clearRect(0,0,canvas.width,canvas.height);
         //         draw();
         //         requestAnimationFrame(loop);
@@ -229,7 +229,7 @@ export default {
                     s4 = document.getElementById("s4"),
                     s5 = document.getElementById("s5"),
                     s6 = document.getElementById("s6"),
-                    s7 = document.getElementById("s7"), 
+                    s7 = document.getElementById("s7"),
                     s8 = document.getElementById("s8"),
                     s9 = document.getElementById("s9");
                 let color = 0;
@@ -245,7 +245,7 @@ export default {
                         shou[5] += 30.5/(20/0.4);
                         shou[6] += 30.5/(20/0.4);
                         // console.log(color)
-                        
+
                         s1.setAttribute("y",shou[0]);
                         s2.setAttribute("x",shou[1]);
                         s3.setAttribute("x",shou[2]);
@@ -275,10 +275,10 @@ export default {
                                 clearInterval(act2);
                             }
                         },30);
-                        
+
 
                     }
-                },25)    
+                },25)
             }
             function ye(){
                 var ye = [0,86,2,180,0,60,83,10,0]; //用于调配笔画移动或透明度的参数（一一对应）
@@ -341,7 +341,7 @@ export default {
                 var ren = [0,0];
                 let r1 = document.getElementById("r1"),
                     r2 = document.getElementById("r2");
-                let color = 0; 
+                let color = 0;
 
                 if(color < 1){
                     let act1 = setInterval(() =>{
@@ -353,7 +353,7 @@ export default {
                 else{
                     clearInterval(act1);
                 }
-                
+
             }
             shou();
             setTimeout(ye,500);
@@ -412,7 +412,7 @@ export default {
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../assets/home.jpg);
+        background-image: url(../../static/img/newHome.jpg);
         height: 100vh;
         overflow: hidden;
         background-size: cover;
@@ -526,7 +526,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 5vh;
         bottom:0;
-        background-image: url(../assets/wave1.png);
+        background-image: url(../../static/img/wave1.png);
         z-index: 10;
     }
     #wave2{
@@ -538,7 +538,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 4vh;
         bottom:0;
-        background-image: url(../assets/wave2.png);
+        background-image: url(../../static/img/wave2.png);
         z-index: 9;
     }
 </style>

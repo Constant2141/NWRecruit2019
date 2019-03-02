@@ -65,7 +65,7 @@ vwx.config_ok.then(config_ok => {
         title: '2019 Night\'s Watch 招新现场' , // 分享标题
         desc: getWord(), // 分享描述
         link: 'http://wx.zqyy.site/#/', // 分享链接
-        imgUrl: 'http://thyrsi.com/t6/675/1551430427x2890174094.jpg', // 分享图标
+        imgUrl: 'http://pnqc4vaxj.bkt.clouddn.com/logo.jpg', // 分享图标
         success(){},
         
     }
