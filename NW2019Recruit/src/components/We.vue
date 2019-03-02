@@ -36,7 +36,7 @@ export default {
         document.body.clientHeight) + "px";
         setTimeout(() => {
             this.$refs.wePhoto.style.opacity = 1;
-        }, 1000);
+        }, 300);
     },
     methods:{
         clickPre(){
@@ -54,7 +54,7 @@ export default {
       this.$refs.blackCover.style.top="-100px" 
       setTimeout(function(){
         next();
-      },800)    
+      },600)    
     }
 }
 </script>

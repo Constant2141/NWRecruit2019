@@ -52,14 +52,14 @@ export default {
 				return acc;
 			},0);
 
-			if((navMap == 1 && cha > 120) || (navMap == routes.length - 1 && cha < -120)){
+			if((navMap == 2 && cha > 120) || (navMap == routes.length - 1 && cha < -120)){
 				return 
 			}
 			if(Math.abs(cha) > 120){
 				cha < 0 ? this.$router.push(routes[navMap + 1].name) : this.$router.push(routes[navMap - 1].name);
 				this.arrStatus = true;
 			}
-			if((navMap == routes.length - 2 && cha < -120) || (routeName == 'HomePage' && cha < -120)){
+			if((navMap == routes.length - 2 && cha < -120)){
 				this.arrStatus = false;
 			}
 		},
