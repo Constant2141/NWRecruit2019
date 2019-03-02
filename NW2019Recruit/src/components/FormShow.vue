@@ -25,8 +25,8 @@
         <p class="middles">学号</p>
         <span id="number">{{obj.stuID}}</span>
       </div>
-      <div>
-        <p class="middles">专业班级</p>
+      <div id="guy">
+        <p class="middles" id="subject">专业班级</p>
         <span id="school">{{obj.subject}}</span>
       </div>
       <div>
@@ -49,8 +49,21 @@ export default {
       show:false,
       nws:false,
       name:this.$store.state.name,
-      obj:{}
+      obj:{},
+      msg:"信工学院信工2班"
     }
+  },
+  methods:{
+    changeStyle(){
+      if(obj.subject.length <= 6){
+        var style = document.getElementById("school").style;
+        style.fontSize = "18px";
+        style.lineHeight = "25px"
+      }
+    }
+  },
+  updated(){
+    this.changeStyle();
   },
   mounted(){
   // console.log(this.$store.state.name);
@@ -175,10 +188,19 @@ export default {
 .middles{
   margin-left: 60px;
 }
+#subject{
+  height: 75px;
+  padding-top: 17px;
+}
+#guy{
+  margin-top: 23px;
+}
 #school{
   font-size: 24px;
-  line-height: 34px;
+  line-height: 44px;
   width:176px;
+  height: 75px;
+  vertical-align: top;
   word-wrap: break-word;
   margin-left: 30px;
 }
@@ -206,7 +228,7 @@ export default {
   font-size: 36px;
   width: 450px;
   height: 150px;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 40px;
   color:#6e6e6e;
   overflow-y: scroll;
