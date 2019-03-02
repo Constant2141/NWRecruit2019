@@ -37,9 +37,9 @@ export default {
     this.text = true;
     this.circles = true;
     let that = this;
-    // setTimeout(function(){
-    //   that.texts()
-    // },2350)
+    setTimeout(function(){
+      that.texts()
+    },2350)
   },
   methods:{
     texts(){
