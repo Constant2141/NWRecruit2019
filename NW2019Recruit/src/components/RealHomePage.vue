@@ -1,9 +1,8 @@
 <template>
     <div class="homepage">
-        <div class="home-img">
-            <canvas class="font">
+        <star v-for="i in items" :key="i.id"></star>
+        <div class="home-img"> 
 
-            </canvas>
             <div class="font">
                 <svg width="93" height="259">
                     <g class="shou">
@@ -56,20 +55,20 @@
                             d="M41 133
                             L47 138"></path>
                     </g>
-                    <g>
+                    <g class="ren">
                         <path id="r1"
-                        style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
+                        style="fill:#ffffff00;stroke:#ffffff00;stroke-witdth:1;"
                         d="M35 202
                         S40 230 10 250"></path>
                         <path id="r2"
-                        style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
+                        style="fill:#ffffff00;stroke:#ffffff00;stroke-witdth:1"
                         d="M35 202
                         S30 230 60 250"></path>
                     </g>
                 </svg>
             </div>
-
-            <div class="star-wrap" id="s1">
+            
+            <!-- <div class="star-wrap" id="s1">
                 <div class="star"></div>
                 <div class="star-blur" ref="blur1"></div>
                 <div class="star-blur2" ref="blur2"></div>
@@ -108,21 +107,28 @@
                 <div class="star"></div>
                 <div class="star-blur" ref="blur1"></div>
                 <div class="star-blur2" ref="blur2"></div>
-            </div>
+            </div> -->
         </div>
 
-        <div id="wave1"> </div>
-        <div id="wave2"></div>
+        <!-- <div id="wave1"> </div>
+        <div id="wave2"></div> -->
     </div>
 </template>
 
 <script>
-
+import star from "@/components/star"
 export default {
     data(){
         return {
-            timer:null
+            timer:null,
+            timer2:null,
+            timer3:null,
+            starcount: 12,
+            items:[]
         }
+    },
+    components:{
+        star
     },
     created(){
         // window.addEventListener('message',function(e){
@@ -131,95 +137,61 @@ export default {
         // )
     },
     mounted(){
-        this.wave();
+        // this.wave();
         this.font();
-        this.types();
+        for(let i = 0;i < this.starcount;i++){
+            this.items.push("1");
+        }
+        // this.types();
+        clearInterval(this.timer);
+        // this.$star.RandomTwinkle(this.$refs.star);
         // this.timer = setInterval(() =>{
         //     // console.log(this.$star);
-        //     this.$star.RandomTwinkle();
+        //     console.log(this.timer);
+            
         // },3000);
+        this.$once('hook:beforeDestroy', () => { 
+            console.log(this.timer);           
+            clearInterval(this.timer);
+            clearTimeout(this.timer2);
+            clearTimeout(this.timer3)                                    
+        })
     },
     beforeDestroy(){
-        // console.log(1);
-        clearInterval(this.timer);
     },
+    // destroyed(){
+    //     clearInterval(this.timer);
+    // },
     methods: {
-        wave(){
-            var wave1 = document.getElementById("wave1");
-            var wave2 = document.getElementById("wave2");
-            var flagX = 0,
-                flagY = 0;
-            function act(){
-                // console.log(wave1.style.backgroundPositionX)
-                flagX -= 0.9;
-                // flagY < -5 ? flagY = 5:flagY -= 0.1;
-                wave1.style.backgroundPositionX = flagX + 'px';
-                // wave1.style.backgroundPositionY = (Math.abs(flagY))+30 + 'px';
-                wave2.style.backgroundPositionX = 100 + flagX*1.8 + 'px';
-                // wave2.style.backgroundPositionY = (Math.abs(flagY))*0.5 +27 + 'px';
-                requestAnimationFrame(act);
-            }
-            act();
-        },
-        types(){
-            var u = navigator.userAgent;
-            console.log(u)
-            if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
-                console.log("手机")
-            }else{
-                this.$router.push("/tophone")
-            }
-        },
-
+        // star(){
+        //     this.$refs.star.
+        // },
         // wave(){
-        //     var canvas = document.getElementById("wave");
-        //     canvas.width = window.innerWidth;
-		// 	canvas.height = window.innerHeight;
-        //     if(canvas.getContext){
-        //         var ctx = canvas.getContext('2d');
+        //     var wave1 = document.getElementById("wave1");
+        //     var wave2 = document.getElementById("wave2");
+        //     var flagX = 0,
+        //         flagY = 0;
+        //     function act(){
+        //         // console.log(wave1.style.backgroundPositionX)
+        //         flagX -= 0.9;
+        //         // flagY < -5 ? flagY = 5:flagY -= 0.1;
+        //         wave1.style.backgroundPositionX = flagX + 'px';
+        //         // wave1.style.backgroundPositionY = (Math.abs(flagY))+30 + 'px';
+        //         wave2.style.backgroundPositionX = 100 + flagX*1.8 + 'px';
+        //         // wave2.style.backgroundPositionY = (Math.abs(flagY))*0.5 +27 + 'px';
+        //         requestAnimationFrame(act);
         //     }
-
-        //     //定义两种波浪的颜色
-        //     var waves = ["green",
-        //                 "#1a5a6e"];
-        //     var startX = 0,
-        //         offset = 0,
-        //         offset2 = 0,
-        //         startY = canvas.height*0.99,
-        //         waveCount = 2.5,
-        //         waveWidth = canvas.width,
-        //         x = 0;
-
-
-        //     function draw(){
-        //         ctx.fillStyle = "rgb(36,94,157)";
-        //         ctx.strokeStyle = wave[0];
-        //         ctx.lineWidth = 1;
-        //         ctx.beginPath();
-        //         ctx.moveTo(waveWidth,startY-10);
-        //         ctx.lineTo(waveWidth,startY+200);
-        //         ctx.lineTo(0,startY+200);
-        //         ctx.lineTo(0,startY);
-        //         ctx.stroke();
-        //         ctx.moveTo(0,startY);
-        //         ctx.bezierCurveTo(waveWidth/4 + offset2/2,canvas.height*0.9 - offset2/3,waveWidth/2.5 - offset2/2,startY*1.03 + offset2/3,waveWidth/2,startY);
-        //         ctx.bezierCurveTo(waveWidth/1.03 + offset2,canvas.height*0.9,waveWidth - offset2,startY*1.03,waveWidth,startY-10);
-        //         ctx.fill();
-        //         ctx.closePath();
+        //     act();
+        // },
+        // types(){
+        //     var u = navigator.userAgent;
+        //     console.log(u)
+        //     if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
+        //         console.log("手机")
+        //     }else{
+        //         this.$router.push("/tophone")
         //     }
-
-        //     function loop(){
-        //         offset +=1;
-        //         if(offset > 50)offset = -50;
-        //         offset2 = Math.abs(offset);
-        //         // offset =
-        //         ctx.clearRect(0,0,canvas.width,canvas.height);
-        //         draw();
-        //         requestAnimationFrame(loop);
-        //         console.log(offset2)
-        //     }
-        //     loop();
-        // }
+        // },
         font(){
             function shou(){
                 var shou = [0,0,80,-20,80,20,5.5,0];//用于调配笔画移动或透明度的参数（一一对应）
@@ -344,61 +316,21 @@ export default {
                 let color = 0;
 
                 if(color < 1){
-                    let act1 = setInterval(() =>{
+                    let act2 = setInterval(() =>{
                         color += 1/50;
-                        r1.setAttribute("style","stroke:rgba(255,255,255,"+ color+");fill:#ffffff00");
-                        r2.setAttribute("style","stroke:rgba(255,255,255,"+ color+");fill:#ffffff00");
+                        r1.setAttribute("style","stroke:rgba(255,255,255,"+ color+");");
+                        r2.setAttribute("style","stroke:rgba(255,255,255,"+ color+");");
                     },30)
                 }
                 else{
-                    clearInterval(act1);
+                    clearInterval(act2);
                 }
 
             }
             shou();
-            setTimeout(ye,500);
-            setTimeout(ren,2000);
-
-
-            // var font = document.getElementsByClassName("font")[0];
-            // var ctx = font.getContext('2d');
-            // var s1 = [0,0];
-            // console.log(ctx)
-            // //画守字
-            // function draw1(){
-            //     ctx.lineWidth = 3;
-            //     ctx.strokeStyle = "#ffffff";
-            //     ctx.fillStyle = "#ffffff";
-            //     ctx.font = "48px serif";
-            //     ctx.textBaseline = "hanging";
-
-            //     ctx.beginPath();
-                // strokeRoundRect(ctx,10, 10, 100, 50, 10);
-                // fillRoundRect(ctx, 200, 10, 100, 50, 10, 'rgba(0,0,0,0.7)');
-                // ctx.drawRoundRect(120,20,10,30);
-                // ctx.moveTo(120,10);
-                // ctx.lineTo(150,20);
-                // ctx.stroke();
-                // if(s1[0] < 10){
-                //     // console.log(ctx.fillStyle)
-                //     s1[0] += 0.4;
-                //     s1[1] += 2.14;
-                //     // ctx.fillStyle = "rgba(255,255,255,"+ s + ")";
-                //     requestAnimationFrame(draw1)
-                //     ctx.fillRect(80,s1[0],5,7);
-                //     ctx.fillRect(80,10,150,1);
-                //     ctx.fillRect(230,10,5,7);
-
-                //     // ctx.fillStyle = "#ffffff";
-                //     ctx.fillRect(71,20,172,1);
-                //     ctx.fillRect(200,15,5,23)
-                // };
-                // ctx.quadraticCurveTo(100,100,200,100)
-                // ctx.lineTo(160,15);
-        //         ctx.stroke();
-
-        //     }
-        //     draw1();
+            this.timer2 = setTimeout(ye,500);
+            this.timer3 = setTimeout(ren,1500);
+            
         }
     },
 
@@ -407,12 +339,22 @@ export default {
 </script>
 
 <style scoped>
+    path{
+        fill:#ffffff00;
+    }
+    circle{
+        fill:#ffffff;
+    }
+    #star{
+        width: 100%;
+        height: 50vh;
+    }
     .homepage{
         height: 100vh;
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../../static/img/newHome.jpg);
+        background-image: url(http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg);
         height: 100vh;
         overflow: hidden;
         background-size: cover;
@@ -479,17 +421,8 @@ export default {
         background-color: #56e4cd50;
     }
     .star{
-        background-color: #ffffff80;
-        border-radius: 20px;
-        position: absolute;
-        top:50%;
-        left:50%;
-        margin-left: -.4vw;
-        margin-top:-.4vw;
-        width: .8vw;
-        height: .8vw;
-        z-index: 11;
-        -webkit-filter: blur(1px);
+        width:100%;
+        height:50vh;
     }
 
     /* .star-blur{

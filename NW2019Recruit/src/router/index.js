@@ -17,21 +17,21 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/tophone',
-    //   name: 'ToPhone',
-    //   component: ToPhone
-    // },
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
     {
       path:'/',
       name:'base',
-      redirect:'/loading'
+      redirect:'/realhomepage'
     },
-    {
-      path: '/loading',
-      name: 'Loading',
-      component: Loading
-    },
+    // {
+    //   path: '/loading',
+    //   name: 'Loading',
+    //   component: Loading
+    // },
     {
       path: '/realhomepage',
       name: 'RealHomePage',
