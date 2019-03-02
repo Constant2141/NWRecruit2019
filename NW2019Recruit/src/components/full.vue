@@ -143,7 +143,7 @@ export default {
 }
 .fullstack{
   height: 100vh;
-  background: url("../assets/full.png");
+  background: url("../../static/img/full.png");
   background-size: 100% 100%;
 }
 .circle{

@@ -51,10 +51,10 @@ export default {
     },
     beforeRouteLeave(to,from,next){
       this.$refs.blackCover.style.left="-100px"
-      this.$refs.blackCover.style.top="-100px" 
+      this.$refs.blackCover.style.top="-100px"
       setTimeout(function(){
         next();
-      },600)    
+      },800)
     }
 }
 </script>
@@ -87,10 +87,10 @@ export default {
   background-size: cover;
 }
 .we-bg {
-  background-image: url("../assets/webg.jpg");
+  background-image: url("../../static/img/webg.jpg");
 }
 .we-ppl {
-  background-image: url("../assets/weppl.png");
+  background-image: url("../../static/img/weppl.png");
   z-index: 3;
   position: absolute;
   top: 0;
