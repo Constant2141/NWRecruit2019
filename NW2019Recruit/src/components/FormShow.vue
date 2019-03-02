@@ -205,8 +205,10 @@ export default {
   font-family: YouYuan;
   font-size: 36px;
   width: 450px;
+  height: 150px;
   margin-top: 40px;
   margin-left: 40px;
-  color:#6e6e6e
+  color:#6e6e6e;
+  overflow-y: scroll;
 }
 </style>
