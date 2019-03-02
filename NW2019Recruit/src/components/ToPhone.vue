@@ -6,7 +6,9 @@
 
 <script>
 export default {
-
+    beforeRouteLeave(to,from,next){
+        
+    }
 }
 </script>
 

@@ -412,7 +412,7 @@ export default {
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../assets/home.jpg);
+        background-image: url(../assets/newHome.jpg);
         height: 100vh;
         overflow: hidden;
         background-size: cover;
