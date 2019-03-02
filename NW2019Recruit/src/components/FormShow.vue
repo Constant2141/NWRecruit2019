@@ -50,7 +50,6 @@ export default {
       nws:false,
       name:this.$store.state.name,
       obj:{},
-      msg:"信工学院信工2班"
     }
   },
   methods:{
