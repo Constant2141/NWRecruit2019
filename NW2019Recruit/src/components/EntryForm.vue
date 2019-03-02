@@ -115,6 +115,7 @@ export default {
     };
   },
   mounted() {
+   
     this.clientHeight =
       (window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -125,16 +126,16 @@ export default {
   },
   methods: {
     submit() {
-      console.log({
-        name: this.name,
-          sex: this.sex,
-          like: this.like,
-          major: this.major,
-          intro: this.intro,
-          stuID: this.stuID,//学号
-          subject: this.subject,//专业班级
-          call: this.call,//电话
-      });
+      // console.log({
+      //   name: this.name,
+      //     sex: this.sex,
+      //     like: this.like,
+      //     major: this.major,
+      //     intro: this.intro,
+      //     stuID: this.stuID,//学号
+      //     subject: this.subject,//专业班级
+      //     call: this.call,//电话
+      // });
       
       this.$axios.post('/api/submit',{
           name: this.name,
@@ -147,7 +148,7 @@ export default {
           call: this.call,//电话
       })
       .then((res) => {
-        console.log(res);
+         this.$store.commit('setName',this.name)
         if(res.data.code == 200){
           alert('报名成功')
         }else{

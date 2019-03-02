@@ -7,7 +7,7 @@
     <div class="texts" v-if="show">
       <div>
         <p id="ptop">姓名</p>
-        <span>郑庆义</span>
+        <span>{{this.name}}</span>
       </div>
       <div>
         <p class="middles">性别</p>
@@ -48,15 +48,34 @@ export default {
     return{
       show:false,
       nws:false,
+      name:this.$store.state.name
     }
   },
   mounted(){
+  console.log(this.$store.state.name);
+  
+
     this.show = true;
     let that = this
     setTimeout(function(){
       that.nws = true
     },1200)
-  }
+
+
+    this.$axios.post('/api/show',{
+      name:'郑庆义'
+    })
+    .then((res) => {
+      if(res.data.code == 200){
+        this.obj = res.data.doc;
+      }else{
+        console.log('不对劲');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  },
 }
 </script>
 
