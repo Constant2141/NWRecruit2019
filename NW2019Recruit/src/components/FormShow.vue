@@ -117,7 +117,7 @@ export default {
 }
 .form-show{
   height: 100vh;
-  background: url("../assets/报名表.jpg");
+  background: url("../../static/img/baomingbiao.jpg");
   background-size: 100% 100%;
 }
 .book{
@@ -212,7 +212,7 @@ export default {
   height: 198px;
   width: 198px;
   position: absolute;
-  background: url("../assets/rnw.png");
+  background: url("../../static/img/rnw.png");
   background-size: 100% 100%;
   bottom: 270px;
   right: 126px;
