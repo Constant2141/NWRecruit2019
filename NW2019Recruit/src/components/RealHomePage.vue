@@ -125,18 +125,22 @@ export default {
         }
     },
     created(){
-        
+        // window.addEventListener('message',function(e){
+        //     console.log(e.origin,e.data)
+        //     }
+        // )
     },
     mounted(){
         this.wave();
         this.font();
+        this.types();
         this.timer = setInterval(() =>{
             // console.log(this.$star);
             this.$star.RandomTwinkle();
         },3000);
     },
     beforeDestroy(){
-        console.log(1);
+        // console.log(1);
         clearInterval(this.timer);
     },
     methods: {
@@ -156,6 +160,15 @@ export default {
                 requestAnimationFrame(act);
             }
             act();
+        },
+        types(){
+            var u = navigator.userAgent;
+            console.log(u)
+            if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
+                console.log("手机")
+            }else{
+                this.$router.push("/tophone")
+            }
         },
         
         // wave(){
@@ -231,7 +244,7 @@ export default {
                         shou[4] -= 29.5/(20/0.4);
                         shou[5] += 30.5/(20/0.4);
                         shou[6] += 30.5/(20/0.4);
-                        console.log(color)
+                        // console.log(color)
                         
                         s1.setAttribute("y",shou[0]);
                         s2.setAttribute("x",shou[1]);
@@ -250,7 +263,7 @@ export default {
                         s7.setAttribute("style","fill:rgba(255,255,255,"+ color +")")
                     }
                     else{
-                        console.log(s1.getAttribute("style"))
+                        // console.log(s1.getAttribute("style"))
                         clearInterval(act1);
                         let act2 = setInterval(() => {
                             if(shou[7] < 1){

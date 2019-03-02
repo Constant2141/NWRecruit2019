@@ -20,21 +20,21 @@
     <transition name="NW">
       <section class="nw-font" v-if="IsShowNW">
         <div class="night">
-          <span>N</span>ight's
+          <span>設計</span>
         </div>
-        <div class="watch">
-          <span>W</span>atch
-        </div>
+        <div class="watch">組</div>
       </section>
     </transition>
     <transition name="font">
       <section class="font-content" v-if="IsShowFont">
         <p
+          lang="ch"
           class="part1"
         >不同于传统画师，UI设计师除了要给用户带来最优的视觉效果，同时需要明确产品功能，安排界面布局，制定交互逻辑，创造流畅的动态效果，从而带来最佳的用户体验。</p>
         <p
+          lang="ch"
           class="part2"
-        >当然，我们设计组并不局限于UI设计，还会涉及到平面、海报、插图设计等。从用笔纸作画，到用Photoshop处理图像、Illustrator绘制图案、CorelDRAW建模、After Effect制定交互……工具多如繁星，只为实现你天马星空的灵感。</p>
+        >当然，我们设计组并不局限于UI设计，还会涉及到平面、海报、插图设计等。从用笔纸作画，到用Photoshop处理图像、Illustrator绘制图案、CorelDRAW建模、AfterEffect制定交互……工具多如繁星，只为实现你天马星空的灵感。</p>
       </section>
     </transition>
   </div>
@@ -110,8 +110,8 @@ export default {
 
 <style scoped>
 @font-face {
-  font-family: HarryP;
-  src: url("../font/harrypotter.ttf");
+  font-family: SoukouMincho;
+  src: url("../font/SoukouMincho.ttf");
 }
 .introduce-page {
   width: 750px;
@@ -336,15 +336,23 @@ export default {
 /***night's watch*/
 .nw-font {
   text-align: right;
+  position: relative;
+  height: 170px;
+  width: 100vw;
   margin-right: 110px;
 }
 .night {
-  font-family: "HarryP";
-  font-size: 75px;
+  font-family: "SoukouMincho";
+  position: absolute;
+  right: 120px;
+  font-size: 80px;
   color: #fff;
 }
 .watch {
-  font-family: "HarryP";
+  font-family: "SoukouMincho";
+  position: absolute;
+  right: 90px;
+  top: 50px;
   font-size: 75px;
   color: #fff;
 }
@@ -353,12 +361,12 @@ export default {
 }
 /***font-content*/
 .font-content {
-  width: 640px;
-  font-size: 25px;
+  width: 528px;
+  font-size: 22px;
   color: #ddd;
-  font-family: "youyuan";
-  line-height: 2;
-  text-align: left;
+  font-family: "SimSun";
+  line-height: 52px;
+  text-align: justify;
   margin: 0 auto;
 }
 .part1 {

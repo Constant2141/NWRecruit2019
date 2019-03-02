@@ -1,21 +1,40 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/HomePage'
 import IntroducePage from '@/components/IntroducePage'
-import Fullstack from '@/components/Fullstack'
+// import Fullstack from '@/components/Fullstack'
+import full from '@/components/full'
 import EntryForm from '@/components/EntryForm'
+import FormShow from '@/components/FormShow'
 import RealHomePage from "@/components/RealHomePage"
+import ToPhone from "@/components/ToPhone"
 import We from '@/components/We'
+import Picture from '@/components/Picture'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/s',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
+    {
+      path:'/',
+      name:'base',
+      redirect:'/realhomepage'
+    },
+    {
+      path: '/realhomepage',
+      name: 'RealHomePage',
+      component: RealHomePage
+    },
+    {
+      path:'/we',
+      name:'We',
+      component:We
     },
     {
       path: '/homepage',
@@ -28,9 +47,24 @@ export default new Router({
       component: IntroducePage
     },
     {
-      path: '/fullstack',
-      name: 'Fullstack',
-      component: Fullstack
+      path: '/picture',
+      name: 'Picture',
+      component: Picture
+    },
+    // {
+    //   path: '/s',
+    //   name: 'Picture',
+    //   component: HelloWorld
+    // },
+    // {
+    //   path: '/fullstack',
+    //   name: 'Fullstack',
+    //   component: Fullstack
+    // },
+    {
+      path: '/full',
+      name: 'full',
+      component: full
     },
     {
       path: '/entryform',
@@ -38,14 +72,10 @@ export default new Router({
       component: EntryForm
     },
     {
-      path: '/',
-      name: 'RealHomePage',
-      component: RealHomePage
-    },
-    {
-      path:'/we',
-      name:'We',
-      component:We
+      path: '/formshow',
+      name: 'FormShow',
+      component: FormShow
     }
+
   ]
 })
