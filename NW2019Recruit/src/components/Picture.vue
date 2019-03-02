@@ -122,7 +122,7 @@ img {
   top: 0;
 }
 .bg {
-  background-color: grey;
+  background-color: rgb(240,240,240);
   height: 100vh;
   width: 100vw;
 }

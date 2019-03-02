@@ -6,7 +6,7 @@
         <div class="dot"></div>
         <div class="wave1"></div>
         <div class="wave2"></div>
-        <div class="wave3"></div>
+        <!-- <div class="wave3"></div> -->
         <!-- <div class="wave4"></div> -->
         <img class="bgm" src="../assets/bgm1.png" width="100%">
       </section>
@@ -128,33 +128,33 @@ export default {
   margin-bottom: 10px;
 }
 .wave1{
-  width: 208px;
+  width: 158px;
   box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -106px;
-  margin-top: -86px;
-  height: 208px;
+  margin-left: -81px;
+  margin-top: -61px;
+  height: 158px;
   border-radius: 50%;
   /* background-color: blue; */
-  border: 6px solid #fff;
+  border: 3px solid #fff;
   z-index: 2;
   opacity: 0;
   animation: wave 2s ease-in-out 0s infinite;
 }
 .wave2{
-  width: 208px;
+  width: 158px;
   box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -106px;
-  margin-top: -86px;
-  height: 208px;
+  margin-left: -81px;
+  margin-top: -61px;
+  height: 158px;
   border-radius: 50%;
   /* background-color: blue; */
-  border: 6px solid #fff;
+  border: 3px solid #fff;
   z-index: 2;
   opacity: 0;
   animation: wave 2s ease-in-out 1s infinite;
