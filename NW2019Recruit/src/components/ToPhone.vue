@@ -1,6 +1,6 @@
 <template>
     <div class="to-phone">
-
+        <div class="qrCode"></div>
     </div>
 </template>
 
@@ -22,5 +22,14 @@ export default {
     background: url("../assets/tophone.jpg") no-repeat center center;
     /* background-size: cover; */
     height: 100vh;
+}
+.qrCode{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 60%;
+    left: 43%;
+    background: url("../assets/QRCode.png");
+    background-size: 100% 100%;
 }
 </style>
