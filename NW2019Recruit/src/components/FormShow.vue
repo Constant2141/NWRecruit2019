@@ -1,8 +1,8 @@
 <template>
   <div class="form-show">
-    <img src="../assets/书.png" alt="" class="book">
-    <img src="../assets/topf.png" alt="" class="topf">
-    <img src="../assets/bottomf.png" alt="" class="bottomf">
+    <img src="../../static/img/book.png" alt="" class="book">
+    <img src="../../static/img/topf.png" alt="" class="topf">
+    <img src="../../static/img/bottomf.png" alt="" class="bottomf">
     <transition name="fade">
     <div class="texts" v-if="show">
       <div>

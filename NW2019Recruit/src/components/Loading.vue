@@ -15,7 +15,6 @@ export default {
   },
   mounted() {
     this.preLoading();
-        alert(1)
   },
   methods: {
     preLoading() {
@@ -29,10 +28,10 @@ export default {
         "static/img/webg.jpg",
         "static/img/weppl.png",
         "static/img/bgm.png",
-        "static/img/书.png",
-        "static/img/提交.png",
-        "static/img/报名表.jpg",
-        "static/img/提示框.png",
+        "static/img/book.png",
+        "static/img/commit.png",
+        "static/img/baomingbiao.jpg",
+        "static/img/tishikuang.png",
         "static/img/inf.png",
       ];
 
@@ -49,10 +48,9 @@ export default {
   watch: {
     count(val) {
       if (val == 14) {
-        alert(1)
         setTimeout(() => {
           this.$router.push({
-            path: "/"
+            path: "/realhomepage"
           });
         },2000);
       }
