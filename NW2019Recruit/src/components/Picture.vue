@@ -3,22 +3,26 @@
     <section class="bg" v-show="IsShowBg"></section>
     <transition name="p4">
       <section v-show="p4">
-        <img src="../assets/p4.png">
+        <!-- <img src="../../static/img/p4.png"> -->
+        <img v-lazy="'../../static/img/p4.png'" alt>
       </section>
     </transition>
     <transition name="p3">
       <section v-show="p3">
-        <img src="../assets/p3.png">
+        <!-- <img src="../../static/img/p3.png"> -->
+        <img v-lazy="'../../static/img/p3.png'" alt>
       </section>
     </transition>
     <transition name="p2">
       <section v-show="p2">
-        <img src="../assets/p2.png">
+        <!-- <img src="../../static/img/p2.png"> -->
+        <img v-lazy="'../../static/img/p2.png'" alt>
       </section>
     </transition>
     <transition name="p1">
       <section v-show="p1">
-        <img src="../assets/p1.png">
+        <!-- <img src="../../static/img/p1.png"> -->
+        <img v-lazy="'../../static/img/p1.png'" alt>
       </section>
     </transition>
   </div>
@@ -32,40 +36,40 @@ export default {
       p2: false,
       p3: false,
       p4: false,
-      IsShowBg:false
+      IsShowBg: false
     };
   },
   mounted() {
-    this.p1 = true
+    this.p1 = true;
     setTimeout(() => {
-      this.p1 = false
+      this.p1 = false;
     }, 800);
-    setTimeout(()=>{
+    setTimeout(() => {
       this.p2 = true;
-    },850)
+    }, 850);
     setTimeout(() => {
       this.p2 = false;
     }, 1650);
     setTimeout(() => {
       this.p3 = true;
-    },1700)
+    }, 1700);
     setTimeout(() => {
       this.p3 = false;
     }, 2500);
     setTimeout(() => {
       this.p4 = true;
-    },2550)
+    }, 2550);
     setTimeout(() => {
-      this.p4 = false
+      this.p4 = false;
     }, 3350);
     setTimeout(() => {
-      this.IsShowBg = true
-    },3450)
-    setTimeout(() =>{
+      this.IsShowBg = true;
+    }, 3450);
+    setTimeout(() => {
       this.$router.push({
         path: "/full"
       });
-    },4150)
+    }, 4150);
   }
 };
 </script>
@@ -80,7 +84,7 @@ export default {
 }
 .p1-enter-active,
 .p1-leave-active {
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 .p1-enter,
 .p1-leave-to {
@@ -88,7 +92,7 @@ export default {
 }
 .p2-enter-active,
 .p2-leave-active {
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 .p2-enter,
 .p2-leave-to {
@@ -96,7 +100,7 @@ export default {
 }
 .p3-enter-active,
 .p3-leave-active {
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 .p3-enter,
 .p3-leave-to {
@@ -104,7 +108,7 @@ export default {
 }
 .p4-enter-active,
 .p4-leave-active {
-  transition: opacity .1s;
+  transition: opacity 0.1s;
 }
 .p4-enter,
 .p4-leave-to {
@@ -117,7 +121,7 @@ img {
   left: 0;
   top: 0;
 }
-.bg{
+.bg {
   background-color: grey;
   height: 100vh;
   width: 100vw;

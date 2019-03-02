@@ -2,7 +2,7 @@
   <div class="entry-form" :style="{height:clientHeight}">
     <div class="desk">
       <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
-      <img src="../assets/书.png" alt class="book">
+      <img src="../../static/img/书.png" alt class="book">
       <!-- <img src="../assets/杯子.png" alt="" class="cup"> -->
       <transition name="entryForm">
         <div class="paper" v-if="IsShowPaper">
@@ -63,7 +63,7 @@
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
-          <img src="../assets/提交.png" alt class="submit" @click="showTip1 = true">
+          <img src="../../static/img/提交.png" alt class="submit" @click="showTip1 = true">
           <div class="NW">Night's Watch</div>
         </div>
       </transition>
@@ -171,7 +171,7 @@ export default {
   height: 100%;
   margin: 0 auto;
   position: relative;
-  background: url("../assets/报名表.jpg");
+  background: url("../../static/img/报名表.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -355,7 +355,7 @@ export default {
   top: 31%;
   left: 50%;
   transform: translate(-50%);
-  background: url("../assets/提示框.png");
+  background: url("../../static/img/提示框.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Genkaimincho;
@@ -382,7 +382,7 @@ export default {
   margin-left: -330px;
   z-index: 25;
   font-family: Genkaimincho;
-  background-image: url("../assets/inf.png");
+  background-image: url("../../static/img/inf.png");
   background-size: 100% 100%;
   font-size: 40px;
 }

@@ -15,7 +15,7 @@
       <ul class="bg-bubbles" v-if="IsBegin">
         <li v-for="i in 9" :key="i"></li>
       </ul>
-      <img class="bg circle" src="../assets/bgm.png">
+      <img class="bg circle" src="../../static/img/bgm.png">
     </section>
     <transition name="NW">
       <section class="nw-font" v-if="IsShowNW">
