@@ -22,11 +22,26 @@ export default {
 	},
   created(){
     vwx.share();
-
+		var u = navigator.userAgent;
+		console.log(u)
+		if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
+				console.log("手机")
+		}else{
+				this.$router.push("/tophone");
+				this.arrStatus = false;
+				return ;
+		}
     let body = document.getElementsByTagName("body")[0];
 		body.addEventListener("touchstart", this.start);
 		body.addEventListener("touchend", this.end);
-  },
+	},
+	updated(){
+		// console.log("app.vue更新了");
+		var routeName = this.$route.name;
+			// 整个路由配置中的url
+		if(routeName == 'HomePage' || routeName == 'ToPhone' || routeName == 'FormShow' || routeName == "Picture")this.arrStatus = false;
+		else this.arrStatus = true;
+	},
 	methods: {
 		move(e){
 			e.preventDefault();
@@ -44,7 +59,7 @@ export default {
 			var routeName = this.$route.name;
 			// 整个路由配置中的url
 			var routes = this.$router.options.routes;
-			console.log(routes);
+			// console.log(routes);
 			var navMap = routes.reduce((acc,cur,idx) => {
 				if(cur.name === routeName){
 					return acc = idx;
@@ -52,14 +67,20 @@ export default {
 				return acc;
 			},0);
 
-			if((navMap == 1 && cha > 120) || (navMap == routes.length - 1 && cha < -120)){
+			if(navMap == 7 && cha > 120){
+				this.$router.push('IntroducePage');
+				return 
+			}
+
+			if((navMap == 2 && cha > 120) || (navMap == 4 && cha < -120) ||(navMap == 6 && cha< -120)||(navMap == 6 && cha > 120)||(navMap == routes.length - 1 && cha < -120)){
+				// console.log("不该上下滑");
 				return 
 			}
 			if(Math.abs(cha) > 120){
 				cha < 0 ? this.$router.push(routes[navMap + 1].name) : this.$router.push(routes[navMap - 1].name);
 				this.arrStatus = true;
 			}
-			if((navMap == routes.length - 2 && cha < -120) || (routeName == 'HomePage' && cha < -120)){
+			if((navMap == routes.length - 2 && cha < -120)){
 				this.arrStatus = false;
 			}
 		},

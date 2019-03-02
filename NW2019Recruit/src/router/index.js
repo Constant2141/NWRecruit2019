@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 import HomePage from '@/components/HomePage'
 import IntroducePage from '@/components/IntroducePage'
-import Fullstack from '@/components/Fullstack'
+// import Fullstack from '@/components/Fullstack'
 import full from '@/components/full'
 import EntryForm from '@/components/EntryForm'
 import FormShow from '@/components/FormShow'
@@ -16,6 +16,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
     {
       path:'/',
       name:'base',
@@ -70,11 +75,7 @@ export default new Router({
       path: '/formshow',
       name: 'FormShow',
       component: FormShow
-    },
-    {
-      path: '/tophone',
-      name: 'ToPhone',
-      component: ToPhone
-    },
+    }
+
   ]
 })
