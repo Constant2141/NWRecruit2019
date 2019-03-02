@@ -3,25 +3,25 @@
     <section class="bg" v-show="IsShowBg"></section>
     <transition name="p4">
       <section v-show="p4">
-        <img src="../../static/img/p4.png">
+        <img src="http://pnqc4vaxj.bkt.clouddn.com/p4.png">
         <!-- <img v-lazy="'../../static/img/p4.png'" alt> -->
       </section>
     </transition>
     <transition name="p3">
       <section v-show="p3">
-        <img src="../../static/img/p3.png">
+        <img src="http://pnqc4vaxj.bkt.clouddn.com/p3.png">
         <!-- <img v-lazy="'../../static/img/p3.png'" alt> -->
       </section>
     </transition>
     <transition name="p2">
       <section v-show="p2">
-        <img src="../../static/img/p2.png">
+        <img src="http://pnqc4vaxj.bkt.clouddn.com/p2.png">
         <!-- <img v-lazy="'../../static/img/p2.png'" alt> -->
       </section>
     </transition>
     <transition name="p1">
       <section v-show="p1">
-        <img src="../../static/img/p1.png">
+        <img src="http://pnqc4vaxj.bkt.clouddn.com/p1.png">
         <!-- <img v-lazy="'../../static/img/p1.png'" alt> -->
       </section>
     </transition>
@@ -36,7 +36,8 @@ export default {
       p2: false,
       p3: false,
       p4: false,
-      IsShowBg: false
+      IsShowBg: false,
+      flag:true
     };
   },
   mounted() {
@@ -66,10 +67,21 @@ export default {
       this.IsShowBg = true;
     }, 3450);
     setTimeout(() => {
-      this.$router.push({
-        path: "/full"
-      });
+        let image = new Image();
+        image.src = "http://pnqc4vaxj.bkt.clouddn.com/full.png";
+        image.onload = () => {
+          this.flag= false
+        };
+      
     }, 4150);
+  },
+  watch:{
+    flag(val){
+      if(!val) 
+          this.$router.push({
+            path: "/full"
+      });
+    }
   }
 };
 </script>

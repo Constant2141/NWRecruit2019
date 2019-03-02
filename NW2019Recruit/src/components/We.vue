@@ -88,10 +88,10 @@ export default {
   background-size: cover;
 }
 .we-bg {
-  background-image: url("../../static/img/webg.jpg");
+  background-image: url("http://pnqc4vaxj.bkt.clouddn.com/webg.jpg");
 }
 .we-ppl {
-  background-image: url("../../static/img/weppl.png");
+  background-image: url("http://pnqc4vaxj.bkt.clouddn.com/weppl.png");
   z-index: 3;
   position: absolute;
   top: 0;

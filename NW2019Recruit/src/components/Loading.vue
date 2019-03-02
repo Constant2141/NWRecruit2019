@@ -19,20 +19,21 @@ export default {
   methods: {
     preLoading() {
       var imgs = [
-        "static/img/full.png",
-        "static/img/p0.jpg",
-        "static/img/p1.png",
-        "static/img/p2.png",
-        "static/img/p3.png",
-        "static/img/p4.png",
-        "static/img/webg.jpg",
-        "static/img/weppl.png",
-        "static/img/bgm.png",
-        "static/img/book.png",
-        "static/img/commit.png",
-        "static/img/baomingbiao.jpg",
-        "static/img/tishikuang.png",
-        "static/img/inf.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/full.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/p0.jpg",
+        "http://pnqc4vaxj.bkt.clouddn.com/p1.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/p2.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/p3.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/p4.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/webg.jpg",
+        "http://pnqc4vaxj.bkt.clouddn.com/weppl.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/bgm.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/book.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/commit.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg",
+        "http://pnqc4vaxj.bkt.clouddn.com/tishikuang.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/inf.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg",
       ];
 
       for (let img of imgs) {
@@ -48,7 +49,7 @@ export default {
   watch: {
     count(val) {
 
-      if (val == 14) {
+      if (val == 15) {
         setTimeout(() => {
           this.$router.push({
             path: "/realhomepage"

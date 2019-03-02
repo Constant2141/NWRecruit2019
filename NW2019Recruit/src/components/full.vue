@@ -40,6 +40,20 @@ export default {
     setTimeout(function(){
       that.texts()
     },2350)
+
+    let imgs = [
+      'http://pnqc4vaxj.bkt.clouddn.com/book.png',
+      'http://pnqc4vaxj.bkt.clouddn.com/commit.png',
+      'http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg',
+      'http://pnqc4vaxj.bkt.clouddn.com/tishikuang.png',
+      'http://pnqc4vaxj.bkt.clouddn.com/inf.png'
+    ]
+    for (let img of imgs) {
+        let image = new Image();
+        image.src = img;
+        image.onload = () => {
+        };
+      }
   },
   methods:{
     texts(){
@@ -143,7 +157,7 @@ export default {
 }
 .fullstack{
   height: 100vh;
-  background: url("../../static/img/full.png");
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png");
   /* background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png"); */
 
 

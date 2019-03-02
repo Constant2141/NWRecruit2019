@@ -412,7 +412,7 @@ export default {
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../../static/img/newHome.jpg);
+        background-image: url(http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg);
         height: 100vh;
         overflow: hidden;
         background-size: cover;
