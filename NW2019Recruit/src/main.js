@@ -10,8 +10,8 @@ Vue.config.productionTip = false
 
 Vue.prototype.$star = star;
 Vue.prototype.$axios = Axios;
-Axios.defaults.baseURL = 'http://47.106.21.195:3001/'
-// Axios.defaults.baseURL = 'http://localhost:3001/'
+// Axios.defaults.baseURL = 'http://47.106.21.195:3001/'
+Axios.defaults.baseURL = 'http://localhost:3001/'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
