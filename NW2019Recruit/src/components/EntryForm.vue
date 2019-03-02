@@ -87,6 +87,12 @@
         <span @click="handleLike('1')">全棧</span>
         <span @click="handleLike('2')">設計</span>
       </div>
+
+      <div class="tips" v-show="showTip4">
+        <div class="close" @click="showTip4 = false">&times;</div>
+        <p>請確認信息填寫是否完整</p>
+        <span @click="showTip4 = false">好滴</span>
+      </div>
     </div>
   </div>
 </template>
@@ -109,13 +115,13 @@ export default {
       showTip1: false, //提交
       showTip2: false, //选择性别
       showTip3: false, //选择意向
+      showTip4: false,//判空提示框
       clientHeight: "",
       IsShowPaper: false,
       IsShowInf: false
     };
   },
   mounted() {
-   
     this.clientHeight =
       (window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -126,38 +132,39 @@ export default {
   },
   methods: {
     submit() {
-      // console.log({
-      //   name: this.name,
-      //     sex: this.sex,
-      //     like: this.like,
-      //     major: this.major,
-      //     intro: this.intro,
-      //     stuID: this.stuID,//学号
-      //     subject: this.subject,//专业班级
-      //     call: this.call,//电话
-      // });
-      
-      this.$axios.post('/api/submit',{
+      let obj = {
           name: this.name,
           sex: this.sex,
           like: this.like,
-          major: this.major,
           intro: this.intro,
           stuID: this.stuID,//学号
           subject: this.subject,//专业班级
           call: this.call,//电话
-      })
+      }
+      let arr = Object.values(obj)
+      console.log(arr);
+      for(let j=0,len = arr.length;j < len ;j++){
+        if(arr[j] == ''){
+          this.showTip4 = true;
+          this.showTip1 = false;
+          return;
+        }
+      }
+
+      this.showTip1 = false;
+      this.$axios.post('/api/submit',obj)
       .then((res) => {
          this.$store.commit('setName',this.name)
         if(res.data.code == 200){
-          alert('报名成功')
+          this.$router.push('FormShow')
         }else{
-          console.log('请确认信息填写是否完整');
+          console.log('报错了');
         }
       })
       .catch((err) => {
         console.log(err);
       })
+      
     },
     handleSex(sex) {
       if (sex == "boy") this.sex = "男生";
