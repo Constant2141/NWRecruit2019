@@ -57,7 +57,7 @@ export default {
     IsClickHere() {
       if (this.IsClickHere == true) {
         let timer = setTimeout(() => {
-          this.$router.push({
+          this.$router.replace({
             path: "/introducePage"
           });
         }, 500);
