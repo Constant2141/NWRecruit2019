@@ -128,9 +128,11 @@ export default {
   background: black;
 }
 .form-show{
-  height: 1334px;
+  width: 100vw;
+  height: 100vh;
+  /* height: 1334px; */
   background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .book{

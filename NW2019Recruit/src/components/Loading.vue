@@ -64,7 +64,7 @@ export default {
           this.$router.replace({
             path: "/realhomepage"
           });
-        }, 1500);
+        }, 3000);
     }
   }
 };
