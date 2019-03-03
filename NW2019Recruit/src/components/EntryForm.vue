@@ -38,7 +38,7 @@
             </div>
             <div class="form-box" @click="inf">
               <label for="major">个人信息</label>
-              <input type="text" id="major" placeholder="点击编辑" v-model="major">
+              <input type="text" id="major" readonly placeholder="点击编辑" v-model="major">
             </div>
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
