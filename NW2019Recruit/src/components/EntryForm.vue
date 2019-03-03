@@ -148,11 +148,11 @@ export default {
     checkPhone(){
       this.toTop();
       // var phone = document.getElementById('call').value;
-      // if(!(/^1[34578]\d{9}$/.test(this.call))){ 
-      //     alert("手机号码格式有误，请重填");  
+      // if(!(/^1[34578]\d{9}$/.test(this.call))){
+      //     alert("手机号码格式有误，请重填");
       //     this.call = '';
-      //     return false; 
-      // } 
+      //     return false;
+      // }
     },
     slideInput(){
       var input = document.getElementsByClassName("form-box");
