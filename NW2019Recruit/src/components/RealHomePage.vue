@@ -1,7 +1,7 @@
 <template>
     <div class="homepage">
         <star v-for="i in items" :key="i.id"></star>
-        <div class="home-img"> 
+        <div class="home-img">
 
             <div class="font">
                 <svg width="93" height="259">
@@ -67,7 +67,7 @@
                     </g>
                 </svg>
             </div>
-            
+
             <!-- <div class="star-wrap" id="s1">
                 <div class="star"></div>
                 <div class="star-blur" ref="blur1"></div>
@@ -148,13 +148,13 @@ export default {
         // this.timer = setInterval(() =>{
         //     // console.log(this.$star);
         //     console.log(this.timer);
-            
+
         // },3000);
-        this.$once('hook:beforeDestroy', () => { 
-            console.log(this.timer);           
+        this.$once('hook:beforeDestroy', () => {
+            console.log(this.timer);
             clearInterval(this.timer);
             clearTimeout(this.timer2);
-            clearTimeout(this.timer3)                                    
+            clearTimeout(this.timer3)
         })
     },
     beforeDestroy(){
@@ -330,7 +330,7 @@ export default {
             shou();
             this.timer2 = setTimeout(ye,500);
             this.timer3 = setTimeout(ren,1500);
-            
+
         }
     },
 
@@ -356,6 +356,7 @@ export default {
     .home-img{
         background-image: url(http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg);
         height: 100vh;
+        background-color: black;
         overflow: hidden;
         background-size: cover;
         background-repeat: no-repeat;

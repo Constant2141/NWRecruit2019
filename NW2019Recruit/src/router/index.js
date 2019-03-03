@@ -17,11 +17,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/tophone',
-      name: 'ToPhone',
-      component: ToPhone
-    },
+
     {
       path:'/',
       name:'base',
@@ -81,7 +77,12 @@ export default new Router({
       path: '/formshow',
       name: 'FormShow',
       component: FormShow
-    }
+    },
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
 
   ]
 })
