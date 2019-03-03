@@ -1,7 +1,9 @@
 <template>
   <div id="app" @touchmove="move">
+		<keep-alive>
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+		</keep-alive>
     <div class="arrow" id="arrow" @click="next" v-if="arrStatus"></div>
   </div>
 </template>
