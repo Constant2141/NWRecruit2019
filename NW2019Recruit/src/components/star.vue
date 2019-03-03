@@ -22,10 +22,10 @@ export default {
             // console.log(this.destroy);
             this.star();
         },3000)
-            console.log(this.destroy);
+            // console.log(this.destroy);
     },
     beforeDestroy(){
-        console.log("this.destroy");
+        // console.log("this.destroy");
         clearInterval(this.timer);
         clearInterval(this.timer2);
 

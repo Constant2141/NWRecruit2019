@@ -37,10 +37,16 @@ export default {
       p3: false,
       p4: false,
       // IsShowBg: false,
-      flag:true
+      flag:true,
+      flag2:false
     };
   },
   mounted() {
+    let image = new Image();
+        image.src = "http://pnqc4vaxj.bkt.clouddn.com/full2.png";
+        image.onload = () => {
+          this.flag= false
+     };
     this.p1 = true;
     setTimeout(() => {
       this.p1 = false;
@@ -67,21 +73,22 @@ export default {
     //   this.IsShowBg = true;
     // }, 3450);
     setTimeout(() => {
-        let image = new Image();
-        image.src = "http://pnqc4vaxj.bkt.clouddn.com/full.png";
-        image.onload = () => {
-          this.flag= false
-        };
-
+      this.flag2=true
     }, 3400);
   },
   watch:{
     flag(val){
-      if(!val)
+      if(!val&&this.flag2)
           this.$router.replace({
             path: "/full"
       });
-    }
+    },
+   flag2(val){
+      if(val&&!this.flag)
+          this.$router.replace({
+            path: "/full"
+      });
+    },
   }
 };
 </script>

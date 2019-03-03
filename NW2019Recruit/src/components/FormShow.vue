@@ -51,11 +51,12 @@ export default {
       show:false,
       nws:false,
       name:this.$store.state.name,
-      obj:{},
+      obj:'',
     }
   },
   methods:{
     changeStyle(){
+      if(this.obj == '') return;
       if(this.obj.subject.length <= 6){
         var style = document.getElementById("school").style;
         style.fontSize = "18px";
@@ -63,6 +64,7 @@ export default {
         style.paddingTop = "11px";
         style.width = "103px";
       }
+
     }
   },
   updated(){

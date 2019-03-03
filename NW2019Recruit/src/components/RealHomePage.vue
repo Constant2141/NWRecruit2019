@@ -155,10 +155,10 @@ export default {
         })
     },
     beforeDestroy(){
-        console.log(1);
+        // console.log(1);
     },
     beforeRouteLeave(to,from,next){
-        console.log(1);
+        // console.log(1);
             clearInterval(this.timer);
             clearTimeout(this.timer2);
             clearTimeout(this.timer3)

@@ -162,7 +162,7 @@ export default {
 }
 .fullstack{
   height: 1334px;
-  background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png");
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/full2.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
