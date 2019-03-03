@@ -49,20 +49,25 @@ export default {
       show:false,
       nws:false,
       name:this.$store.state.name,
+      subject:"",
       obj:{},
     }
   },
   methods:{
     changeStyle(){
-      if(obj.subject.length <= 6){
+      if(this.obj.subject.length <= 6){
         var style = document.getElementById("school").style;
         style.fontSize = "18px";
-        style.lineHeight = "25px"
+        style.lineHeight = "25px";
+        style.paddingTop = "8.5px";
       }
     }
   },
   updated(){
-    this.changeStyle();
+    let that = this;
+    setTimeout(function(){
+      that.changeStyle();
+    },100)
   },
   mounted(){
   // console.log(this.$store.state.name);
@@ -199,7 +204,6 @@ export default {
   line-height: 44px;
   width:176px;
   height: 75px;
-  vertical-align: top;
   word-wrap: break-word;
   margin-left: 30px;
 }

@@ -17,21 +17,17 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/tophone',
-      name: 'ToPhone',
-      component: ToPhone
-    },
+
     {
       path:'/',
       name:'base',
-      redirect:'/realhomepage'
+      redirect:'/loading'
     },
-    // {
-    //   path: '/loading',
-    //   name: 'Loading',
-    //   component: Loading
-    // },
+    {
+      path: '/loading',
+      name: 'Loading',
+      component: Loading
+    },
     {
       path: '/realhomepage',
       name: 'RealHomePage',
@@ -81,7 +77,12 @@ export default new Router({
       path: '/formshow',
       name: 'FormShow',
       component: FormShow
-    }
+    },
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
 
   ]
 })
