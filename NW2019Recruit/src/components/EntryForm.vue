@@ -156,7 +156,7 @@ export default {
       .then((res) => {
          this.$store.commit('setName',this.name)
         if(res.data.code == 200){
-          this.$router.push('FormShow')
+          this.$router.replace('FormShow')
         }else{
           console.log('报错了');
         }
