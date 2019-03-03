@@ -100,6 +100,7 @@
 
 <script>
 export default {
+  name:"EntryForm",
   data() {
     return {
       //要发送的信息

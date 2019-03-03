@@ -1,6 +1,6 @@
 <template>
   <div id="app" @touchmove="move">
-		<keep-alive>
+		<keep-alive include="EntryForm">
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
 		</keep-alive>
