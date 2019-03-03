@@ -27,21 +27,23 @@
                     </g>
 
                     <g class="ye">
+                        <rect x="15" y="116" width="45" height="1" style="fill:rgba(255,255,255,0)" id="y2"></rect>
+                        <rect x="21" y="130" width="1" height="27" style="fill:rgba(255,255,255,0)" id="y4"></rect>
+                        <rect x="36" y="128" height="1" width="22" style="fill:rgba(255,255,255,0)" id="y6"></rect>
                         <path style="stroke:#ffffff00;stroke-width:1.5"
                             id="y1"
                             d="M35 109
                             L40 116"></path>
-                        <rect x="15" y="116" width="45" height="1" style="fill:#ffffff00" id="y2"></rect>
                         <path style="stroke:#ffffff00;stroke-width:1;fill:#ffffff00"
                             id="y3"
                             d=" M27 121
                             S25 128 13 140"></path>
-                        <rect width="1" height="27" style="fill:#ffffff00" x="21" y="130" id="y4"></rect>
+                        
                         <path id="y5"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M39 121
                             S37 128 27 140"></path>
-                        <rect x="36" y="128" height="1" width="22" style="fill:#ffffff00" id="y6"></rect>
+
                         <path id="y7"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M57 128
@@ -344,7 +346,6 @@ export default {
     }
     rect{
         stroke:#ffffff00;
-        
     }
     circle{
         fill:#ffffff00;

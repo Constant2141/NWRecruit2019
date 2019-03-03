@@ -1,7 +1,7 @@
 <template>
         <svg ref="star" class="star" style="position:fixed;top:0px;left:0px;z-index:10;">
-            <circle v-bind:cx=x v-bind:cy=y r="1" style="fill:#ffffff00"></circle>
-            <circle v-bind:cx=(x+1) v-bind:cy=(y+1) r="0.5" style="fill:#ffffff00"></circle>
+            <circle v-bind:cx=x v-bind:cy=y r="0.8" style="fill:rgba(255,255,255,0)"></circle>
+            <circle v-bind:cx=(x+1) v-bind:cy=(y+1) r="0.5" style="fill:rgba(255,255,255,0)"></circle>
         </svg>
 </template>
 
@@ -12,7 +12,8 @@ export default {
             x:null,
             y:null,
             color:0,
-            timer:null
+            timer:null,
+            timer2:null
         }
     },
     mounted(){
@@ -23,6 +24,7 @@ export default {
     },
     beforeDestroy(){
         clearInterval(this.timer);
+        clearInterval(this.timer2);
     },
     methods:{
         star(){
@@ -30,23 +32,27 @@ export default {
             this.y = Math.random()*(window.innerHeight/2);
             var circle = document.getElementsByTagName("circle");
             let count = 0;
-            let act = setInterval(() =>{
-                // console.log(circle[0].style.fill);
+            // for(let i = 0;i < circle.length;i++){
+            //     // console.log(this.color);
+            //     circle[i].fill = "#ffffff00";
+            // }             
+            this.timer2 = setInterval(() =>{
+                console.log(circle[0].style.fill);
                 if(circle[0].style.fill == "rgba(255, 255, 255, 0)" || circle[0].style.fill == "#ffffff" ){
                         for(let i = 0;i < circle.length;i++){
                             // console.log(circle[i].style.fill);
-                            circle[i].style.fill = "#ffffff";
+                            circle[i].style.fill = "rgba(255, 255, 255, 1)";
                         }
                 }
                 else{
                         for(let i = 0;i < circle.length;i++){
                             // console.log(this.color);
-                            circle[i].style.fill = "#ffffff00";
+                            circle[i].style.fill = "rgba(255, 255, 255, 0)";
                             count ++;
                         }                   
                 }
                 if(count >= 24){
-                    clearInterval(act);
+                    clearInterval(this.timer2);
                     // console.log(count)
                 }
                 // if(this.color < 99 && this.color >= 0){
@@ -85,7 +91,9 @@ export default {
         height: 50vh;
     }
     .star circle{
-        transition: fill 0.5s ease-in;
+        transition:fill 0.5s ease-in;
+        stroke: #ffffff00;
+        /* fill: #ffffff00; */
     }
 
 </style>
