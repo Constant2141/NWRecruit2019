@@ -1,7 +1,7 @@
 <template>
   <div class="show-form">
     <div class="form-show">
-    <img src="../../static/img/book.png" alt="" class="book">
+    <img src="http://pnqc4vaxj.bkt.clouddn.com/book.png" alt="" class="book">
     <img src="../../static/img/topf.png" alt="" class="topf">
     <img src="../../static/img/bottomf.png" alt="" class="bottomf">
     <transition name="fade">
@@ -129,7 +129,7 @@ export default {
 }
 .form-show{
   height: 1334px;
-  background: url("../../static/img/baomingbiao.jpg");
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg");
   background-size: contain;
   background-repeat: no-repeat;
 }
