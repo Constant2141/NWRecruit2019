@@ -154,7 +154,8 @@ export default {
   height: 33px;
   width: 493px;
   position: absolute;
-  top: 1100px;
+  /* top: 1100px; */
+  top:80%;
   left: 117px;
 }
 .texts{
@@ -228,7 +229,8 @@ export default {
   position: absolute;
   background: url("../../static/img/rnw.png");
   background-size: 100% 100%;
-  top: 880px;
+  /* top: 880px; */
+  top:67%;
   right: 126px;
 }
 #introduce{
