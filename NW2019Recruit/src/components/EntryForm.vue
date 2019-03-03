@@ -1,8 +1,8 @@
 <template>
-  <div class="entry-form" :style="{height:clientHeight}" ref="entryform">
+  <div class="entry-form" :style="{height:clientHeight}">
     <div class="desk">
       <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
-      <img src="http://pnqc4vaxj.bkt.clouddn.com/book.png" alt class="book">
+      <img src="../assets/书.png" alt class="book">
       <!-- <img src="../assets/杯子.png" alt="" class="cup"> -->
       <transition name="entryForm">
         <div class="paper" v-if="IsShowPaper">
@@ -53,8 +53,8 @@
                 <label for="call" class="mgl50">電話</label>
                 <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call" @blur="checkPhone()" >
               </div>
-              <span @click="this.disInf">確認</span>
-              <span @click="this.disInf">取消</span>
+              <span @click="IsShowInf = false">確認</span>
+              <span @click="IsShowInf = false">取消</span>
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
@@ -62,7 +62,7 @@
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
-          <img src="http://pnqc4vaxj.bkt.clouddn.com/commit.png" alt class="submit" @click="showTip1 = true">
+          <img src="../assets/提交.png" alt class="submit" @click="showTip1 = true">
           <div class="NW">Night's Watch</div>
         </div>
       </transition>
@@ -86,12 +86,6 @@
         <span @click="handleLike('1')">全棧</span>
         <span @click="handleLike('2')">設計</span>
       </div>
-
-      <div class="tips" v-show="showTip4">
-        <div class="close" @click="showTip4 = false">&times;</div>
-        <p>請確認信息填寫是否完整</p>
-        <span @click="showTip4 = false">好滴</span>
-      </div>
     </div>
   </div>
 </template>
@@ -99,7 +93,6 @@
 
 <script>
 export default {
-  name:"EntryForm",
   data() {
     return {
       //要发送的信息
@@ -115,23 +108,12 @@ export default {
       showTip1: false, //提交
       showTip2: false, //选择性别
       showTip3: false, //选择意向
-      showTip4: false,//判空提示框
       clientHeight: "",
       IsShowPaper: false,
       IsShowInf: false
     };
   },
   mounted() {
-    let imgs = [
-        "http://pnqc4vaxj.bkt.clouddn.com//book.png",
-        "http://pnqc4vaxj.bkt.clouddn.com/rnw.png"
-    ];
-    for (let img of imgs) {
-        let image = new Image();
-        image.src = img;
-        image.onload = () => {
-        };
-      }
     this.clientHeight =
       (window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -186,39 +168,38 @@ export default {
       // },500)
     },
     submit() {
-      let obj = {
-          name: this.name,
+      console.log({
+        name: this.name,
           sex: this.sex,
           like: this.like,
+          major: this.major,
           intro: this.intro,
           stuID: this.stuID,//学号
           subject: this.subject,//专业班级
           call: this.call,//电话
-      }
-      let arr = Object.values(obj)
-      console.log(arr);
-      for(let j=0,len = arr.length;j < len ;j++){
-        if(arr[j] == ''){
-          this.showTip4 = true;
-          this.showTip1 = false;
-          return;
-        }
-      }
-
-      this.showTip1 = false;
-      this.$axios.post('/api/submit',obj)
+      });
+      
+      this.$axios.post('/api/submit',{
+          name: this.name,
+          sex: this.sex,
+          like: this.like,
+          major: this.major,
+          intro: this.intro,
+          stuID: this.stuID,//学号
+          subject: this.subject,//专业班级
+          call: this.call,//电话
+      })
       .then((res) => {
-         this.$store.commit('setName',this.name)
+        console.log(res);
         if(res.data.code == 200){
-          this.$router.replace('FormShow')
+          alert('报名成功')
         }else{
-          console.log('报错了');
+          console.log('请确认信息填写是否完整');
         }
       })
       .catch((err) => {
         console.log(err);
       })
-
     },
     handleSex(sex) {
       if (sex == "boy") this.sex = "男生";
@@ -278,7 +259,7 @@ export default {
   background-repeat: no-repeat;
 }
 .desk .background {
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 /***paper***/
@@ -395,7 +376,7 @@ export default {
 }
 .form-box2 {
   width: 420px;
-  height: 260px;
+  height: 270px;
   line-height: 50px;
   position: relative;
   margin: 20px auto 0 -420px;
@@ -474,7 +455,7 @@ export default {
   top: 31%;
   left: 50%;
   transform: translate(-50%);
-  background: url("http://pnqc4vaxj.bkt.clouddn.com/tishikuang.png");
+  background: url("../assets/提示框.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Genkaimincho;
@@ -501,7 +482,7 @@ export default {
   margin-left: -330px;
   z-index: 25;
   font-family: Genkaimincho;
-  background-image: url("http://pnqc4vaxj.bkt.clouddn.com/inf.png");
+  background-image: url("../assets/inf.png");
   background-size: 100% 100%;
   font-size: 40px;
 }
