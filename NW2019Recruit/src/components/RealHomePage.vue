@@ -342,8 +342,13 @@ export default {
     path{
         fill:#ffffff00;
     }
+    rect{
+        stroke:#ffffff00;
+        
+    }
     circle{
-        fill:#ffffff;
+        fill:#ffffff00;
+        stroke: #ffffff00;
     }
     #star{
         width: 100%;

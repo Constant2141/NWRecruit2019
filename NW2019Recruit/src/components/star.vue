@@ -21,7 +21,7 @@ export default {
         },3000)
  
     },
-    berforeDestroy(){
+    beforeDestroy(){
         clearInterval(this.timer);
     },
     methods:{

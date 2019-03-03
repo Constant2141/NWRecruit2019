@@ -57,7 +57,7 @@
               <span @click="IsShowInf = false">確認</span>
               <span @click="IsShowInf = false">取消</span>
             </section>
-            <div class="form-box2">
+            <div class="form-box2 form-box">
               <label for="intro">自我介绍</label>
               <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑" v-model="intro"></textarea>
             </div>
@@ -122,8 +122,22 @@ export default {
     setTimeout(() => {
       this.IsShowPaper = true;
     }, 1000);
+    setTimeout(() => {
+      this.slideInput();
+    }, 2500);
+
   },
   methods: {
+    slideInput(){
+      var input = document.getElementsByClassName("form-box");
+      console.log(input);
+      for(let i = 0;i < input.length;i++){
+        setTimeout(() =>{
+          input[i].style.marginLeft = "10vw";
+          input[i].style.opacity = 1;
+        },50*(i+1))
+      }
+    },
     submit() {
       console.log({
         name: this.name,
@@ -287,6 +301,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-x: hidden;
   /* margin-left: 74px; */
   /* font-family: ShouShuti; */
   font-size: 36px;
@@ -308,13 +323,15 @@ export default {
   padding-right: 15px;
   font-size: 36px;
 }
-
 .form-box {
   width: 420px;
   height: 65px;
   line-height: 65px;
   position: relative;
-  margin: 30px auto 0 auto;
+  opacity: 0;
+  /* margin-left: -56vw; */
+  margin: 30px auto 0 -56vw;
+  transition: margin-left 0.5s ease-in,opacity 1.5s;
 }
 .form-box2 {
   width: 420px;
@@ -322,14 +339,19 @@ export default {
   line-height: 50px;
   position: relative;
   margin: 20px auto 0 auto;
+  opacity: 1;
+
 }
 .form .form-box:first-child {
-  margin: 0 auto;
+  margin-top: 0 ;
 }
 .form-box2 textarea {
   background-color: rgba(204, 204, 204, 0.67);
   color: #757575;
   padding-right: 15px;
+  position: absolute;
+  top:48px;
+  left:0;
   text-align: left;
 }
 .form-box2 label {
