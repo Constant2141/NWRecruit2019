@@ -122,6 +122,16 @@ export default {
     };
   },
   mounted() {
+    let imgs = [
+        "http://pnqc4vaxj.bkt.clouddn.com//book.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/rnw.png"
+    ];
+    for (let img of imgs) {
+        let image = new Image();
+        image.src = img;
+        image.onload = () => {
+        };
+      }
     this.clientHeight =
       (window.innerHeight ||
         document.documentElement.clientHeight ||
