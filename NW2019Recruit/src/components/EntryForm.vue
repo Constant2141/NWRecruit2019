@@ -47,7 +47,7 @@
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
-                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject" @blur="this.toTop">
+                <input type="text" maxlength="10" id="subject" placeholder="点击编辑" v-model="subject" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="call" class="mgl50">電話</label>
