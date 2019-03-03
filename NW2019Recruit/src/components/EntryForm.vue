@@ -215,16 +215,16 @@ export default {
   background-color: #000000;
 }
 .desk {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0 auto;
   position: relative;
   background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .desk .background {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 /***paper***/
