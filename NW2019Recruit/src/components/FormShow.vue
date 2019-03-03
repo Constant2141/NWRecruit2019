@@ -30,10 +30,10 @@
         <p class="middles" id="subject">专业班级</p>
         <span id="school">{{obj.subject}}</span>
       </div>
-      <div>
+      <!-- <div>
         <p id="introduce">自我介绍</p>
         <p id="contents">{{obj.intro}}</p>
-        </div>
+      </div> -->
     </div>
     </transition>
     <transition name="logo">

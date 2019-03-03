@@ -148,7 +148,7 @@ export default {
         // this.types();
         // clearInterval(this.timer);
         this.$once('hook:beforeDestroy', () => {
-            console.log(1);
+            // console.log(1);
             clearInterval(this.timer);
             clearTimeout(this.timer2);
             clearTimeout(this.timer3)
