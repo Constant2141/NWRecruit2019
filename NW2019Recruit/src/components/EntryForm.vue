@@ -44,7 +44,7 @@
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
                 <label for="stuID" class="mgl50">學號</label>
-                <input type="number" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
+                <input type="text" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
