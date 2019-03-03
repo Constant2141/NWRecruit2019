@@ -78,7 +78,7 @@ export default {
   watch:{
     flag(val){
       if(!val) 
-          this.$router.push({
+          this.$router.replace({
             path: "/full"
       });
     }

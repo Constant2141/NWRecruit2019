@@ -7,17 +7,16 @@
       <div class="scircle"></div>
       <div class="black-clip" ref="blackCover"></div>
     </div>
-    <div class="we-word" lang="ch">
+    <div class="we-word" lang="ch" ref="weNW">
       <!-- <img src="../assets/nw.png" alt> -->
-      <h1>
+      <h1 ref="weNight">
         <span>N</span>ight's
       </h1>
-      <h1 id="font-bottom">
+      <h1 id="font-bottom" ref="weWatch">
         <span>W</span>atch
-      </h1>Night’s Watch 工作室成立于2017年初，前身是协同工作室前端组，目前主要分为前端、后端、设计组，工作室专注设计并开发Web项目、移动端网页及小程序,特色独立项目为女生节的许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。
-      <br>我们着重培养多方面、多技能的人才，增加自己竞争力。毕业的师兄大多就职于阿里、网易等一线互联网公司。
+      </h1><i ref="weIntro">Night’s Watch 工作室成立于2017年初，前身是协同工作室前端组，目前主要分为前端、后端、设计组，工作室专注设计并开发Web项目、移动端网页及小程序,特色独立项目为女生节的许愿墙。2017年女生节期间，许愿墙4.0访问人数超过5000。
+      <br>我们着重培养多方面、多技能的人才，增加自己竞争力。毕业的师兄大多就职于阿里、网易等一线互联网公司。</i>
     </div>
-    <!-- <div class="sli-btn" @click="clickPre"></div> -->
   </div>
 </template>
 
@@ -37,21 +36,18 @@ export default {
         setTimeout(() => {
             this.$refs.wePhoto.style.opacity = 1;
         }, 300);
-    },
-    methods:{
-        clickPre(){
-            this.$refs.blackCover.style.left="-100px"
-            this.$refs.blackCover.style.top="-100px"
-            setTimeout(()=>{
-                this.$router.push({
-                    path:'/.....'
-                })
-            },1000)
-        }
+        setTimeout(() => {
+            this.$refs.weNight.style.opacity = 1;
+            this.$refs.weWatch.style.opacity = 1;            
+        }, 1000);
+        setTimeout(() => {
+            this.$refs.weIntro.style.opacity = 1;           
+        }, 1600);
     },
     beforeRouteLeave(to,from,next){
       this.$refs.blackCover.style.left="-100px"
       this.$refs.blackCover.style.top="-100px"
+      this.$refs.weNW.style.opacity = 0;
       setTimeout(function(){
         next();
       },800)
@@ -144,6 +140,7 @@ export default {
   z-index: 5;
   position: relative;
   text-align: justify;
+  transition: opacity 1s;
 }
 .we-word > img {
   width: 489px;
@@ -160,6 +157,8 @@ export default {
   font-stretch: normal;
   letter-spacing: 0px;
   color: #fefefe;
+  opacity: 0;
+  transition: opacity 1s;
 }
 .we-word span {
   position: relative;
@@ -183,12 +182,9 @@ export default {
 #font-bottom{
   margin-bottom: 50px;
 }
-.sli-btn{
-    position:fixed;
-    left: 20px;
-    bottom: 20px;
-    width: 100px;
-    height: 100px;
-    background-color: red;
+i{
+  font-style: normal;
+  opacity: 0;
+  transition: opacity 1s;
 }
 </style>
