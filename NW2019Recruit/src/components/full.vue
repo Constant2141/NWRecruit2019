@@ -43,7 +43,7 @@ export default {
     },2350)
 
     let imgs = [
-      'http://pnqc4vaxj.bkt.clouddn.com/paper.png',
+      'http://pnqc4vaxj.bkt.clouddn.com/paper2.png',
       'http://pnqc4vaxj.bkt.clouddn.com/book.png',
       'http://pnqc4vaxj.bkt.clouddn.com/commit.png',
       'http://pnqc4vaxj.bkt.clouddn.com/desk.jpg',
