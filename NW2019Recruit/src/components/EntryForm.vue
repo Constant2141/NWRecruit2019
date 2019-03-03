@@ -12,14 +12,14 @@
           <form class="form">
             <div class="form-box">
               <label for="name">姓名</label>
-              <input type="text" maxlength="7" id="name" placeholder="点击编辑" v-model="name">
+              <input type="text" maxlength="7" id="name" placeholder="" v-model="name">
             </div>
             <div class="form-box">
               <label for="sex">性别</label>
               <input
                 type="text"
                 id="sex"
-                placeholder="点击编辑"
+                placeholder=""
                 v-model="sex"
                 @click="showTip2 = true"
                 readonly
@@ -30,7 +30,7 @@
               <input
                 type="text"
                 id="like"
-                placeholder="点击编辑"
+                placeholder=""
                 v-model="like"
                 @click="showTip3 = true"
                 readonly
@@ -38,7 +38,7 @@
             </div>
             <div class="form-box" @click="inf">
               <label for="major">个人信息</label>
-              <input type="text" id="major" readonly placeholder="点击编辑" v-model="major">
+              <input type="text" id="major" placeholder="" v-model="major">
             </div>
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
@@ -59,7 +59,7 @@
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
-              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑" v-model="intro" @blur="this.toTop"></textarea>
+              <textarea maxlength="200" name="intro" id="intro" placeholder="" v-model="intro"></textarea>
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
@@ -139,8 +139,43 @@ export default {
     setTimeout(() => {
       this.IsShowPaper = true;
     }, 1000);
+    setTimeout(() => {
+      this.slideInput();
+    }, 1500);
+
   },
   methods: {
+    slideInput(){
+      var input = document.getElementsByClassName("form-box");
+      var input2 = document.getElementsByClassName("form-box2");
+      for(let i = 0;i < input.length;i++){
+        setTimeout(() =>{
+          input[i].style.marginLeft = "10vw";
+          input[i].style.opacity = 1;
+        },50*(i+1))
+      }
+      setTimeout(() =>{
+          input2[0].style.marginLeft = "10vw";
+          input2[0].style.opacity = 1;
+        },50*(input.length + 1));
+      setTimeout(() =>{
+          for(let i = 0;i < input.length;i++){
+            let label = input[i].getElementsByTagName("label")[0];
+            let placeholder = input[i].getElementsByTagName("input")[0];
+            placeholder.setAttribute("placeholder","点击编辑");
+            label.style.opacity = 1;
+          }
+          let placeholder2 = input2[0].getElementsByTagName("textarea")[0];
+          let label2 = input2[0].getElementsByTagName("label")[0];
+          placeholder2.setAttribute("placeholder","点击编辑");
+          label2.style.opacity = 1;
+      },500)
+      // setTimeout(() =>{
+      //   for(let i =0;i < input.length;i++){
+          
+      //   }
+      // },500)
+    },
     submit() {
       let obj = {
           name: this.name,
@@ -315,6 +350,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-x: hidden;
   /* margin-left: 74px; */
   /* font-family: ShouShuti; */
   font-size: 36px;
@@ -336,28 +372,37 @@ export default {
   padding-right: 15px;
   font-size: 36px;
 }
-
 .form-box {
   width: 420px;
   height: 65px;
   line-height: 65px;
   position: relative;
-  margin: 30px auto 0 auto;
+  opacity: 0;
+  /* margin-left: -56vw; */
+  margin: 30px auto 0 -56vw;
+  transition: margin-left 0.5s ease-in,opacity 1.5s;
 }
 .form-box2 {
   width: 420px;
   height: 260px;
   line-height: 50px;
   position: relative;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 0 -420px;
+  opacity: 0;
+  transition: margin-left 0.5s ease-in,opacity 1.5s;
+
 }
 .form .form-box:first-child {
-  margin: 0 auto;
+  margin-top: 0 ;
 }
 .form-box2 textarea {
   background-color: rgba(204, 204, 204, 0.67);
   color: #757575;
   padding-right: 15px;
+  position: absolute;
+  top:48px;
+  width: 420px;
+  left:0;
   text-align: left;
 }
 .form-box2 label {
@@ -370,6 +415,8 @@ export default {
   line-height: 50px;
   color: #000;
   z-index: 21;
+  opacity:0;
+  transition: opacity 1.5s;
 }
 .form-box label {
   display: inline-block;
@@ -379,6 +426,8 @@ export default {
   height: 65px;
   color: #000;
   z-index: 21;
+  opacity:0;
+  transition: opacity 1.5s;
 }
 .form div input::placeholder {
   font-size: 30px;
@@ -388,10 +437,11 @@ export default {
   text-align: right;
   padding-right: 15px;
   position: absolute;
+  /* opacity: 0; */
   z-index: 21;
 }
 #intro {
-  width: 420px;
+  width: 400px;
   height: 200px;
   border: solid 1px #757575;
   border-radius: 0;
