@@ -4,7 +4,7 @@
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
 		</keep-alive>
-    <div class="arrow" id="arrow" @click="next" v-if="arrStatus"></div>
+    <div class="arrow" id="arrowt" @click="next" v-if="arrStatus"></div>
   </div>
 </template>
 
@@ -131,8 +131,8 @@ body{
 	animation: updown .35s infinite linear;
 	animation-direction: alternate;
 }
-#arrow{
-  z-index: 100;
+#arrowt{
+  z-index: 123 !important;
 }
 @keyframes updown {
 	from{
