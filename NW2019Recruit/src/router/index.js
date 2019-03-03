@@ -11,20 +11,22 @@ import RealHomePage from "@/components/RealHomePage"
 import ToPhone from "@/components/ToPhone"
 import We from '@/components/We'
 import Picture from '@/components/Picture'
+import Loading from '@/components/Loading'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/tophone',
-      name: 'ToPhone',
-      component: ToPhone
-    },
+
     {
       path:'/',
       name:'base',
-      redirect:'/realhomepage'
+      redirect:'/loading'
+    },
+    {
+      path: '/loading',
+      name: 'Loading',
+      component: Loading
     },
     {
       path: '/realhomepage',
@@ -75,7 +77,12 @@ export default new Router({
       path: '/formshow',
       name: 'FormShow',
       component: FormShow
-    }
+    },
+    {
+      path: '/tophone',
+      name: 'ToPhone',
+      component: ToPhone
+    },
 
   ]
 })

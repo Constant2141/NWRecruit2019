@@ -1,8 +1,8 @@
 <template>
-  <div class="entry-form" :style="{height:clientHeight}">
+  <div class="entry-form" :style="{height:clientHeight}" ref="entryform">
     <div class="desk">
       <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
-      <img src="../assets/书.png" alt class="book">
+      <img src="http://pnqc4vaxj.bkt.clouddn.com/book.png" alt class="book">
       <!-- <img src="../assets/杯子.png" alt="" class="cup"> -->
       <transition name="entryForm">
         <div class="paper" v-if="IsShowPaper">
@@ -44,18 +44,18 @@
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
                 <label for="stuID" class="mgl50">學號</label>
-                <input type="text" maxlength="12" id="stuID" placeholder="点击编辑" v-model="stuID">
+                <input type="text" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
-                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject">
+                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject"  @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="call" class="mgl50">電話</label>
-                <input type="text" maxlength="12" id="call" placeholder="点击编辑" v-model="call">
+                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call"  @blur="this.toTop">
               </div>
-              <span @click="IsShowInf = false">確認</span>
-              <span @click="IsShowInf = false">取消</span>
+              <span @click="this.disInf">確認</span>
+              <span @click="this.disInf">取消</span>
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
@@ -63,7 +63,7 @@
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
-          <img src="../assets/提交.png" alt class="submit" @click="showTip1 = true">
+          <img src="http://pnqc4vaxj.bkt.clouddn.com/commit.png" alt class="submit" @click="showTip1 = true">
           <div class="NW">Night's Watch</div>
         </div>
       </transition>
@@ -87,6 +87,12 @@
         <span @click="handleLike('1')">全棧</span>
         <span @click="handleLike('2')">設計</span>
       </div>
+
+      <div class="tips" v-show="showTip4">
+        <div class="close" @click="showTip4 = false">&times;</div>
+        <p>請確認信息填寫是否完整</p>
+        <span @click="showTip4 = false">好滴</span>
+      </div>
     </div>
   </div>
 </template>
@@ -109,12 +115,23 @@ export default {
       showTip1: false, //提交
       showTip2: false, //选择性别
       showTip3: false, //选择意向
+      showTip4: false,//判空提示框
       clientHeight: "",
       IsShowPaper: false,
       IsShowInf: false
     };
   },
   mounted() {
+    let imgs = [
+        "http://pnqc4vaxj.bkt.clouddn.com//book.png",
+        "http://pnqc4vaxj.bkt.clouddn.com/rnw.png"
+    ];
+    for (let img of imgs) {
+        let image = new Image();
+        image.src = img;
+        image.onload = () => {
+        };
+      }
     this.clientHeight =
       (window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -160,38 +177,39 @@ export default {
       // },500)
     },
     submit() {
-      console.log({
-        name: this.name,
-          sex: this.sex,
-          like: this.like,
-          major: this.major,
-          intro: this.intro,
-          stuID: this.stuID,//学号
-          subject: this.subject,//专业班级
-          call: this.call,//电话
-      });
-      
-      this.$axios.post('/api/submit',{
+      let obj = {
           name: this.name,
           sex: this.sex,
           like: this.like,
-          major: this.major,
           intro: this.intro,
           stuID: this.stuID,//学号
           subject: this.subject,//专业班级
           call: this.call,//电话
-      })
+      }
+      let arr = Object.values(obj)
+      console.log(arr);
+      for(let j=0,len = arr.length;j < len ;j++){
+        if(arr[j] == ''){
+          this.showTip4 = true;
+          this.showTip1 = false;
+          return;
+        }
+      }
+
+      this.showTip1 = false;
+      this.$axios.post('/api/submit',obj)
       .then((res) => {
-        console.log(res);
+         this.$store.commit('setName',this.name)
         if(res.data.code == 200){
-          alert('报名成功')
+          this.$router.replace('FormShow')
         }else{
-          console.log('请确认信息填写是否完整');
+          console.log('报错了');
         }
       })
       .catch((err) => {
         console.log(err);
       })
+
     },
     handleSex(sex) {
       if (sex == "boy") this.sex = "男生";
@@ -205,6 +223,16 @@ export default {
     },
     inf() {
       this.IsShowInf = true;
+      this.toTop();
+    },
+    toTop(){
+      // alert(123);
+      // 填完往上滑
+      this.$refs.entryform.scrollIntoView(false);
+    },
+    disInf(){
+      this.IsShowInf = false;
+      this.toTop();
     }
   }
 };
@@ -232,16 +260,16 @@ export default {
   background-color: #000000;
 }
 .desk {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0 auto;
   position: relative;
-  background: url("../assets/报名表.jpg");
-  background-size: contain;
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 .desk .background {
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 /***paper***/
@@ -435,7 +463,7 @@ export default {
   top: 31%;
   left: 50%;
   transform: translate(-50%);
-  background: url("../assets/提示框.png");
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/tishikuang.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Genkaimincho;
@@ -462,7 +490,7 @@ export default {
   margin-left: -330px;
   z-index: 25;
   font-family: Genkaimincho;
-  background-image: url("../assets/inf.png");
+  background-image: url("http://pnqc4vaxj.bkt.clouddn.com/inf.png");
   background-size: 100% 100%;
   font-size: 40px;
 }

@@ -7,7 +7,7 @@
             class="circle1"
             :style="{width:width+'px',height:width+'px',marginLeft:-width/2+'px',marginTop:-width/2+'px'}"
           ></div>
-          <div class="circle2"></div>
+          <!-- <div class="circle2"></div> -->
           <div class="circle3 blur1" :style="{filter:blur}"></div>
         </div>
       </transition>
@@ -15,7 +15,7 @@
       <ul class="bg-bubbles" v-if="IsBegin">
         <li v-for="i in 9" :key="i"></li>
       </ul>
-      <img class="bg circle" src="../assets/bgm.png">
+      <img class="bg circle" src="http://pnqc4vaxj.bkt.clouddn.com/bgm.png">
     </section>
     <transition name="NW">
       <section class="nw-font" v-if="IsShowNW">
@@ -62,7 +62,7 @@ export default {
 
       setTimeout(() => {
         setInterval(() => {
-          this.blur = "blur(" + i + "px)";
+          // this.blur = "blur(" + i + "px)";
           if (flag2) {
             this.width -= 5;
           } else {
@@ -339,6 +339,7 @@ export default {
   position: relative;
   height: 170px;
   width: 100vw;
+  margin-top: -50px;
   margin-right: 110px;
 }
 .night {
@@ -365,7 +366,7 @@ export default {
   font-size: 22px;
   color: #ddd;
   font-family: "SimSun";
-  line-height: 52px;
+  line-height: 44px;
   text-align: justify;
   margin: 0 auto;
 }

@@ -1,37 +1,37 @@
 <template>
   <div class="form-show">
-    <img src="../assets/书.png" alt="" class="book">
-    <img src="../assets/topf.png" alt="" class="topf">
-    <img src="../assets/bottomf.png" alt="" class="bottomf">
+    <img src="../../static/img/book.png" alt="" class="book">
+    <img src="../../static/img/topf.png" alt="" class="topf">
+    <img src="../../static/img/bottomf.png" alt="" class="bottomf">
     <transition name="fade">
     <div class="texts" v-if="show">
       <div>
         <p id="ptop">姓名</p>
-        <span>郑庆义</span>
+        <span>{{this.name}}</span>
       </div>
       <div>
         <p class="middles">性别</p>
-        <span>男</span>
+        <span>{{obj.sex}}</span>
       </div>
       <div>
         <p class="middles">意向</p>
-        <span>设计</span>
+        <span>{{obj.like}}</span>
       </div>
       <div>
         <p class="middles">手机</p>
-        <span id="number">18888299999</span>
+        <span id="number">{{obj.call}}</span>
       </div>
       <div>
         <p class="middles">学号</p>
-        <span id="number">3117002222</span>
+        <span id="number">{{obj.stuID}}</span>
       </div>
-      <div>
-        <p class="middles">专业班级</p>
-        <span id="school">计算机学院软件2班</span>
+      <div id="guy">
+        <p class="middles" id="subject">专业班级</p>
+        <span id="school">{{obj.subject}}</span>
       </div>
       <div>
         <p id="introduce">自我介绍</p>
-        <p id="contents">我很帅很好很棒很厉害..</p>
+        <p id="contents">{{obj.intro}}</p>
         </div>
     </div>
     </transition>
@@ -48,15 +48,50 @@ export default {
     return{
       show:false,
       nws:false,
+      name:this.$store.state.name,
+      subject:"",
+      obj:{},
     }
   },
+  methods:{
+    changeStyle(){
+      if(this.obj.subject.length <= 6){
+        var style = document.getElementById("school").style;
+        style.fontSize = "18px";
+        style.lineHeight = "25px";
+        style.paddingTop = "8.5px";
+      }
+    }
+  },
+  updated(){
+    let that = this;
+    setTimeout(function(){
+      that.changeStyle();
+    },100)
+  },
   mounted(){
+  // console.log(this.$store.state.name);
     this.show = true;
     let that = this
     setTimeout(function(){
       that.nws = true
     },1200)
-  }
+
+
+    this.$axios.post('/api/show',{
+      name:this.$store.state.name
+    })
+    .then((res) => {
+      if(res.data.code == 200){
+        this.obj = res.data.doc;
+      }else{
+        console.log('不对劲');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  },
 }
 </script>
 
@@ -86,7 +121,7 @@ export default {
 }
 .form-show{
   height: 100vh;
-  background: url("../assets/报名表.jpg");
+  background: url("../../static/img/baomingbiao.jpg");
   background-size: 100% 100%;
 }
 .book{
@@ -157,10 +192,18 @@ export default {
 .middles{
   margin-left: 60px;
 }
+#subject{
+  height: 75px;
+  padding-top: 17px;
+}
+#guy{
+  margin-top: 23px;
+}
 #school{
   font-size: 24px;
-  line-height: 34px;
+  line-height: 44px;
   width:176px;
+  height: 75px;
   word-wrap: break-word;
   margin-left: 30px;
 }
@@ -172,7 +215,7 @@ export default {
   height: 198px;
   width: 198px;
   position: absolute;
-  background: url("../assets/rnw.png");
+  background: url("../../static/img/rnw.png");
   background-size: 100% 100%;
   bottom: 270px;
   right: 126px;
@@ -187,8 +230,10 @@ export default {
   font-family: YouYuan;
   font-size: 36px;
   width: 450px;
-  margin-top: 40px;
+  height: 150px;
+  margin-top: 30px;
   margin-left: 40px;
-  color:#6e6e6e
+  color:#6e6e6e;
+  overflow-y: scroll;
 }
 </style>

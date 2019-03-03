@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Axios from 'axios'
 import star from './utils/star'
+import store from './utils/store'
 
 Vue.config.productionTip = false
 
@@ -16,6 +17,7 @@ Axios.defaults.baseURL = 'http://47.106.21.195:3001/'
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

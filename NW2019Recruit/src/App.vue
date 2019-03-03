@@ -1,7 +1,9 @@
 <template>
   <div id="app" @touchmove="move">
+		<keep-alive>
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+		</keep-alive>
     <div class="arrow" id="arrow" @click="next" v-if="arrStatus"></div>
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
 		if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
 				console.log("手机")
 		}else{
-				this.$router.push("/tophone");
+				this.$router.replace("/tophone");
 				this.arrStatus = false;
 				return ;
 		}
@@ -36,16 +38,20 @@ export default {
 		body.addEventListener("touchend", this.end);
 	},
 	updated(){
-		// console.log("app.vue更新了");
 		var routeName = this.$route.name;
 			// 整个路由配置中的url
-		if(routeName == 'HomePage' || routeName == 'ToPhone' || routeName == 'FormShow' || routeName == "Picture")this.arrStatus = false;
+		if(routeName == "Loading"||routeName == 'HomePage' || routeName == 'ToPhone' || routeName == 'FormShow' || routeName == "Picture" || routeName == "EntryForm")this.arrStatus = false;
 		else this.arrStatus = true;
 	},
 	methods: {
 		move(e){
+			var routeName = this.$route.name;
+			// 整个路由配置中的url
+		if(routeName == "FormShow" || routeName == "EntryForm")return ;
+		else{
 			e.preventDefault();
-      e.stopPropagation();
+			e.stopPropagation();
+		}
 		},
 		next(){
 			if(Math.abs(cha) > 120){
@@ -68,16 +74,16 @@ export default {
 			},0);
 
 			if(navMap == 7 && cha > 120){
-				this.$router.push('IntroducePage');
+				this.$router.replace('IntroducePage');
 				return 
 			}
 
-			if((navMap == 2 && cha > 120) || (navMap == 4 && cha < -120) ||(navMap == 6 && cha< -120)||(navMap == 6 && cha > 120)||(navMap == routes.length - 1 && cha < -120)){
+			if((navMap == 1)||(navMap == 2 && cha > 120) || (navMap == 4 && cha < -120) ||(navMap == 6 && cha< -120)||(navMap == 6 && cha > 120)||(navMap == 8 && cha< -120)||(navMap == routes.length - 2)){
 				// console.log("不该上下滑");
 				return 
 			}
 			if(Math.abs(cha) > 120){
-				cha < 0 ? this.$router.push(routes[navMap + 1].name) : this.$router.push(routes[navMap - 1].name);
+				cha < 0 ? this.$router.replace(routes[navMap + 1].name) : this.$router.replace(routes[navMap - 1].name);
 				this.arrStatus = true;
 			}
 			if((navMap == routes.length - 2 && cha < -120)){

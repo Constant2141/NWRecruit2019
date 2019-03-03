@@ -1,7 +1,7 @@
 <template>
     <div class="homepage">
         <star v-for="i in items" :key="i.id"></star>
-        <div class="home-img"> 
+        <div class="home-img">
 
             <div class="font">
                 <svg width="93" height="259">
@@ -51,7 +51,7 @@
                         <path id="y8"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M32 133
-                            S38 150 60 157"></path>    
+                            S38 150 60 157"></path>
                         <path id="y9"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M41 133
@@ -69,7 +69,7 @@
                     </g>
                 </svg>
             </div>
-            
+
             <!-- <div class="star-wrap" id="s1">
                 <div class="star"></div>
                 <div class="star-blur" ref="blur1"></div>
@@ -150,13 +150,13 @@ export default {
         // this.timer = setInterval(() =>{
         //     // console.log(this.$star);
         //     console.log(this.timer);
-            
+
         // },3000);
-        this.$once('hook:beforeDestroy', () => { 
-            console.log(this.timer);           
+        this.$once('hook:beforeDestroy', () => {
+            console.log(this.timer);
             clearInterval(this.timer);
             clearTimeout(this.timer2);
-            clearTimeout(this.timer3)                                    
+            clearTimeout(this.timer3)
         })
     },
     beforeDestroy(){
@@ -203,7 +203,7 @@ export default {
                     s4 = document.getElementById("s4"),
                     s5 = document.getElementById("s5"),
                     s6 = document.getElementById("s6"),
-                    s7 = document.getElementById("s7"), 
+                    s7 = document.getElementById("s7"),
                     s8 = document.getElementById("s8"),
                     s9 = document.getElementById("s9");
                 let color = 0;
@@ -219,7 +219,7 @@ export default {
                         shou[5] += 30.5/(20/0.4);
                         shou[6] += 30.5/(20/0.4);
                         // console.log(color)
-                        
+
                         s1.setAttribute("y",shou[0]);
                         s2.setAttribute("x",shou[1]);
                         s3.setAttribute("x",shou[2]);
@@ -249,10 +249,10 @@ export default {
                                 clearInterval(act2);
                             }
                         },30);
-                        
+
 
                     }
-                },25)    
+                },25)
             }
             function ye(){
                 var ye = [0,86,2,180,0,61,83,10,0]; //用于调配笔画移动或透明度的参数（一一对应）
@@ -315,7 +315,7 @@ export default {
                 var ren = [0,0];
                 let r1 = document.getElementById("r1"),
                     r2 = document.getElementById("r2");
-                let color = 0; 
+                let color = 0;
 
                 if(color < 1){
                     let act2 = setInterval(() =>{
@@ -327,12 +327,12 @@ export default {
                 else{
                     clearInterval(act2);
                 }
-                
+
             }
             shou();
             this.timer2 = setTimeout(ye,500);
             this.timer3 = setTimeout(ren,1500);
-            
+
         }
     },
 
@@ -360,9 +360,9 @@ export default {
         overflow: hidden;
     }
     .home-img{
-        background-image: url(../assets/homepage.jpg);
-        /* background-color: #00000010; */
+        background-image: url(http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg);
         height: 100vh;
+        background-color: black;
         overflow: hidden;
         background-size: cover;
         background-repeat: no-repeat;
@@ -466,7 +466,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 5vh;
         bottom:0;
-        background-image: url(../assets/wave1.png);
+        background-image: url(../../static/img/wave1.png);
         z-index: 10;
     }
     #wave2{
@@ -478,7 +478,7 @@ export default {
         background-repeat: repeat-x;
         background-position-y: 4vh;
         bottom:0;
-        background-image: url(../assets/wave2.png);
+        background-image: url(../../static/img/wave2.png);
         z-index: 9;
     }
 </style>
