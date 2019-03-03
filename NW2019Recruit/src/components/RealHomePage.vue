@@ -255,7 +255,7 @@ export default {
                 },25)    
             }
             function ye(){
-                var ye = [0,86,2,180,0,60,83,10,0]; //用于调配笔画移动或透明度的参数（一一对应）
+                var ye = [0,86,2,180,0,61,83,10,0]; //用于调配笔画移动或透明度的参数（一一对应）
                 let y1 = document.getElementById("y1"),
                     y2 = document.getElementById("y2"),
                     y3 = document.getElementById("y3"),
