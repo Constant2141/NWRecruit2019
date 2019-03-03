@@ -230,7 +230,7 @@ export default {
   background: url("../../static/img/rnw.png");
   background-size: 100% 100%;
   /* top: 880px; */
-  top:67%;
+  top:63%;
   right: 126px;
 }
 #introduce{
