@@ -1,5 +1,6 @@
 <template>
-  <div class="form-show">
+  <div class="show-form">
+    <div class="form-show">
     <img src="../../static/img/book.png" alt="" class="book">
     <img src="../../static/img/topf.png" alt="" class="topf">
     <img src="../../static/img/bottomf.png" alt="" class="bottomf">
@@ -40,6 +41,7 @@
       </div>
     </transition>
   </div>
+  </div>
 </template>
 
 <script>
@@ -49,7 +51,6 @@ export default {
       show:false,
       nws:false,
       name:this.$store.state.name,
-      subject:"",
       obj:{},
     }
   },
@@ -59,7 +60,8 @@ export default {
         var style = document.getElementById("school").style;
         style.fontSize = "18px";
         style.lineHeight = "25px";
-        style.paddingTop = "8.5px";
+        style.paddingTop = "11px";
+        style.width = "103px";
       }
     }
   },
@@ -119,10 +121,15 @@ export default {
   50%{transform:scale(2);}
   100%{transform:scale(1);}
 }
-.form-show{
+.show-form{
   height: 100vh;
+  background: black;
+}
+.form-show{
+  height: 1334px;
   background: url("../../static/img/baomingbiao.jpg");
-  background-size: 100% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .book{
   width: 479px;
@@ -143,7 +150,7 @@ export default {
   height: 33px;
   width: 493px;
   position: absolute;
-  bottom: 230px;
+  top: 1100px;
   left: 117px;
 }
 .texts{
@@ -202,7 +209,7 @@ export default {
 #school{
   font-size: 24px;
   line-height: 44px;
-  width:176px;
+  width:160px;
   height: 75px;
   word-wrap: break-word;
   margin-left: 30px;
@@ -217,7 +224,7 @@ export default {
   position: absolute;
   background: url("../../static/img/rnw.png");
   background-size: 100% 100%;
-  bottom: 270px;
+  top: 880px;
   right: 126px;
 }
 #introduce{
@@ -235,5 +242,7 @@ export default {
   margin-left: 40px;
   color:#6e6e6e;
   overflow-y: scroll;
+  padding-left: 30px;
+  text-align: left;
 }
 </style>

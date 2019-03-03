@@ -1,5 +1,6 @@
 <template>
-  <div class="fullstack">
+  <div class="full">
+    <div class="fullstack">
     <transition name="fade">
       <div v-if="circles">
       <div class="circle">
@@ -20,8 +21,8 @@
       <p id="p5">{{msg5}}</p>
       <p id="p6">{{msg6}}</p>
       <p id="p7">{{msg7}}</p>
-
     </div>
+  </div>
   </div>
 </template>
 
@@ -94,7 +95,7 @@ export default {
             }
           that.msg2 = shower2;
       },30)
-      }, 500);
+      }, 700);
       setTimeout(() => {
         that.timer3 = setInterval(() => {
             var shower3 = text3.substr(0,i3++);
@@ -103,7 +104,7 @@ export default {
             }
           that.msg3 = shower3;
         },30)
-      }, 1000);
+      }, 1400);
       setTimeout(() => {
         that.timer4 = setInterval(() => {
             var shower4 = text4.substr(0,i4++);
@@ -112,7 +113,7 @@ export default {
             }
           that.msg4 = shower4;
         },30)
-      }, 1600);
+      }, 2100);
       setTimeout(() => {
         that.timer5 = setInterval(() => {
             var shower5 = text5.substr(0,i5++);
@@ -121,7 +122,7 @@ export default {
             }
           that.msg5 = shower5;
         },30)
-      }, 2600);
+      }, 3200);
       setTimeout(() => {
         that.timer6 = setInterval(() => {
             var shower6 = text6.substr(0,i6++);
@@ -130,7 +131,7 @@ export default {
             }
           that.msg6 = shower6;
         },30)
-      }, 3500);
+      }, 4400);
       setTimeout(() => {
         that.timer7 = setInterval(() => {
             var shower7 = text7.substr(0,i7++);
@@ -139,7 +140,7 @@ export default {
             }
           that.msg7 = shower7;
         },30)
-      }, 4200);
+      }, 5500);
     }
   }
 }
@@ -155,13 +156,15 @@ export default {
   font-family: SoukouMincho;
   src: url("../font/SoukouMincho.ttf");
 }
-.fullstack{
+.full{
   height: 100vh;
+  background: black;
+}
+.fullstack{
+  height: 1334px;
   background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png");
-  /* background: url("http://pnqc4vaxj.bkt.clouddn.com/full.png"); */
-
-
-  background-size: 100% 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .circle{
   position: absolute;
@@ -211,7 +214,7 @@ export default {
   width: 640px;
   height: 474px;
   position: absolute;
-  bottom: 240px;
+  top: 600px;
   left: 58px;
   font-style: italic;
   font-size: 24px;
@@ -220,6 +223,7 @@ export default {
 }
 .more-content p{
   text-align: left;
+  height: 48px;
 }
 #p1{
   margin-left: 110px;
