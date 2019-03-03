@@ -38,7 +38,7 @@
                             id="y3"
                             d=" M27 121
                             S25 128 13 140"></path>
-                        
+
                         <path id="y5"
                             style="stroke:#ffffff00;stroke-witdth:1;fill:#ffffff00"
                             d="M39 121
@@ -365,9 +365,11 @@ export default {
     .home-img{
         background-image: url(http://pnqc4vaxj.bkt.clouddn.com/newHome.jpg);
         height: 100vh;
+        width: 100vw;
         background-color: black;
         overflow: hidden;
-        background-size: cover;
+        /* background-size: cover; */
+        background-size: 100% 100%;
         background-repeat: no-repeat;
     }
     .font{

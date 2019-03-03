@@ -173,7 +173,7 @@ export default {
       },500)
       // setTimeout(() =>{
       //   for(let i =0;i < input.length;i++){
-          
+
       //   }
       // },500)
     },
@@ -262,10 +262,11 @@ export default {
 }
 .desk {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
   position: relative;
-  background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg");
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/desk.jpg");
+  /* background: url("http://pnqc4vaxj.bkt.clouddn.com/baomingbiao.jpg"); */
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -285,8 +286,10 @@ export default {
 .paper {
   width: 569px;
   height: 998px;
+  background: url("http://pnqc4vaxj.bkt.clouddn.com/paper.png");
+  background-size: 100% 100%;
   position: absolute;
-  top: 148px;
+  top: 100px;
   left: 87px;
   /* font-weight: 100; */
 }
@@ -294,7 +297,7 @@ export default {
   width: 479px;
   height: 230px;
   position: absolute;
-  top: 0;
+  top: -50px;
   left: 0;
   z-index: 10;
 }
