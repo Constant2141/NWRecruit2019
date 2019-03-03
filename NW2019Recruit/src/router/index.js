@@ -25,13 +25,13 @@ export default new Router({
     {
       path:'/',
       name:'base',
-      redirect:'/realhomepage'
+      redirect:'/loading'
     },
-    // {
-    //   path: '/loading',
-    //   name: 'Loading',
-    //   component: Loading
-    // },
+    {
+      path: '/loading',
+      name: 'Loading',
+      component: Loading
+    },
     {
       path: '/realhomepage',
       name: 'RealHomePage',

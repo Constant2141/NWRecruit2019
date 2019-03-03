@@ -1,5 +1,5 @@
 <template>
-  <div class="entry-form" :style="{height:clientHeight}">
+  <div class="entry-form" :style="{height:clientHeight}" ref="entryform">
     <div class="desk">
       <!-- <img src="../assets/报名表.jpg" alt="" class="background"> -->
       <img src="http://pnqc4vaxj.bkt.clouddn.com/book.png" alt class="book">
@@ -43,23 +43,23 @@
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
-                <label for="stuID"  class="mgl50">學號</label>
-                <input type="number" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID">
+                <label for="stuID" class="mgl50">學號</label>
+                <input type="number" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
-                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject">
+                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject"  @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="call" class="mgl50">電話</label>
-                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call">
+                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call"  @blur="this.toTop">
               </div>
-              <span @click="IsShowInf = false">確認</span>
-              <span @click="IsShowInf = false">取消</span>
+              <span @click="this.disInf">確認</span>
+              <span @click="this.disInf">取消</span>
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
-              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑" v-model="intro"></textarea>
+              <textarea maxlength="200" name="intro" id="intro" placeholder="点击编辑" v-model="intro" @blur="this.toTop"></textarea>
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
@@ -188,6 +188,16 @@ export default {
     },
     inf() {
       this.IsShowInf = true;
+      this.toTop();
+    },
+    toTop(){
+      // alert(123);
+      // 填完往上滑
+      this.$refs.entryform.scrollIntoView(false);
+    },
+    disInf(){
+      this.IsShowInf = false;
+      this.toTop();
     }
   }
 };

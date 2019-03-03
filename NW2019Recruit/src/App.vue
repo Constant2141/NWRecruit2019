@@ -27,7 +27,7 @@ export default {
 		if(u.indexOf("iPhone") > -1 || u.indexOf("Linux") > -1 || u.indexOf('Windows Phone') > -1){
 				console.log("手机")
 		}else{
-				this.$router.push("/tophone");
+				this.$router.replace("/tophone");
 				this.arrStatus = false;
 				return ;
 		}
@@ -45,7 +45,7 @@ export default {
 		move(e){
 			var routeName = this.$route.name;
 			// 整个路由配置中的url
-		if(routeName == "FormShow")return ;
+		if(routeName == "FormShow" || routeName == "EntryForm")return ;
 		else{
 			e.preventDefault();
 			e.stopPropagation();
