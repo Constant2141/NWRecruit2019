@@ -1,6 +1,9 @@
 <template>
   <div class="full">
-    <div class="fullstack">
+    <transition name="bg">
+      <div class="fullstack" v-if="backg">
+      </div>
+    </transition>
     <transition name="fade">
       <div v-if="circles">
       <div class="circle">
@@ -23,24 +26,26 @@
       <p id="p7">{{msg7}}</p>
     </div>
   </div>
-  </div>
 </template>
 
 <script>
 export default {
   data(){
     return{
-      circles:false,msg1:"",msg2:"",msg3:"",msg4:"",msg5:"",msg6:"",msg7:"",
+      circles:false,msg1:"",msg2:"",msg3:"",msg4:"",msg5:"",msg6:"",msg7:"",backg:false,
       timer1:null,timer2:null,timer3:null,timer4:null,timer5:null,timer6:null,timer7:null,
     }
   },
   mounted(){
     this.text = true;
-    this.circles = true;
     let that = this;
+    this.backg = true;
+    setTimeout(function(){
+      that.circles = true;
+    },1200)
     setTimeout(function(){
       that.texts()
-    },2350)
+    },3550)
 
     let imgs = [
       'http://pnqc4vaxj.bkt.clouddn.com/paper2.png',
@@ -195,6 +200,12 @@ export default {
   top: 100px;
   left: 120px;
   }
+.bg-enter{
+  opacity: 0;
+}
+.bg-enter-active{
+  transition: opacity 2s;
+}
 .fade-enter{
   opacity: 0;
 }
