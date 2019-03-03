@@ -395,7 +395,7 @@ export default {
 }
 .form-box2 {
   width: 420px;
-  height: 260px;
+  height: 270px;
   line-height: 50px;
   position: relative;
   margin: 20px auto 0 -420px;
