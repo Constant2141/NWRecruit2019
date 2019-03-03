@@ -19,7 +19,7 @@ export default {
     },
     mounted(){
         this.timer = setInterval(() =>{
-            console.log(this.destroy);
+            // console.log(this.destroy);
             this.star();
         },3000)
             console.log(this.destroy);
@@ -42,11 +42,7 @@ export default {
             this.x = Math.random()*(window.innerWidth);
             this.y = Math.random()*(window.innerHeight/2);
             var circle = document.getElementsByTagName("circle");
-            let count = 0;
-            // for(let i = 0;i < circle.length;i++){
-            //     // console.log(this.color);
-            //     circle[i].fill = "#ffffff00";
-            // }             
+            let count = 0;            
             this.timer2 = setInterval(() =>{
                 // console.log(circle[0].style.fill);
                 if(circle[0].style.fill == "rgba(255, 255, 255, 0)" || circle[0].style.fill == "#ffffff" ){
