@@ -235,7 +235,8 @@ export default {
 }
 #contents{
   font-family: YouYuan;
-  font-size: 36px;
+  /* font-size: 36px; */
+  font-size: 28px;
   width: 450px;
   height: 150px;
   margin-top: 30px;
