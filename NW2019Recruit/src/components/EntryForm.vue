@@ -43,8 +43,8 @@
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
-                <label for="stuID" class="mgl50">學號</label>
-                <input type="text" maxlength="12" id="stuID" placeholder="点击编辑" v-model="stuID">
+                <label for="stuID"  class="mgl50">學號</label>
+                <input type="number" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
@@ -52,7 +52,7 @@
               </div>
               <div class="form-box3">
                 <label for="call" class="mgl50">電話</label>
-                <input type="text" maxlength="12" id="call" placeholder="点击编辑" v-model="call">
+                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call">
               </div>
               <span @click="IsShowInf = false">確認</span>
               <span @click="IsShowInf = false">取消</span>
@@ -174,7 +174,7 @@ export default {
       .catch((err) => {
         console.log(err);
       })
-      
+
     },
     handleSex(sex) {
       if (sex == "boy") this.sex = "男生";

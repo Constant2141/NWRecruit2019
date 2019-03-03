@@ -1,6 +1,6 @@
 <template>
   <div class="picture">
-    <section class="bg" v-show="IsShowBg"></section>
+    <!-- <section class="bg" v-show="IsShowBg"></section> -->
     <transition name="p4">
       <section v-show="p4">
         <img src="http://pnqc4vaxj.bkt.clouddn.com/p4.png">
@@ -36,7 +36,7 @@ export default {
       p2: false,
       p3: false,
       p4: false,
-      IsShowBg: false,
+      // IsShowBg: false,
       flag:true
     };
   },
@@ -63,21 +63,21 @@ export default {
     setTimeout(() => {
       this.p4 = false;
     }, 3350);
-    setTimeout(() => {
-      this.IsShowBg = true;
-    }, 3450);
+    // setTimeout(() => {
+    //   this.IsShowBg = true;
+    // }, 3450);
     setTimeout(() => {
         let image = new Image();
         image.src = "http://pnqc4vaxj.bkt.clouddn.com/full.png";
         image.onload = () => {
           this.flag= false
         };
-      
-    }, 4150);
+
+    }, 3400);
   },
   watch:{
     flag(val){
-      if(!val) 
+      if(!val)
           this.$router.push({
             path: "/full"
       });
@@ -100,7 +100,7 @@ export default {
 }
 .p1-enter,
 .p1-leave-to {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .p2-enter-active,
 .p2-leave-active {
@@ -108,7 +108,7 @@ export default {
 }
 .p2-enter,
 .p2-leave-to {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .p3-enter-active,
 .p3-leave-active {
@@ -116,7 +116,7 @@ export default {
 }
 .p3-enter,
 .p3-leave-to {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .p4-enter-active,
 .p4-leave-active {
@@ -124,7 +124,7 @@ export default {
 }
 .p4-enter,
 .p4-leave-to {
-  opacity: 0;
+  opacity: 0.4;
 }
 img {
   position: absolute;
