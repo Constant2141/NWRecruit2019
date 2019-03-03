@@ -8,7 +8,6 @@
         <div class="paper" v-if="IsShowPaper">
           <div class="title">報名表</div>
           <div class="line"></div>
-          <!-- <img src="../assets/人.png" alt class="person"> -->
           <form class="form">
             <div class="form-box">
               <label for="name">姓名</label>
@@ -38,28 +37,28 @@
             </div>
             <div class="form-box" @click="inf">
               <label for="major">个人信息</label>
-              <input type="text" id="major" placeholder="" v-model="major">
+              <input type="text" id="major" placeholder="" readonly v-model="major">
             </div>
             <section class="inf" v-show ="IsShowInf">
               <div class="close2" @click="IsShowInf = false">&times;</div>
               <div class="form-box3">
                 <label for="stuID" class="mgl50">學號</label>
-                <input type="text" maxlength="10" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
+                <input type="number" oninput="if(value.length>10)value=value.slice(0,10)" id="stuID" placeholder="点击编辑" v-model="stuID" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="subject">專業班級</label>
-                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject"  @blur="this.toTop">
+                <input type="text" maxlength="8" id="subject" placeholder="点击编辑" v-model="subject" @blur="this.toTop">
               </div>
               <div class="form-box3">
                 <label for="call" class="mgl50">電話</label>
-                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call"  @blur="this.toTop">
+                <input type="tel" maxlength="11" id="call" placeholder="点击编辑" v-model="call" @blur="checkPhone()" >
               </div>
               <span @click="this.disInf">確認</span>
               <span @click="this.disInf">取消</span>
             </section>
             <div class="form-box2">
               <label for="intro">自我介绍</label>
-              <textarea maxlength="200" name="intro" id="intro" placeholder="" v-model="intro"></textarea>
+              <textarea maxlength="200" name="intro" id="intro" placeholder="" v-model="intro" @blur="this.toTop"></textarea>
             </div>
             <!-- <input type="textarea" id="intro" placeholder="点击编辑" v-model="intro"  cols="3" rows="3"> -->
           </form>
@@ -146,6 +145,15 @@ export default {
 
   },
   methods: {
+    checkPhone(){
+      this.toTop();
+      // var phone = document.getElementById('call').value;
+      if(!(/^1[34578]\d{9}$/.test(this.call))){ 
+          alert("手机号码格式有误，请重填");  
+          this.call = '';
+          return false; 
+      } 
+    },
     slideInput(){
       var input = document.getElementsByClassName("form-box");
       var input2 = document.getElementsByClassName("form-box2");
@@ -227,7 +235,6 @@ export default {
       this.toTop();
     },
     toTop(){
-      // alert(123);
       // 填完往上滑
       this.$refs.entryform.scrollIntoView(false);
     },
