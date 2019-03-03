@@ -56,11 +56,16 @@ export default {
   watch: {
     IsClickHere() {
       if (this.IsClickHere == true) {
-        let timer = setTimeout(() => {
-          this.$router.replace({
-            path: "/introducePage"
-          });
-        }, 500);
+          var timer = setTimeout(() => {
+            this.IsBegin = false;
+            this.first = false;
+            this.second = false;
+          }, 500);
+          setTimeout(() => {
+            this.$router.replace({
+              path: "/introducePage"
+            });
+          },1500)
       }
     }
   }
