@@ -51,7 +51,7 @@ export default {
 
       if (val == 15) {
         setTimeout(() => {
-          this.$router.push({
+          this.$router.replace({
             path: "/realhomepage"
           });
         },2000);
