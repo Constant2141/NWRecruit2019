@@ -1,6 +1,6 @@
 <template>
     <div class="homepage">
-        <star v-for="i in items" :key="i.id"></star>
+        <star v-for="i in items" :key="i.id" ></star>
         <div class="home-img">
 
             <div class="font">
@@ -126,7 +126,8 @@ export default {
             timer2:null,
             timer3:null,
             starcount: 12,
-            items:[]
+            items:[],
+            destroy:true,
         }
     },
     components:{
@@ -145,21 +146,23 @@ export default {
             this.items.push("1");
         }
         // this.types();
-        clearInterval(this.timer);
-        // this.$star.RandomTwinkle(this.$refs.star);
-        // this.timer = setInterval(() =>{
-        //     // console.log(this.$star);
-        //     console.log(this.timer);
-
-        // },3000);
+        // clearInterval(this.timer);
         this.$once('hook:beforeDestroy', () => {
-            console.log(this.timer);
+            console.log(1);
             clearInterval(this.timer);
             clearTimeout(this.timer2);
             clearTimeout(this.timer3)
         })
     },
     beforeDestroy(){
+        console.log(1);
+    },
+    beforeRouteLeave(to,from,next){
+        console.log(1);
+            clearInterval(this.timer);
+            clearTimeout(this.timer2);
+            clearTimeout(this.timer3)
+        next();
     },
     // destroyed(){
     //     clearInterval(this.timer);
