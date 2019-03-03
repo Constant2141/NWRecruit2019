@@ -7,6 +7,7 @@
 
 <script>
 export default {
+    props:["destroy"],
     data(){
         return{
             x:null,
@@ -18,13 +19,23 @@ export default {
     },
     mounted(){
         this.timer = setInterval(() =>{
+            console.log(this.destroy);
             this.star();
         },3000)
- 
+            console.log(this.destroy);
     },
     beforeDestroy(){
+        console.log("this.destroy");
         clearInterval(this.timer);
         clearInterval(this.timer2);
+
+    },
+    watch:{
+        destroy(data){
+            if(data == true){
+                
+            }
+        }
     },
     methods:{
         star(){
@@ -37,7 +48,7 @@ export default {
             //     circle[i].fill = "#ffffff00";
             // }             
             this.timer2 = setInterval(() =>{
-                console.log(circle[0].style.fill);
+                // console.log(circle[0].style.fill);
                 if(circle[0].style.fill == "rgba(255, 255, 255, 0)" || circle[0].style.fill == "#ffffff" ){
                         for(let i = 0;i < circle.length;i++){
                             // console.log(circle[i].style.fill);
