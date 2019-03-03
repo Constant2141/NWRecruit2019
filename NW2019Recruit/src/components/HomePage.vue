@@ -11,14 +11,14 @@
         <img class="bgm" src="../assets/bgm1.png" width="100%">
       </section>
     </transition>
-    <transition name="lumos">
+    <!-- <transition name="lumos">
       <section class="part3" v-if="IsClickHere">
         <div class="lumos shaky">Lumos</div>
       </section>
-    </transition>
+    </transition> -->
     <section class="part1">
       <transition name="first">
-        <div v-if="first">隧道里太暗了...</div>
+        <div v-if="first" class="mgb50">隧道里太暗了...</div>
       </transition>
       <transition name="second">
         <div v-if="second">我们需要点亮一盏灯...</div>
@@ -60,7 +60,7 @@ export default {
           this.$router.push({
             path: "/introducePage"
           });
-        }, 3000);
+        }, 500);
       }
     }
   }
@@ -88,6 +88,9 @@ export default {
   font-size: 30px;
   font-family: "Adobe Heiti Std";
   color: rgb(255, 255, 255);
+}
+.mgb50{
+  margin-bottom: 50px;
 }
 .part1 div {
   text-align: left;
@@ -138,10 +141,10 @@ export default {
   height: 158px;
   border-radius: 50%;
   /* background-color: blue; */
-  border: 3px solid #fff;
+  border: 2px solid #1fab96;
   z-index: 2;
   opacity: 0;
-  animation: wave 2s ease-in-out 0s infinite;
+  animation: wave 1.5s ease-in-out 0s infinite;
 }
 .wave2{
   width: 158px;
@@ -154,10 +157,10 @@ export default {
   height: 158px;
   border-radius: 50%;
   /* background-color: blue; */
-  border: 3px solid #fff;
+  border: 2px solid #84ab7a;
   z-index: 2;
   opacity: 0;
-  animation: wave 2s ease-in-out 1s infinite;
+  animation: wave 1.5s ease-in-out 0.75s infinite;
 }
 .wave3{
   width: 208px;
@@ -208,7 +211,7 @@ export default {
   margin-top: 5px;
   height: 26px;
   border-radius: 50%;
-  background-color: #fff;
+  background:-webkit-linear-gradient(#84ab7a, #1fab96);
   z-index: 20;
 }
 .begin-enter-active,

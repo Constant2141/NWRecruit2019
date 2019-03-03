@@ -339,6 +339,7 @@ export default {
   position: relative;
   height: 170px;
   width: 100vw;
+  margin-top: -50px;
   margin-right: 110px;
 }
 .night {
@@ -365,7 +366,7 @@ export default {
   font-size: 22px;
   color: #ddd;
   font-family: "SimSun";
-  line-height: 52px;
+  line-height: 44px;
   text-align: justify;
   margin: 0 auto;
 }
